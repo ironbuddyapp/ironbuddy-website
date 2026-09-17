@@ -1,20 +1,39 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
+import { PrivacyJsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
+
+const privacyDescription =
+  "IronBuddy keeps workouts on your phone. No account, no cloud training log, no ads, and no sale of your gym data.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "IronBuddy does not require an account, does not store your data in the cloud, and does not sell or advertise against your information.",
+  description: privacyDescription,
   alternates: {
-    canonical: "/privacy",
+    canonical: "/privacy/",
   },
   openGraph: {
     title: "Privacy Policy | IronBuddy",
-    description:
-      "IronBuddy does not require an account, does not store your data in the cloud, and does not sell or advertise against your information.",
-    url: `${siteConfig.url}/privacy`,
-    images: [siteConfig.ogImage],
+    description: privacyDescription,
+    url: `${siteConfig.url}/privacy/`,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | IronBuddy",
+    description: privacyDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -112,6 +131,7 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <main id="main" className="pb-24 pt-12 sm:pt-16">
+      <PrivacyJsonLd />
       <Container>
         <div className="mx-auto max-w-3xl">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">

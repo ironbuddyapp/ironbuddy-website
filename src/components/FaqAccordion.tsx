@@ -23,10 +23,10 @@ export function FaqAccordion() {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-7"
+                className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left sm:px-7 sm:py-5"
                 onClick={() => setOpen(isOpen ? null : index)}
               >
-                <span className="text-base font-medium tracking-tight text-white sm:text-lg">
+                <span className="text-sm font-medium tracking-tight text-white sm:text-lg">
                   {item.question}
                 </span>
                 <Icon
@@ -43,7 +43,7 @@ export function FaqAccordion() {
               role="region"
               aria-labelledby={buttonId}
               hidden={!isOpen}
-              className="px-5 pb-5 sm:px-7"
+              className="px-4 pb-4 sm:px-7 sm:pb-5"
             >
               <p className="max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
                 {item.answer}

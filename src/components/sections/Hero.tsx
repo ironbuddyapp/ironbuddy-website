@@ -1,29 +1,33 @@
 import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { Container } from "@/components/Container";
+import { ExploreIronBuddyButton } from "@/components/ExploreIronBuddyButton";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
 import { heroBullets } from "@/lib/content";
+import { preload } from "react-dom";
 
 export function Hero() {
+  preload("/screenshots/dashboard.webp", { as: "image", fetchPriority: "high" });
+
   return (
-    <section className="relative overflow-hidden pb-16 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
+    <section id="home" className="relative overflow-hidden max-lg:scroll-mt-0 max-lg:py-0 sm:pb-24 sm:pt-16 lg:scroll-mt-24 lg:pb-28 lg:pt-20">
       <div className="hero-grid pointer-events-none absolute inset-0" />
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
 
-      <Container className="relative grid items-center gap-12 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-        <div className="animate-fade-up">
+      <Container className="relative grid h-full min-h-0 items-center gap-4 max-lg:grid-rows-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+        <div className="animate-fade-up max-lg:order-2 max-lg:min-h-0">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
             Your lifelong gym companion.
           </p>
-          <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
+          <h1 className="mt-2 max-w-xl text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
             The Workout Tracker That Doesn&apos;t Need an Account.
           </h1>
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            Offline workout tracking built for lifters who want complete ownership of their data.
+          <p className="mt-3 hidden max-w-lg text-sm leading-relaxed text-muted sm:mt-5 sm:text-base lg:block lg:text-lg">
+            Offline Android workout tracking built for lifters who want complete ownership of their data.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-8 hidden grid-cols-2 gap-3 lg:mt-8 lg:grid">
             {heroBullets.map((item) => (
               <li key={item} className="flex items-center gap-2.5 text-sm text-white">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -34,21 +38,24 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <GooglePlayButton />
+          <div className="mt-4 flex flex-col gap-3 lg:mt-10 lg:flex-row lg:items-center">
+            <div className="hidden lg:block">
+              <GooglePlayButton />
+            </div>
+            <ExploreIronBuddyButton />
             <a
               href="#features"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="hidden h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:inline-flex"
             >
               View Features
             </a>
           </div>
         </div>
 
-        <div className="relative animate-fade-up [animation-delay:140ms]">
+        <div className="relative flex min-h-0 items-center justify-center animate-fade-up max-lg:order-1 [animation-delay:140ms]">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
-          <PhoneMockup float className="relative">
-            <AppScreen id="dashboard" alt="IronBuddy home dashboard" />
+          <PhoneMockup float className="relative max-lg:w-[min(200px,46svh)]">
+            <AppScreen id="dashboard" alt="IronBuddy home dashboard with the weekly training split" priority />
           </PhoneMockup>
         </div>
       </Container>

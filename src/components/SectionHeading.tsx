@@ -12,7 +12,7 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={cn("mx-auto max-w-2xl text-center", className)}>
+    <div className={cn("section-heading mx-auto max-w-2xl text-center", className)}>
       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
         {eyebrow}
       </p>
@@ -20,7 +20,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+        <p className="section-heading-desc mt-4 text-base leading-relaxed text-muted sm:text-lg">
           {description}
         </p>
       ) : null}

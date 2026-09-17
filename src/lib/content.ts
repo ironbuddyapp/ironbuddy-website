@@ -54,12 +54,36 @@ export const features: Array<{
 ];
 
 export const screenshots = [
-  { id: "dashboard", label: "Dashboard" },
-  { id: "logging", label: "Workout Logging" },
-  { id: "splits", label: "Training Splits" },
-  { id: "progress", label: "Progress Tracking" },
-  { id: "metrics", label: "Body Metrics" },
-  { id: "library", label: "Exercise Library" },
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    alt: "IronBuddy home dashboard with the weekly Push Pull Legs split and last workout volume",
+  },
+  {
+    id: "logging",
+    label: "Workout Logging",
+    alt: "IronBuddy workout logging screen for editing a Pull day and saving sets, reps, and weight",
+  },
+  {
+    id: "splits",
+    label: "Training Splits",
+    alt: "IronBuddy training splits screen with an active Push Pull Legs program",
+  },
+  {
+    id: "progress",
+    label: "Progress Tracking",
+    alt: "IronBuddy progress charts showing workout volume over time",
+  },
+  {
+    id: "metrics",
+    label: "Body Metrics",
+    alt: "IronBuddy body metrics tab tracking body weight and body fat percentage",
+  },
+  {
+    id: "library",
+    label: "Exercise Library",
+    alt: "IronBuddy exercise library with search, muscle filters, and demonstration thumbnails",
+  },
 ] as const;
 
 export type ScreenshotId = (typeof screenshots)[number]["id"];
@@ -104,6 +128,15 @@ export const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Screenshots", href: "/#screenshots" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Privacy Policy", href: "/privacy/" },
   { label: "Download", href: "/#download" },
+] as const;
+
+export const sectionNav = [
+  { id: "home", label: "Home" },
+  { id: "features", label: "Features" },
+  { id: "screenshots", label: "Screenshots" },
+  { id: "why", label: "Compare" },
+  { id: "faq", label: "FAQ" },
+  { id: "download", label: "Download" },
 ] as const;

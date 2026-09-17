@@ -12,12 +12,12 @@ export function FeatureCard({
   icon: FeatureIcon;
 }) {
   return (
-    <article className="group rounded-3xl border border-white/8 bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_60px_-32px_rgba(183,255,42,0.35)] sm:p-7">
-      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/12 text-primary transition duration-300 group-hover:bg-primary group-hover:text-background">
-        <Icon name={icon} className="h-5 w-5" />
+    <article className="group rounded-2xl border border-white/8 bg-surface p-3 transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_60px_-32px_rgba(183,255,42,0.35)] sm:rounded-3xl sm:p-6 lg:p-7">
+      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/12 text-primary transition duration-300 group-hover:bg-primary group-hover:text-background sm:h-11 sm:w-11 sm:rounded-2xl">
+        <Icon name={icon} className="h-4 w-4 sm:h-5 sm:w-5" />
       </div>
-      <h3 className="mt-5 text-lg font-semibold tracking-tight text-white">{title}</h3>
-      <p className={cn("mt-2 text-sm leading-relaxed text-muted")}>{description}</p>
+      <h3 className="mt-2 text-sm font-semibold tracking-tight text-white sm:mt-5 sm:text-lg">{title}</h3>
+      <p className={cn("mt-1 line-clamp-3 text-xs leading-snug text-muted sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed")}>{description}</p>
     </article>
   );
 }

@@ -74,6 +74,17 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+@media (max-width: 1023px) {
+  .animate-float {
+    animation: none;
+  }
+}
+
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 280px;
+}
+
 .reveal {
   animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -98,5 +109,60 @@ body {
 
   .opacity-0 {
     opacity: 1 !important;
+  }
+}
+
+body:has(#mobile-nav.block) [data-mobile-section-nav],
+body:has(#mobile-nav.block) [data-mobile-install-bar] {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  html:has(.app-deck) {
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: none;
+    scrollbar-width: none;
+  }
+
+  html:has(.app-deck)::-webkit-scrollbar {
+    display: none;
+  }
+
+  html:has(.app-deck) header {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+  }
+
+  html:has(.app-deck) footer {
+    display: none;
+  }
+
+  .app-deck > section {
+    box-sizing: border-box;
+    display: flex;
+    height: 100svh;
+    max-height: 100svh;
+    min-height: 100svh;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 4rem;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .app-deck .reveal {
+    animation: none;
+  }
+
+  .app-deck .section-heading-desc {
+    display: none;
+  }
+
+  .app-deck .section-heading h2 {
+    margin-top: 0.35rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 }

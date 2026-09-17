@@ -26,13 +26,25 @@ export function PhoneMockup({
   );
 }
 
-export function AppScreen({ id, alt }: { id: ScreenshotId; alt: string }) {
+export function AppScreen({
+  id,
+  alt,
+  priority = false,
+}: {
+  id: ScreenshotId;
+  alt: string;
+  priority?: boolean;
+}) {
   return (
     <img
-      src={`/screenshots/${id}.png`}
+      src={`/screenshots/${id}.webp`}
       alt={alt}
-      width={1080}
-      height={2400}
+      width={720}
+      height={1600}
+      sizes="(min-width: 1024px) 292px, 240px"
+      decoding="async"
+      fetchPriority={priority ? "high" : "low"}
+      loading={priority ? "eager" : "lazy"}
       className="h-full w-full object-cover object-top"
     />
   );

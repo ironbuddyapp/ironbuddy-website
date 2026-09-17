@@ -5,8 +5,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 py-20 sm:py-28">
-      <Container>
+    <section id="faq" className="max-lg:scroll-mt-0 max-lg:py-0 lg:scroll-mt-24 lg:py-20 sm:py-28">
+      <Container className="flex h-full min-h-0 flex-col justify-center">
         <Reveal>
           <SectionHeading
             eyebrow="FAQ"
@@ -14,7 +14,7 @@ export function Faq() {
             description="Straight answers about accounts, offline use, pricing, and platforms."
           />
         </Reveal>
-        <Reveal delay={80} className="mx-auto mt-12 max-w-3xl">
+        <Reveal delay={80} className="mx-auto mt-4 min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-y-contain lg:mt-12 lg:flex-none">
           <FaqAccordion />
         </Reveal>
       </Container>

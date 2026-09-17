@@ -39,10 +39,10 @@ export function ScreenshotCarousel() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative flex h-full min-h-0 flex-col justify-center">
       <div
         ref={scrollerRef}
-        className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-4 pt-2 sm:gap-8 sm:px-8"
+        className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain px-5 pb-4 pt-2 touch-pan-x sm:gap-8 sm:px-8"
         role="region"
         aria-roledescription="carousel"
         aria-label="App screenshots"
@@ -54,20 +54,20 @@ export function ScreenshotCarousel() {
             className="snap-center shrink-0"
             aria-label={`${index + 1} of ${screenshots.length}: ${shot.label}`}
           >
-            <PhoneMockup>
-              <AppScreen id={shot.id} alt={shot.label} />
+            <PhoneMockup className="max-lg:w-[10.5rem]">
+              <AppScreen id={shot.id} alt={shot.alt} />
             </PhoneMockup>
-            <figcaption className="mt-5 text-center text-sm font-medium text-white">
+            <figcaption className="mt-2 text-center text-sm font-medium text-white lg:mt-5">
               {shot.label}
             </figcaption>
           </figure>
         ))}
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-4">
+      <div className="mt-3 flex items-center justify-center gap-4 lg:mt-6">
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary lg:h-11 lg:w-11"
           aria-label="Previous screenshot"
           onClick={() => scrollTo(Math.max(active - 1, 0))}
         >
@@ -91,7 +91,7 @@ export function ScreenshotCarousel() {
         </div>
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary lg:h-11 lg:w-11"
           aria-label="Next screenshot"
           onClick={() => scrollTo(Math.min(active + 1, screenshots.length - 1))}
         >
