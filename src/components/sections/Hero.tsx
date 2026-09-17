@@ -15,7 +15,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
 
-      <Container className="relative grid h-full min-h-0 items-center gap-4 max-lg:grid-rows-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <Container className="relative grid h-full min-h-0 flex-1 items-center gap-4 max-lg:grid-rows-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div className="animate-fade-up max-lg:order-2 max-lg:min-h-0">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
             Your lifelong gym companion.

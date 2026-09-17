@@ -119,13 +119,9 @@ body:has(#mobile-nav.block) [data-mobile-install-bar] {
 
 @media (max-width: 1023px) {
   html:has(.app-deck) {
-    scroll-snap-type: y mandatory;
-    overscroll-behavior-y: none;
-    scrollbar-width: none;
-  }
-
-  html:has(.app-deck)::-webkit-scrollbar {
-    display: none;
+    scroll-behavior: auto;
+    scroll-padding-top: 4rem;
+    scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
   }
 
   html:has(.app-deck) header {
@@ -141,15 +137,11 @@ body:has(#mobile-nav.block) [data-mobile-install-bar] {
   .app-deck > section {
     box-sizing: border-box;
     display: flex;
-    height: 100svh;
-    max-height: 100svh;
     min-height: 100svh;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
     padding-top: 4rem;
     padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 
   .app-deck .reveal {
