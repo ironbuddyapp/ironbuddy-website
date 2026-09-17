@@ -157,4 +157,14 @@ body:has(#mobile-nav.block) [data-mobile-install-bar] {
     font-size: 1.5rem;
     line-height: 1.2;
   }
+
+  .app-deck,
+  .app-deck * {
+    touch-action: pan-y;
+  }
+
+  .app-deck [data-screenshot-scroller],
+  .app-deck [data-screenshot-scroller] * {
+    touch-action: pan-x pan-y;
+  }
 }

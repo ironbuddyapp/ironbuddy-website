@@ -23,7 +23,7 @@ export function FaqAccordion() {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left sm:px-7 sm:py-5"
+                className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left touch-pan-y sm:px-7 sm:py-5"
                 onClick={() => setOpen(isOpen ? null : index)}
               >
                 <span className="text-sm font-medium tracking-tight text-white sm:text-lg">

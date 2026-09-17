@@ -14,7 +14,7 @@ export function Faq() {
             description="Straight answers about accounts, offline use, pricing, and platforms."
           />
         </Reveal>
-        <Reveal delay={80} className="mx-auto mt-4 min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-y-contain lg:mt-12 lg:flex-none">
+        <Reveal delay={80} className="mx-auto mt-4 w-full max-w-3xl lg:mt-12">
           <FaqAccordion />
         </Reveal>
       </Container>

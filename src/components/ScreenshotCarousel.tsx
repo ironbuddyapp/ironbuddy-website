@@ -42,10 +42,11 @@ export function ScreenshotCarousel() {
     <div className="relative flex h-full min-h-0 flex-col justify-center">
       <div
         ref={scrollerRef}
-        className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain px-5 pb-4 pt-2 touch-pan-x sm:gap-8 sm:px-8"
+        className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-4 pt-2 sm:gap-8 sm:px-8"
         role="region"
         aria-roledescription="carousel"
         aria-label="App screenshots"
+        data-screenshot-scroller
       >
         {screenshots.map((shot, index) => (
           <figure
