@@ -48,7 +48,7 @@ export function Hero() {
         <div className="relative animate-fade-up [animation-delay:140ms]">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
           <PhoneMockup float className="relative">
-            <AppScreen id="dashboard" />
+            <AppScreen id="dashboard" alt="IronBuddy home dashboard" />
           </PhoneMockup>
         </div>
       </Container>

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { Icon } from "@/components/icons";
-import { screenshots, type ScreenshotId } from "@/lib/content";
+import { screenshots } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 export function ScreenshotCarousel() {
@@ -55,7 +55,7 @@ export function ScreenshotCarousel() {
             aria-label={`${index + 1} of ${screenshots.length}: ${shot.label}`}
           >
             <PhoneMockup>
-              <AppScreen id={shot.id as ScreenshotId} />
+              <AppScreen id={shot.id} alt={shot.label} />
             </PhoneMockup>
             <figcaption className="mt-5 text-center text-sm font-medium text-white">
               {shot.label}
