@@ -7,7 +7,6 @@ export type LucideIconName =
   | "shield"
   | "check"
   | "close"
-  | "play"
   | "menu"
   | "x"
   | "chevronLeft"
@@ -105,12 +104,6 @@ export function Icon({
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M7 7l10 10M17 7L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      );
-    case "play":
-      return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M4.5 3.2v17.6c0 .7.8 1.1 1.4.7l14.2-8.8c.6-.4.6-1.2 0-1.6L5.9 2.5c-.6-.4-1.4 0-1.4.7Z" />
         </svg>
       );
     case "menu":

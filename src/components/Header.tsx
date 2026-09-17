@@ -104,8 +104,8 @@ export function Header() {
               {item.label}
             </a>
           ))}
-          <div className="px-4 pt-4">
-            <GooglePlayButton className="w-full" />
+          <div className="flex justify-center px-4 pt-4">
+            <GooglePlayButton />
           </div>
         </Container>
       </div>
