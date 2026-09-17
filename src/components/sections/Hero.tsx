@@ -21,7 +21,7 @@ export function Hero() {
             Your lifelong gym companion.
           </p>
           <h1 className="mt-2 max-w-xl text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
-            The Workout Tracker That Doesn&apos;t Need an Account.
+            No Subscription. Yours for Life.
           </h1>
           <p className="mt-3 hidden max-w-lg text-sm leading-relaxed text-muted sm:mt-5 sm:text-base lg:block lg:text-lg">
             Offline Android workout tracking built for lifters who want complete ownership of their data.
