@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomeJsonLd } from "@/components/JsonLd";
+import { JsonLd } from "@/components/JsonLd";
 import { MobileInstallBar } from "@/components/MobileInstallBar";
 import { MobileSectionNav } from "@/components/MobileSectionNav";
 import { Comparison } from "@/components/sections/Comparison";
@@ -8,28 +8,16 @@ import { Faq } from "@/components/sections/Faq";
 import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
 import { Screenshots } from "@/components/sections/Screenshots";
-import { siteConfig } from "@/lib/site";
+import { pages } from "@/lib/pages";
+import { pageMetadata } from "@/lib/seo";
+import { homeGraph } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: siteConfig.title,
-  },
-  description: siteConfig.description,
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    type: "website",
-  },
-};
+export const metadata: Metadata = pageMetadata(pages.home);
 
 export default function Home() {
   return (
     <main id="main" className="app-deck max-lg:pr-7">
-      <HomeJsonLd />
+      <JsonLd data={homeGraph(pages.home)} />
       <MobileSectionNav />
       <MobileInstallBar />
       <Hero />

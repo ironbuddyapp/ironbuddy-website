@@ -7,10 +7,11 @@ export function ComparisonTable() {
     <div className="overflow-hidden rounded-3xl border border-white/8 bg-surface">
       <table className="w-full border-collapse">
         <caption className="sr-only">
-          IronBuddy compared with typical fitness apps on offline use, accounts, pricing, ads, and privacy
+          IronBuddy compared with how many other fitness apps work on offline use, accounts,
+          subscriptions, ads, and where your data lives
         </caption>
         <thead>
-          <tr className="border-b border-white/8 bg-white/[0.02] text-[11px] font-semibold uppercase tracking-[0.16em] text-muted sm:text-xs">
+          <tr className="border-b border-white/8 bg-white/[0.02] text-xs font-semibold uppercase tracking-[0.16em] text-muted">
             <th scope="col" className="px-3 py-3 text-left sm:px-8 sm:py-4">
               <span className="sr-only sm:not-sr-only">Feature</span>
             </th>
@@ -18,7 +19,8 @@ export function ComparisonTable() {
               IronBuddy
             </th>
             <th scope="col" className="px-3 py-3 text-center sm:px-8 sm:py-4">
-              Typical Fitness Apps
+              <span className="sm:hidden">Other apps</span>
+              <span className="hidden sm:inline">Many other apps</span>
             </th>
           </tr>
         </thead>
@@ -34,17 +36,16 @@ export function ComparisonTable() {
               >
                 {row.feature}
               </th>
-              <td className="px-3 py-2.5 sm:px-8 sm:py-4">
-                <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-primary/12 text-primary">
-                  <Icon name="check" className="h-4 w-4" />
-                  <span className="sr-only">Yes</span>
+              <td className="px-2 py-2.5 sm:px-8 sm:py-4">
+                <span className="mx-auto flex items-center justify-center gap-1.5 text-xs font-medium text-white sm:gap-2 sm:text-sm">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary sm:h-6 sm:w-6">
+                    <Icon name="check" className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  </span>
+                  {row.ironbuddy}
                 </span>
               </td>
-              <td className="px-3 py-2.5 sm:px-8 sm:py-4">
-                <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-muted">
-                  <Icon name="close" className="h-4 w-4" />
-                  <span className="sr-only">No</span>
-                </span>
+              <td className="px-2 py-2.5 text-center text-xs text-muted sm:px-8 sm:py-4 sm:text-sm">
+                {row.others}
               </td>
             </tr>
           ))}

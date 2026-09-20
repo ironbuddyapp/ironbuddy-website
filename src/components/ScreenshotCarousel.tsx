@@ -56,7 +56,7 @@ export function ScreenshotCarousel() {
             aria-label={`${index + 1} of ${screenshots.length}: ${shot.label}`}
           >
             <PhoneMockup className="max-lg:w-[10.5rem]">
-              <AppScreen id={shot.id} alt={shot.alt} />
+              <AppScreen id={shot.id} />
             </PhoneMockup>
             <figcaption className="mt-2 text-center text-sm font-medium text-white lg:mt-5">
               {shot.label}
@@ -68,13 +68,13 @@ export function ScreenshotCarousel() {
       <div className="mt-3 flex items-center justify-center gap-4 lg:mt-6">
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary lg:h-11 lg:w-11"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
           aria-label="Previous screenshot"
           onClick={() => scrollTo(Math.max(active - 1, 0))}
         >
           <Icon name="chevronLeft" className="h-5 w-5" />
         </button>
-        <div className="flex gap-2" role="tablist" aria-label="Screenshot slides">
+        <div className="flex" role="tablist" aria-label="Screenshot slides">
           {screenshots.map((shot, index) => (
             <button
               key={shot.id}
@@ -82,17 +82,23 @@ export function ScreenshotCarousel() {
               role="tab"
               aria-selected={active === index}
               aria-label={shot.label}
-              className={cn(
-                "h-2 rounded-full transition",
-                active === index ? "w-7 bg-primary" : "w-2 bg-white/20 hover:bg-white/40",
-              )}
+              className="group flex h-6 min-w-6 items-center justify-center px-1"
               onClick={() => scrollTo(index)}
-            />
+            >
+              <span
+                className={cn(
+                  "block h-2 rounded-full transition",
+                  active === index
+                    ? "w-7 bg-primary"
+                    : "w-2 bg-white/20 group-hover:bg-white/40",
+                )}
+              />
+            </button>
           ))}
         </div>
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary lg:h-11 lg:w-11"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
           aria-label="Next screenshot"
           onClick={() => scrollTo(Math.min(active + 1, screenshots.length - 1))}
         >

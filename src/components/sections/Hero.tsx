@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { ExploreIronBuddyButton } from "@/components/ExploreIronBuddyButton";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
-import { heroBullets } from "@/lib/content";
+import { heroBullets, heroHighlights } from "@/lib/content";
 import { preload } from "react-dom";
 
 export function Hero() {
@@ -17,14 +17,35 @@ export function Hero() {
 
       <Container className="relative grid h-full min-h-0 flex-1 items-center gap-4 max-lg:grid-rows-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div className="animate-fade-up max-lg:order-2 max-lg:min-h-0">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-            Your lifelong gym companion.
-          </p>
-          <h1 className="mt-2 max-w-xl text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
-            No Subscription. Yours for Life.
+          {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
+          <h1 className="max-w-xl">
+            <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+              Offline workout tracker<span className="hidden lg:inline"> for Android</span>
+              <span className="sr-only">. </span>
+            </span>
+            <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
+              No Subscription. Yours for Life.
+            </span>
           </h1>
+
+          <ul
+            aria-label="Key benefits"
+            className="mt-2 flex flex-wrap items-center gap-x-2 text-xs text-muted lg:hidden"
+          >
+            {heroHighlights.map((item) => (
+              <li
+                key={item}
+                className="after:ml-2 after:text-white/25 after:content-['·'] last:after:content-none"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+
           <p className="mt-3 hidden max-w-lg text-sm leading-relaxed text-muted sm:mt-5 sm:text-base lg:block lg:text-lg">
-            Offline Android workout tracking built for lifters who want complete ownership of their data.
+            IronBuddy is an offline workout tracker for Android, built for lifters who want complete
+            ownership of their data. Log sets, reps and weight, plan your split, and track strength
+            with no account and no ads.
           </p>
 
           <ul className="mt-8 hidden grid-cols-2 gap-3 lg:mt-8 lg:grid">
@@ -52,10 +73,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative flex min-h-0 items-center justify-center animate-fade-up max-lg:order-1 [animation-delay:140ms]">
+        <div className="relative flex min-h-0 items-center justify-center animate-fade-up max-lg:order-1">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
-          <PhoneMockup float className="relative max-lg:w-[min(200px,46svh)]">
-            <AppScreen id="dashboard" alt="IronBuddy home dashboard with the weekly training split" priority />
+          {/* Width also shrinks on short screens (100svh minus header, install bar and text block) so the phone is never clipped. */}
+          <PhoneMockup float className="relative max-lg:w-[min(200px,calc((100svh_-_21rem)_*_0.4615))]">
+            <AppScreen id="dashboard" priority />
           </PhoneMockup>
         </div>
       </Container>

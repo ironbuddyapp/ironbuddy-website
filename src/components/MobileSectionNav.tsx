@@ -91,7 +91,7 @@ export function MobileSectionNav() {
                   setActive(item.id);
                   scrollToSection(item.id);
                 }}
-                className="flex h-9 w-9 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="flex h-11 w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <span
                   className={cn(

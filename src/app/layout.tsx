@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -29,50 +30,25 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: [
-    "IronBuddy",
-    "offline workout tracker",
-    "Android gym log",
-    "no subscription workout app",
-    "privacy workout tracker",
-    "workout tracker no account",
-    "one time purchase fitness app",
-  ],
   authors: [{ name: "IronBuddy", url: siteConfig.url }],
   creator: "IronBuddy",
   publisher: "IronBuddy",
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/",
-    },
-  },
+  // No `alternates` here on purpose: a canonical set at the layout level is inherited by every page that
+  // does not override it, which would point those pages at the home page. Each page sets its own via pageMetadata().
+  // Fallback social card for routes without their own metadata (for example the 404 page).
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogImageAlt,
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        alt: siteConfig.ogImageAlt,
-      },
-    ],
+    images: [{ url: ogImage.url, alt: ogImage.alt }],
   },
   robots: {
     index: true,

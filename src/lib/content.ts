@@ -1,10 +1,17 @@
+import { pages } from "@/lib/pages";
+import { siteConfig } from "@/lib/site";
+
 export const heroBullets = [
   "No Account Required",
   "Works Offline",
   "One-Time Purchase",
   "No Ads",
   "No Subscription",
+  "Free Trial Included",
 ] as const;
+
+/** Compact benefit line shown under the hero headline on small screens. */
+export const heroHighlights = ["Offline", "No ads", "No account", "Free trial"] as const;
 
 export type FeatureIcon =
   | "clipboard"
@@ -22,18 +29,18 @@ export const features: Array<{
   {
     title: "Log Every Workout",
     description:
-      "Track sets, reps, weight and notes with a clean, distraction-free interface.",
+      "Log sets, reps, weight and notes in a clean, offline gym log.",
     icon: "clipboard",
   },
   {
     title: "Build Training Splits",
     description:
-      "Create Push Pull Legs, Upper Lower, Full Body or custom programs.",
+      "Start from Push Pull Legs, Upper Lower or Full Body, or build your own.",
     icon: "calendar",
   },
   {
     title: "Track Strength Progress",
-    description: "Monitor estimated 1RM and training volume over time.",
+    description: "Follow estimated 1RM and training volume over time.",
     icon: "chart",
   },
   {
@@ -43,12 +50,12 @@ export const features: Array<{
   },
   {
     title: "Exercise Library",
-    description: "Browse hundreds of exercises with visual demonstrations.",
+    description: "Search 800+ exercises with demonstrations and filters.",
     icon: "library",
   },
   {
     title: "Privacy First",
-    description: "Your data stays on your phone. No account required.",
+    description: "Stored on your phone, not our servers. No account required.",
     icon: "shield",
   },
 ];
@@ -57,81 +64,218 @@ export const screenshots = [
   {
     id: "dashboard",
     label: "Dashboard",
-    alt: "IronBuddy home dashboard with the weekly Push Pull Legs split and last workout volume",
+    alt: "IronBuddy home screen showing the week's Push Pull Legs split, each day's workout status, and the last workout's volume",
+    width: 720,
+    height: 1600,
   },
   {
     id: "logging",
     label: "Workout Logging",
-    alt: "IronBuddy workout logging screen for editing a Pull day and saving sets, reps, and weight",
+    alt: "IronBuddy workout logging screen for a Pull day, listing exercises with sets, reps and weight and a Log workout button",
+    width: 720,
+    height: 1600,
   },
   {
     id: "splits",
     label: "Training Splits",
-    alt: "IronBuddy training splits screen with an active Push Pull Legs program",
+    alt: "IronBuddy training splits screen with an active Push Pull Legs split and Full Body, Upper Lower and Bro Split templates",
+    width: 720,
+    height: 1600,
   },
   {
     id: "progress",
     label: "Progress Tracking",
-    alt: "IronBuddy progress charts showing workout volume over time",
+    alt: "IronBuddy Progress tab with workout volume and per-exercise volume charts and time ranges from one week to all time",
+    width: 720,
+    height: 1600,
   },
   {
     id: "metrics",
     label: "Body Metrics",
-    alt: "IronBuddy body metrics tab tracking body weight and body fat percentage",
+    alt: "IronBuddy body metrics charts tracking body weight and body fat percentage over time",
+    width: 720,
+    height: 1600,
   },
   {
     id: "library",
     label: "Exercise Library",
-    alt: "IronBuddy exercise library with search, muscle filters, and demonstration thumbnails",
+    alt: "IronBuddy exercise library with search, muscle group and equipment filters, and demonstration thumbnails for 800+ exercises",
+    width: 720,
+    height: 1558,
   },
 ] as const;
 
 export type ScreenshotId = (typeof screenshots)[number]["id"];
 
+/**
+ * Only IronBuddy's own attributes are stated as fact (they come from the privacy policy). The other
+ * column is deliberately hedged: it describes how apps in general vary, not any specific app.
+ */
 export const comparisonRows = [
-  { feature: "Offline", ironbuddy: true, typical: false },
-  { feature: "No Account Required", ironbuddy: true, typical: false },
-  { feature: "One-Time Purchase", ironbuddy: true, typical: false },
-  { feature: "No Ads", ironbuddy: true, typical: false },
-  { feature: "Privacy Focused", ironbuddy: true, typical: false },
+  { feature: "Works offline", ironbuddy: "Yes", others: "Varies by app" },
+  { feature: "Account required", ironbuddy: "No", others: "Often required" },
+  { feature: "Subscription", ironbuddy: "None", others: "Common" },
+  { feature: "Ads", ironbuddy: "None", others: "Common in free tiers" },
+  { feature: "Where data lives", ironbuddy: "On your device", others: "Often in the cloud" },
 ] as const;
 
-export const faqs = [
+export type Faq = {
+  id: string;
+  question: string;
+  answer: string;
+  more?: { href: string; label: string };
+};
+
+const trial = `free trial (currently ${siteConfig.freeTrialDays} days)`;
+
+export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
   {
-    question: "Why doesn't IronBuddy require an account?",
-    answer:
-      "IronBuddy is built so your training log belongs to you. Workouts, progress, and body metrics are stored on your phone — not in a cloud account we control. That means no sign-up, no password, and no company sitting between you and your data.",
+    id: "offline-use",
+    title: "Offline use",
+    items: [
+      {
+        id: "offline",
+        question: "Does IronBuddy work offline?",
+        answer:
+          "Yes. IronBuddy is offline-first: you can log workouts, review your history, and browse the exercise library with no internet connection. Your training data is stored on your phone, so there is no server to reach and nothing to sync.",
+        more: { href: pages.offline.path, label: "How offline tracking works" },
+      },
+      {
+        id: "gym-no-internet",
+        question: "Can I use IronBuddy in a gym with no internet connection?",
+        answer:
+          "Yes. A basement gym, a garage gym, or a gym with no signal works the same as any other, because logging sets, reps, and weight does not need a connection. The only steps that use the internet are getting the app from Google Play and completing the one-time purchase.",
+      },
+      {
+        id: "why-offline",
+        question: "Why choose an offline workout tracker?",
+        answer:
+          "An offline tracker keeps working when the signal does not, and your training log does not depend on a company account or server. With IronBuddy there is no account to create, no cloud sync to wait on, and your workouts are stored on your device. The trade-off is that backups are your responsibility, so IronBuddy supports both an automatic backup file and manual exports.",
+      },
+    ],
   },
   {
-    question: "Does the app work offline?",
-    answer:
-      "Yes. IronBuddy is offline-first. You can log sessions, review history, and use your library with no internet connection. Your gym should not depend on cell service.",
+    id: "pricing-and-ads",
+    title: "Pricing, trial, and ads",
+    items: [
+      {
+        id: "subscription",
+        question: "Does IronBuddy require a subscription?",
+        answer: `No. IronBuddy has no subscriptions. It is free to download and includes a ${trial}. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using the app.`,
+        more: { href: pages.noSubscription.path, label: "How pricing works" },
+      },
+      {
+        id: "ads",
+        question: "Does IronBuddy contain ads?",
+        answer:
+          "No. IronBuddy shows no ads and includes no advertising or third-party analytics SDKs, so nothing interrupts your sets.",
+      },
+    ],
   },
   {
-    question: "Do I pay monthly?",
-    answer:
-      "No. IronBuddy is a one-time purchase. There is no subscription, no ads, and no feature paywall after you buy the app.",
+    id: "privacy-and-data",
+    title: "Accounts, privacy, and data",
+    items: [
+      {
+        id: "account",
+        question: "Can I use IronBuddy without creating an account?",
+        answer:
+          "Yes. IronBuddy does not create user accounts or require sign-in, so there is no sign-up, email address, or password to manage. It is built so your training log belongs to you: it is stored on your phone, not in a cloud account we control.",
+      },
+      {
+        id: "storage",
+        question: "Where is my workout data stored?",
+        answer:
+          "On your device. Your workouts, splits, notes, body metrics, and settings are stored in the app's on-device storage, and IronBuddy does not send them to any IronBuddy server. Copies exist only in ways you control or Android provides: an automatic backup file in your Downloads folder (you can turn it off), Android Auto Backup to your Google account if Google backup is on, and files you export or share.",
+        more: { href: pages.privacyFocused.path, label: "Privacy in detail" },
+      },
+      {
+        id: "collect-sell",
+        question: "Does IronBuddy collect or sell my data?",
+        answer:
+          "IronBuddy does not sell personal data, does not use advertising SDKs, and does not use third-party analytics or crash SDKs that report your workouts to us. Your training data is not collected onto IronBuddy-operated servers. The privacy policy explains exactly what the app handles.",
+        more: { href: pages.privacy.path, label: "Read the privacy policy" },
+      },
+      {
+        id: "transfer",
+        question: "Can I back up, export, or move my data to another phone?",
+        answer:
+          "Yes. You can export a JSON copy of your data (or a PDF of your active split) from the app and import a backup file on another device you own. IronBuddy can also keep an automatic backup file in your Downloads folder, which you can turn off in Settings. Nothing is uploaded to IronBuddy servers.",
+      },
+      {
+        id: "uninstall",
+        question: "What happens to my data if I uninstall IronBuddy?",
+        answer:
+          "Uninstalling removes the app's private storage. Backup files already saved in your Downloads folder, files you exported, and any Android Auto Backup in your Google account are not removed automatically, so you can restore later or delete them yourself. Settings, then Reset All Data, clears what IronBuddy stores on the device.",
+      },
+    ],
   },
   {
-    question: "Can I transfer my data?",
-    answer:
-      "Yes. Export your training data from the app and import it on another device you own. Nothing is uploaded to IronBuddy servers because we do not operate a user cloud.",
+    id: "features-and-progress",
+    title: "Features and progress tracking",
+    items: [
+      {
+        id: "overload",
+        question: "Is IronBuddy good for progressive overload tracking?",
+        answer:
+          "IronBuddy records the numbers progressive overload depends on: sets, reps, and weight for every workout, plus notes. The Progress tab charts your training volume and estimated 1RM over time, from one week to all time, so you can see whether your training is trending up.",
+        more: { href: pages.progressiveOverload.path, label: "A simple method for tracking progressive overload" },
+      },
+      {
+        id: "what-track",
+        question: "What can I track in IronBuddy?",
+        answer:
+          "You can log sets, reps, weight, and notes for each workout, follow a training split, chart workout volume and estimated 1RM, and record body weight and body fat percentage. An exercise library of more than 800 exercises with demonstration thumbnails helps you find the right movement.",
+        more: { href: pages.features.path, label: "All features" },
+      },
+      {
+        id: "splits",
+        question: "Can I build my own training split?",
+        answer:
+          "Yes. Start from a template such as Full Body 3×, Upper/Lower, Push/Pull/Legs, Bro Split, or Arnold Split, or create a custom program. You can add days, change the exercises on each day, and choose which split is active.",
+      },
+      {
+        id: "units",
+        question: "Does IronBuddy use kilograms or pounds?",
+        answer: "Both. You can choose your unit preference (kg or lb) in the app.",
+      },
+    ],
   },
   {
-    question: "Is IronBuddy available on iPhone?",
-    answer:
-      "Not yet. IronBuddy is currently available on Android through Google Play.",
+    id: "platform",
+    title: "Platform",
+    items: [
+      {
+        id: "iphone",
+        question: "Is IronBuddy available on iPhone?",
+        answer: "Not yet. IronBuddy is currently available on Android through Google Play.",
+      },
+    ],
   },
-] as const;
+];
+
+const allFaqs = faqGroups.flatMap((group) => group.items);
+
+/** The short list shown on the home page. The complete list (and its FAQPage markup) lives on /faq/. */
+export const homeFaqIds = ["offline", "subscription", "ads", "account", "storage", "overload"] as const;
+
+export const homeFaqs: Faq[] = homeFaqIds.map((id) => {
+  const item = allFaqs.find((faq) => faq.id === id);
+  if (!item) throw new Error(`Unknown FAQ id: ${id}`);
+  return item;
+});
 
 export const navItems = [
-  { label: "Features", href: "/#features" },
-  { label: "Screenshots", href: "/#screenshots" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Privacy Policy", href: "/privacy/" },
-  { label: "Download", href: "/#download" },
+  { label: "Features", href: pages.features.path, desktop: true },
+  { label: "Screenshots", href: "/#screenshots", desktop: true },
+  { label: "Guides", href: pages.guides.path, desktop: true },
+  { label: "FAQ", href: pages.faq.path, desktop: true },
+  { label: "About", href: pages.about.path, desktop: true },
+  { label: "Privacy Policy", href: pages.privacy.path, desktop: false },
+  { label: "Download", href: "/#download", desktop: false },
 ] as const;
 
+/** Sections of the home page, used by the mobile dot navigation and the "Explore" auto-scroll. */
 export const sectionNav = [
   { id: "home", label: "Home" },
   { id: "features", label: "Features" },
@@ -139,4 +283,39 @@ export const sectionNav = [
   { id: "why", label: "Compare" },
   { id: "faq", label: "FAQ" },
   { id: "download", label: "Download" },
+] as const;
+
+export const footerGroups = [
+  {
+    title: "Product",
+    links: [
+      { label: "Features", href: pages.features.path },
+      { label: "Screenshots", href: "/#screenshots" },
+      { label: "FAQ", href: pages.faq.path },
+    ],
+  },
+  {
+    title: "Why IronBuddy",
+    links: [
+      { label: pages.offline.label, href: pages.offline.path },
+      { label: pages.noSubscription.label, href: pages.noSubscription.path },
+      { label: pages.privacyFocused.label, href: pages.privacyFocused.path },
+      { label: pages.alternatives.label, href: pages.alternatives.path },
+    ],
+  },
+  {
+    title: "Learn",
+    links: [
+      { label: "All guides", href: pages.guides.path },
+      { label: pages.progressiveOverload.label, href: pages.progressiveOverload.path },
+      { label: pages.logWorkouts.label, href: pages.logWorkouts.path },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: pages.about.label, href: pages.about.path },
+      { label: pages.privacy.label, href: pages.privacy.path },
+    ],
+  },
 ] as const;

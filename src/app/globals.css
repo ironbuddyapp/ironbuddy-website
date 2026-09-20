@@ -82,7 +82,8 @@ body {
 
 .below-fold {
   content-visibility: auto;
-  contain-intrinsic-size: auto 280px;
+  /* Roughly the footer's desktop height, so the placeholder is close to the real size. */
+  contain-intrinsic-size: auto 340px;
 }
 
 .reveal {

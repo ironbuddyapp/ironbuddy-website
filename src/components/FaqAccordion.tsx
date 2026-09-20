@@ -1,22 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Icon } from "@/components/icons";
-import { faqs } from "@/lib/content";
+import type { Faq } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
-export function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(0);
+export function FaqAccordion({
+  items,
+  idPrefix = "faq",
+  defaultOpen = 0,
+}: {
+  items: readonly Faq[];
+  idPrefix?: string;
+  defaultOpen?: number | null;
+}) {
+  const [open, setOpen] = useState<number | null>(defaultOpen);
 
   return (
     <div className="divide-y divide-white/8 overflow-hidden rounded-3xl border border-white/8 bg-surface">
-      {faqs.map((item, index) => {
+      {items.map((item, index) => {
         const isOpen = open === index;
-        const panelId = `faq-panel-${index}`;
-        const buttonId = `faq-button-${index}`;
+        const panelId = `${idPrefix}-panel-${index}`;
+        const buttonId = `${idPrefix}-button-${index}`;
 
         return (
-          <div key={item.question}>
+          <div key={item.id}>
             <h3>
               <button
                 id={buttonId}
@@ -48,6 +57,14 @@ export function FaqAccordion() {
               <p className="max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
                 {item.answer}
               </p>
+              {item.more ? (
+                <Link
+                  href={item.more.href}
+                  className="mt-2 inline-block text-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                >
+                  {item.more.label} →
+                </Link>
+              ) : null}
             </div>
           </div>
         );

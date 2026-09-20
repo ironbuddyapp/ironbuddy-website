@@ -1,168 +1,367 @@
 import type { Metadata } from "next";
-import { Container } from "@/components/Container";
-import { PrivacyJsonLd } from "@/components/JsonLd";
+import {
+  BulletList,
+  Code,
+  ContentSection,
+  PageBody,
+  Strong,
+  TextLink,
+} from "@/components/content";
+import { JsonLd } from "@/components/JsonLd";
+import { PageHero } from "@/components/PageHero";
+import { pages } from "@/lib/pages";
+import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { pageGraph, trail } from "@/lib/structured-data";
 
-const privacyDescription =
-  "IronBuddy keeps workouts on your phone. No account, no cloud training log, no ads, and no sale of your gym data.";
+export const metadata: Metadata = pageMetadata(pages.privacy);
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: privacyDescription,
-  alternates: {
-    canonical: "/privacy/",
-  },
-  openGraph: {
-    title: "Privacy Policy | IronBuddy",
-    description: privacyDescription,
-    url: `${siteConfig.url}/privacy/`,
-    type: "website",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogImageAlt,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacy Policy | IronBuddy",
-    description: privacyDescription,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+/*
+ * The policy text below is ported verbatim from the source of truth:
+ * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 20 September 2026).
+ * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
+ */
 
-const sections = [
-  {
-    title: "1. Introduction",
-    body: [
-      "IronBuddy (“we”, “us”, or “the app”) is an Android workout tracker designed around a simple idea: your training data belongs to you. This Privacy Policy explains what information IronBuddy handles, where it lives, and what we do not do with it.",
-      "By installing or using IronBuddy, you agree to this policy. If you do not agree, please do not use the app.",
-    ],
-  },
-  {
-    title: "2. No account required",
-    body: [
-      "IronBuddy does not require you to create an account. We do not ask for an email address, username, password, phone number, or social login to use the core features of the app.",
-      "Because there is no IronBuddy account, we do not maintain a user profile on our servers and we cannot look up your workouts, body metrics, or training history.",
-    ],
-  },
-  {
-    title: "3. Local storage only",
-    body: [
-      "Workout logs, training splits, estimated strength progress, body metrics, notes, and related app settings are stored locally on your device.",
-      "We do not operate a user cloud. We do not sync your training data to IronBuddy servers. If you uninstall the app or clear its data without exporting first, that local information may be permanently lost from the device.",
-    ],
-  },
-  {
-    title: "4. No cloud storage of training data",
-    body: [
-      "IronBuddy is built offline-first. Your sets, reps, weights, programs, and body measurements are not uploaded to a remote database that we control.",
-      "If you choose to export your data, the export file is created on your device so you can store or transfer it yourself. We do not receive a copy of that export unless you independently choose to send it to us (for example, as an attachment when contacting support).",
-    ],
-  },
-  {
-    title: "5. Information we do not collect",
-    body: [
-      "We do not collect your workout history, body weight, body fat percentage, exercise notes, or other training content for advertising, analytics products, or resale.",
-      "We do not sell user data. We do not share training data with data brokers. We do not build advertising profiles from your gym activity.",
-    ],
-  },
-  {
-    title: "6. No third-party advertising",
-    body: [
-      "IronBuddy does not show third-party ads. We do not integrate advertising SDKs to track you across apps or websites for marketing.",
-      "The app is offered as a one-time purchase. We do not monetize the product through advertising against your attention or your data.",
-    ],
-  },
-  {
-    title: "7. App store and device information",
-    body: [
-      "When you download IronBuddy from Google Play, Google may process information according to Google’s own policies (for example, purchase records, device compatibility, and crash reports you choose to share with Google).",
-      "IronBuddy itself is designed so that your training log stays on-device. Any diagnostics you send through the Play Store or through email are controlled by you at the moment you send them.",
-    ],
-  },
-  {
-    title: "8. Permissions",
-    body: [
-      "IronBuddy may request only the device permissions needed to provide the features you use, such as storing files when you export or import data. We do not request permissions for advertising identifiers or unnecessary location tracking.",
-      "You can review and revoke permissions in your Android system settings at any time.",
-    ],
-  },
-  {
-    title: "9. Data retention and deletion",
-    body: [
-      "Because training data is stored locally, retention is under your control. You can delete information inside the app, clear the app’s storage in Android settings, or uninstall IronBuddy.",
-      "We do not keep a cloud copy of your workout history that you would need to request we delete, because we do not host that history.",
-    ],
-  },
-  {
-    title: "10. Children’s privacy",
-    body: [
-      "IronBuddy is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us personal information through a support email, contact us and we will delete that correspondence.",
-    ],
-  },
-  {
-    title: "11. International users",
-    body: [
-      "IronBuddy is intended to keep your training data on the device you use. We do not operate a global user database of workout logs. If you contact us by email, that message is processed where we read support mail.",
-    ],
-  },
-  {
-    title: "12. Changes to this policy",
-    body: [
-      "We may update this Privacy Policy to reflect product changes or legal requirements. The “Last updated” date at the top of this page will change when we do. Continued use of IronBuddy after an update means you accept the revised policy.",
-    ],
-  },
-  {
-    title: "13. Contact",
-    body: [
-      `If you have questions about privacy, email ${siteConfig.contactEmail}.`,
-      "Please do not send passwords or unnecessary personal documents. IronBuddy support does not need access to your Google account to answer questions about local data.",
-    ],
-  },
-];
+const googlePrivacyUrl = "https://policies.google.com/privacy";
+
+const contents = [
+  ["summary", "1. Summary"],
+  ["applies-to", "2. Who this policy applies to"],
+  ["data-on-device", "3. Data stored on your device"],
+  ["purchases", "4. Purchases and payment processing"],
+  ["review-prompts", "5. In-app review prompts"],
+  ["not-collected", "6. Data we do not collect"],
+  ["backups", "7. Backups, exports, and sharing"],
+  ["transmission", "8. Data handling and transmission"],
+  ["permissions", "9. Permissions"],
+  ["deleting-data", "10. How you can delete data"],
+  ["health-notice", "11. Health and fitness notice"],
+  ["children", "12. Children"],
+  ["third-party", "13. Third-party services"],
+  ["changes", "14. Changes to this policy"],
+  ["contact", "15. Contact"],
+] as const;
+
+function GooglePolicyLink() {
+  return <TextLink href={googlePrivacyUrl}>Google Play&apos;s own Privacy Policy</TextLink>;
+}
 
 export default function PrivacyPage() {
-  return (
-    <main id="main" className="pb-24 pt-12 sm:pt-16">
-      <PrivacyJsonLd />
-      <Container>
-        <div className="mx-auto max-w-3xl">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-          Legal
-        </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          Privacy Policy
-        </h1>
-        <p className="mt-4 text-sm text-muted">Last updated: September 17, 2026</p>
-        <p className="mt-6 text-base leading-relaxed text-muted">
-          IronBuddy is a privacy-first workout tracker. There is no account, no cloud locker for your
-          training log, no third-party advertising, and no sale of user data. What you lift stays on
-          your phone.
-        </p>
+  const email = siteConfig.contactEmail;
 
-        <div className="mt-12 space-y-10">
-          {sections.map((section) => (
-            <section key={section.title}>
-              <h2 className="text-xl font-semibold tracking-tight text-white">{section.title}</h2>
-              <div className="mt-3 space-y-3">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph} className="text-sm leading-relaxed text-muted sm:text-base">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-        </div>
-      </Container>
+  return (
+    <main id="main">
+      <JsonLd data={pageGraph(pages.privacy, { trail: trail(pages.home, pages.privacy) })} />
+      <PageHero
+        trail={trail(pages.home, pages.privacy)}
+        eyebrow="Legal"
+        title="IronBuddy Privacy Policy"
+        updated={pages.privacy.modified}
+        lead={
+          <>
+            IronBuddy (“the App”, “we”, “us”) is a local workout planning and logging app. This
+            Privacy Policy describes what information the App handles, how it is stored, and what
+            we do <em>not</em> collect. It is intended to meet Google Play requirements for health
+            and fitness apps, including clear disclosure of on-device data, automatic backups, and
+            user-initiated exports.
+          </>
+        }
+      >
+        <dl className="space-y-1 text-sm text-muted">
+          <div>
+            <dt className="inline font-medium text-white">App: </dt>
+            <dd className="inline">
+              IronBuddy (Android package <Code>{siteConfig.playStoreId}</Code>)
+            </dd>
+          </div>
+          <div>
+            <dt className="inline font-medium text-white">Contact: </dt>
+            <dd className="inline">
+              <TextLink href={`mailto:${email}`}>{email}</TextLink>
+            </dd>
+          </div>
+        </dl>
+        <p className="mt-4 text-sm text-muted">
+          Prefer a plain-language overview? Read{" "}
+          <TextLink href={pages.privacyFocused.path}>how IronBuddy keeps your data on your phone</TextLink>.
+        </p>
+      </PageHero>
+
+      <PageBody>
+        <nav aria-label="Policy contents">
+          <ol className="grid gap-x-8 gap-y-1 rounded-3xl border border-white/8 bg-surface px-5 py-4 text-sm sm:grid-cols-2 sm:px-7">
+            {contents.map(([id, label]) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className="inline-block py-1.5 text-muted transition hover:text-white"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <ContentSection id="summary" title="1. Summary">
+          <BulletList>
+            <li>
+              Workout and fitness data you enter is stored on your device. IronBuddy does not send
+              it to any IronBuddy server.
+            </li>
+            <li>
+              No IronBuddy account is required and we do not operate a cloud sync backend for your
+              workouts.
+            </li>
+            <li>We do not sell personal data.</li>
+            <li>The App does not include ads or third-party analytics SDKs.</li>
+            <li>
+              IronBuddy is free to download. It includes a free trial and one optional, one-time
+              in-app purchase that unlocks the full app. The purchase is handled entirely by Google
+              Play (see section 4).
+            </li>
+            <li>
+              Copies of your data can exist outside the App’s private storage in three ways, all
+              explained in section 7: an automatic backup file in Download/IronBuddy on your device;
+              Android’s own backup to your Google account, if Google backup is turned on; and files
+              you choose to export or share.
+            </li>
+          </BulletList>
+        </ContentSection>
+
+        <ContentSection id="applies-to" title="2. Who this policy applies to">
+          <p>
+            This policy applies to users of the IronBuddy Android application distributed on Google
+            Play (and related testing tracks). It covers data processed by the App on your device.
+            It does not cover Google Play, Android’s backup service, or third-party apps or
+            services you later send files to (for example email, Google Drive, or messaging apps).
+          </p>
+        </ContentSection>
+
+        <ContentSection id="data-on-device" title="3. Data stored on your device">
+          <p>
+            The App stores information you provide or generate while using it in on-device storage
+            (application storage / local storage). Depending on how you use IronBuddy, this may
+            include:
+          </p>
+          <BulletList>
+            <li>
+              <Strong>Fitness / workout information:</Strong> training splits and schedules,
+              exercises, sets, reps, weights, workout history, notes, and progress-related
+              calculations (for example estimated strength metrics derived from your logged lifts).
+            </li>
+            <li>
+              <Strong>Health and fitness data:</Strong> body weight and body fat percentage entries
+              (optional), and workout/training logs.
+            </li>
+            <li>
+              <Strong>Personal info you enter:</Strong> an optional display name and unit
+              preferences (kg/lb).
+            </li>
+            <li>
+              <Strong>App settings:</Strong> preferences such as theme, units, and whether the
+              automatic backup file is turned on.
+            </li>
+            <li>
+              <Strong>Purchase and trial status:</Strong> the date your free trial started and
+              whether you have unlocked the full app, including a purchase verification token
+              provided by Google Play Billing that allows the App to verify and restore your
+              entitlement to the one-time purchase. This is stored on your device. The App does not
+              receive or store your payment details.
+            </li>
+          </BulletList>
+          <p>
+            This information is used only to provide App features (planning workouts, logging
+            sessions, showing progress charts, backups you can restore from, and unlocking the full
+            app). We do not receive this data on IronBuddy servers because the App does not upload
+            your training data to an IronBuddy cloud service.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="purchases" title="4. Purchases and payment processing">
+          <p>
+            IronBuddy is free to download and use for a free trial period (currently 5 days). After
+            the trial, the full app can be unlocked with one optional, one-time in-app purchase;
+            there are no subscriptions. The purchase is made and processed entirely by Google Play
+            using Google Play Billing. The App receives from Google Play only confirmation that the
+            purchase exists (the product identifier and a purchase token) and stores it on your
+            device so it can unlock features and check your purchase again when you open the App or
+            reinstall it. The App does not receive, access, or store your payment card, billing
+            address, or other payment details. The trial start date is kept on your device.
+          </p>
+          <p>
+            For details on how Google Play handles your payment data, see <GooglePolicyLink />.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="review-prompts" title="5. In-app review prompts">
+          <p>
+            IronBuddy may occasionally prompt you to rate the app using Google Play&apos;s built-in
+            review feature. This prompt is displayed and processed entirely by Google Play —
+            IronBuddy does not receive, access, or store any information about whether you viewed,
+            completed, or dismissed a review prompt, nor the content of any review you submit. For
+            details on how Google Play handles this, see <GooglePolicyLink />.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="not-collected" title="6. Data we do not collect">
+          <p>As of the last updated date above, IronBuddy does not:</p>
+          <BulletList>
+            <li>Create user accounts or require sign-in</li>
+            <li>Collect data onto IronBuddy-operated servers</li>
+            <li>Use advertising SDKs or sell personal data</li>
+            <li>Use third-party analytics / crash SDKs that report your workouts to us</li>
+            <li>Receive your payment card or billing details (these stay with Google Play)</li>
+            <li>Access your contacts, precise location, microphone, or camera</li>
+          </BulletList>
+        </ContentSection>
+
+        <ContentSection id="backups" title="7. Backups, exports, and sharing">
+          <p>Copies of your data can exist in these ways:</p>
+          <BulletList>
+            <li>
+              <Strong>Automatic backup file (on your device):</Strong> each time your data changes,
+              the App saves one up-to-date JSON copy of it at
+              Download/IronBuddy/ironbuddy-backup.json, replacing the previous copy — the App does
+              not keep numbered copies. The file stays on your device; it can be read by you and by
+              other apps you allow to access your files. You can turn this off in Settings → Backup
+              &amp; Data. After reinstalling the App, Android may ask you to choose the IronBuddy
+              folder once so the App can replace the file left by the earlier installation; the App
+              uses only the folder you choose.
+            </li>
+            <li>
+              <Strong>Android Auto Backup (Google account):</Strong> IronBuddy allows Android’s
+              built-in Auto Backup feature. If backup is enabled on your Android device, the Android
+              operating system may create an encrypted backup of certain App data and store it in
+              your Google account. This backup is managed entirely by Google and Android. IronBuddy
+              does not receive, access, view, process, or control these backups. Android may use the
+              backup to restore your data when reinstalling the App or setting up a new device. You
+              can disable Android backups or remove existing backups through your device’s Google
+              Backup settings.
+            </li>
+            <li>
+              <Strong>Export a copy / Share:</Strong> the system share sheet for a JSON copy of your
+              data or a PDF of your active split; you choose where it goes.
+            </li>
+            <li>
+              <Strong>Import / restore:</Strong> you may choose a backup file to load into the App.
+              The App keeps one copy of your data from just before an import inside the App so you
+              can undo it.
+            </li>
+          </BulletList>
+          <p>
+            Exports, sharing, and imports are started by you. Once a file is saved or shared, the
+            destination (Downloads folder, email, Drive, messaging apps, etc.) is outside
+            IronBuddy’s control and subject to that destination’s policies. Uninstalling the App
+            does not automatically delete files already saved in Downloads or a backup stored in
+            your Google account.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="transmission" title="8. Data handling and transmission">
+          <p>
+            IronBuddy does not transmit workout logs, body measurements, exercise history, notes, or
+            other fitness information to IronBuddy-operated servers. All such information remains on
+            your device unless you explicitly export, share, or back up your data using Android’s
+            backup services or another destination you choose.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="permissions" title="9. Permissions">
+          <p>The App may request or declare permissions such as:</p>
+          <BulletList>
+            <li>
+              <Strong>Internet / network:</Strong> used by the Android WebView/OS networking stack
+              (for example, if you open external links such as open-source credits). The App does
+              not use this to upload your workout, body, or personal data.
+            </li>
+            <li>
+              <Strong>Google Play Billing:</Strong> lets the App ask Google Play about, and
+              complete, the optional in-app purchase.
+            </li>
+            <li>
+              <Strong>Storage / media access (as required by Android version):</Strong> to save the
+              automatic backup file and exports in Downloads, and to read files you choose to
+              import. If you choose a folder with Android’s folder picker, the App can access only
+              that folder.
+            </li>
+            <li>
+              <Strong>Android Auto Backup:</Strong> No additional permission is requested from the
+              user for Android’s Auto Backup feature. When enabled in device settings, the feature
+              is provided by the Android operating system.
+            </li>
+          </BulletList>
+          <p>
+            Exact permission labels shown by Android may vary by OS version. Unused sensitive
+            permissions are not requested for core logging features.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="deleting-data" title="10. How you can delete data">
+          <BulletList>
+            <li>
+              <Strong>In-app:</Strong> Settings → Reset All Data clears App data stored by IronBuddy
+              on the device and returns you to setup.
+            </li>
+            <li>
+              <Strong>Uninstall:</Strong> uninstalling removes the App’s private storage.
+            </li>
+            <li>
+              <Strong>Backup files:</Strong> the automatic backup file and any JSON or PDF files you
+              saved under Downloads (or shared elsewhere) are not removed by uninstalling or by
+              Reset All Data; delete them manually if you no longer want those copies.
+            </li>
+            <li>
+              <Strong>Google backup:</Strong> a backup stored in your Google account can be deleted
+              in your phone’s settings (Google → Backup) or from your Google account.
+            </li>
+          </BulletList>
+          <p>
+            Because we do not host your workout data on IronBuddy servers, there is no separate
+            cloud account deletion request for training logs. For privacy questions, email{" "}
+            <TextLink href={`mailto:${email}`}>{email}</TextLink>.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="health-notice" title="11. Health and fitness notice">
+          <p>
+            IronBuddy is a fitness logging and planning tool. It is <Strong>not a medical device</Strong>{" "}
+            and does not diagnose, treat, cure, or prevent any medical condition. Progress charts
+            and estimated strength figures are informational calculations based on data you enter,
+            not clinical advice. Consult a qualified healthcare professional for medical advice.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="children" title="12. Children">
+          <p>
+            The App is not directed at children under 13. Do not use IronBuddy if you are under the
+            age required in your country to consent to use of local apps of this type.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="third-party" title="13. Third-party services">
+          <p>
+            If you open external links from the App (for example open-source credits), share files
+            through other apps, make a purchase through Google Play, or use Android’s backup, those
+            services are governed by their own terms and privacy policies. IronBuddy does not
+            control them.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="changes" title="14. Changes to this policy">
+          <p>
+            We may update this Privacy Policy when the App or our practices change. The “Last
+            updated” date at the top of this page will be revised accordingly. Any updates will be
+            published on this page.
+          </p>
+        </ContentSection>
+
+        <ContentSection id="contact" title="15. Contact">
+          <p>
+            Privacy questions or requests: <TextLink href={`mailto:${email}`}>{email}</TextLink>
+          </p>
+        </ContentSection>
+      </PageBody>
     </main>
   );
 }

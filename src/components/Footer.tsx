@@ -1,36 +1,69 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
+import { SocialLinks } from "@/components/SocialLinks";
+import { footerGroups } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+
+const linkClass = "inline-block py-1.5 transition hover:text-white";
 
 export function Footer() {
   return (
     <footer className="below-fold border-t border-white/8 bg-background">
-      <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-end sm:justify-between">
-        <div>
+      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+        <div className="sm:col-span-2 lg:col-span-1">
           <Logo />
           <p className="mt-3 max-w-xs text-sm text-muted">{siteConfig.tagline}</p>
+          <SocialLinks className="mt-5 justify-start" />
         </div>
-        <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted">
-          <Link href="/privacy/" className="transition hover:text-white">
-            Privacy Policy
-          </Link>
-          <a href={`mailto:${siteConfig.contactEmail}`} className="transition hover:text-white">
-            Contact
-          </a>
-          <a
-            href={siteConfig.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition hover:text-white"
-          >
-            Google Play
-          </a>
-        </nav>
+        {footerGroups.map((group) => {
+          const labelId = `footer-${group.title.toLowerCase().replace(/\s+/g, "-")}`;
+          return (
+            <nav key={group.title} aria-labelledby={labelId}>
+              <p
+                id={labelId}
+                className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70"
+              >
+                {group.title}
+              </p>
+              <ul className="mt-3 text-sm text-muted">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={linkClass}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                {group.title === "Company" ? (
+                  <>
+                    <li>
+                      <a href={`mailto:${siteConfig.contactEmail}`} className={linkClass}>
+                        Contact
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={siteConfig.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClass}
+                      >
+                        Google Play
+                      </a>
+                    </li>
+                  </>
+                ) : null}
+              </ul>
+            </nav>
+          );
+        })}
       </Container>
-      <Container className="border-t border-white/8 py-6">
+      <Container className="flex flex-col gap-2 border-t border-white/8 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">
           © {new Date().getFullYear()} IronBuddy. All rights reserved.
+        </p>
+        <p className="text-xs text-muted">
+          Google Play and the Google Play logo are trademarks of Google LLC.
         </p>
       </Container>
     </footer>

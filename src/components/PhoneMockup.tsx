@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { screenshots } from "@/lib/content";
 import type { ScreenshotId } from "@/lib/content";
 
 export function PhoneMockup({
@@ -26,21 +27,26 @@ export function PhoneMockup({
   );
 }
 
+/** A real app screenshot. Alt text, intrinsic size and format come from `screenshots` in content.ts. */
 export function AppScreen({
   id,
   alt,
   priority = false,
 }: {
   id: ScreenshotId;
-  alt: string;
+  /** Override the default alt text when a page describes the screen differently. */
+  alt?: string;
   priority?: boolean;
 }) {
+  const shot = screenshots.find((item) => item.id === id);
+  if (!shot) throw new Error(`Unknown screenshot: ${id}`);
+
   return (
     <img
       src={`/screenshots/${id}.webp`}
-      alt={alt}
-      width={720}
-      height={1600}
+      alt={alt ?? shot.alt}
+      width={shot.width}
+      height={shot.height}
       sizes="(min-width: 1024px) 292px, 240px"
       decoding="async"
       fetchPriority={priority ? "high" : "low"}
