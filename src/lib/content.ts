@@ -271,6 +271,7 @@ export const navItems = [
   { label: "Guides", href: pages.guides.path, desktop: true },
   { label: "FAQ", href: pages.faq.path, desktop: true },
   { label: "About", href: pages.about.path, desktop: true },
+  { label: "Contact", href: pages.contact.path, desktop: false },
   { label: "Privacy Policy", href: pages.privacy.path, desktop: false },
   { label: "Download", href: "/#download", desktop: false },
 ] as const;
@@ -315,6 +316,7 @@ export const footerGroups = [
     title: "Company",
     links: [
       { label: pages.about.label, href: pages.about.path },
+      { label: pages.contact.label, href: pages.contact.path },
       { label: pages.privacy.label, href: pages.privacy.path },
     ],
   },

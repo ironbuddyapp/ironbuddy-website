@@ -40,12 +40,9 @@ export function Download() {
                   <Link href={pages.privacy.path} className="inline-flex min-h-11 items-center transition hover:text-white">
                     Privacy Policy
                   </Link>
-                  <a
-                    href={`mailto:${siteConfig.contactEmail}`}
-                    className="inline-flex min-h-11 items-center transition hover:text-white"
-                  >
+                  <Link href={pages.contact.path} className="inline-flex min-h-11 items-center transition hover:text-white">
                     Contact
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>

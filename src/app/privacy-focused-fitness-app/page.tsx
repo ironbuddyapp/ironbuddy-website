@@ -8,7 +8,6 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import type { Faq } from "@/lib/content";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
 import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.privacyFocused);
@@ -178,9 +177,8 @@ export default function PrivacyFocusedPage() {
           </BulletList>
           <p>
             Read IronBuddy&apos;s complete{" "}
-            <TextLink href={pages.privacy.path}>privacy policy</TextLink>, or email{" "}
-            <TextLink href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</TextLink>{" "}
-            with questions.
+            <TextLink href={pages.privacy.path}>privacy policy</TextLink>, or use the{" "}
+            <TextLink href={pages.contact.path}>contact page</TextLink> with questions.
           </p>
         </ContentSection>
 

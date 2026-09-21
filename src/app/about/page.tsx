@@ -55,7 +55,11 @@ export default function AboutPage() {
             },
             {
               term: "Contact",
-              detail: <TextLink href={`mailto:${email}`}>{email}</TextLink>,
+              detail: (
+                <>
+                  {email} · <TextLink href={pages.contact.path}>Contact page</TextLink>
+                </>
+              ),
             },
             { term: "Website", detail: siteConfig.url.replace("https://", "") },
           ]}
@@ -109,9 +113,9 @@ export default function AboutPage() {
 
         <ContentSection id="contact" title="Contact and follow">
           <p>
-            For support or privacy questions, email{" "}
-            <TextLink href={`mailto:${email}`}>{email}</TextLink>. Please do not send passwords or
-            unnecessary personal documents.
+            For support or privacy questions, use the{" "}
+            <TextLink href={pages.contact.path}>contact page</TextLink> or write to {email}. Please
+            do not send passwords or unnecessary personal documents.
           </p>
           <BulletList>
             <li>

@@ -53,9 +53,9 @@ export default function FaqPage() {
 
         <ContentSection id="more-help" title="Still have a question?">
           <p>
-            Email{" "}
-            <TextLink href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</TextLink>.
-            For a fuller picture of how the app handles your data, read the{" "}
+            Use the <TextLink href={pages.contact.path}>contact page</TextLink> or write to{" "}
+            {siteConfig.contactEmail}. For a fuller picture of how the app handles your data, read
+            the{" "}
             <TextLink href={pages.privacy.path}>privacy policy</TextLink>.
           </p>
         </ContentSection>

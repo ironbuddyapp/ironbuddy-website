@@ -48,6 +48,7 @@ export function GET() {
     "",
     entry(pages.faq),
     entry(pages.about),
+    entry(pages.contact),
     entry(pages.privacy),
     "",
   ].join("\n");

@@ -7,6 +7,7 @@ export type PageKind =
   | "about"
   | "guides"
   | "guide"
+  | "contact"
   | "legal";
 
 export type PageDef = {
@@ -30,6 +31,7 @@ export type PageDef = {
 
 const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
+const CONTACT_ADDED = "2026-09-21";
 
 const screenshotImages = [
   "/screenshots/dashboard.webp",
@@ -95,7 +97,7 @@ export const pages = {
       "IronBuddy is a privacy-focused workout tracker: no account, no ads, no third-party analytics SDKs and no cloud sync. Your data is stored on your device.",
     summary: "What IronBuddy stores, where copies can exist, which permissions it uses, and how to delete your data.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: CONTACT_ADDED,
   },
   alternatives: {
     path: "/alternatives/",
@@ -117,7 +119,7 @@ export const pages = {
       "Answers about IronBuddy: does it work offline, need a subscription, show ads, require an account, or store data on your phone? Plus progressive overload.",
     summary: "Answers about offline use, pricing, ads, accounts, data storage and progress tracking.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: CONTACT_ADDED,
   },
   about: {
     path: "/about/",
@@ -128,7 +130,7 @@ export const pages = {
       "IronBuddy is an Android workout tracker built on one idea: your training data belongs to you. See how it works, what it costs, and how to get in touch.",
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: CONTACT_ADDED,
   },
   guides: {
     path: "/guides/",
@@ -162,6 +164,17 @@ export const pages = {
     summary: "The numbers worth recording in a gym log, and how to keep the habit going.",
     published: UPDATED,
     modified: UPDATED,
+  },
+  contact: {
+    path: "/contact/",
+    kind: "contact",
+    label: "Contact",
+    title: "Contact IronBuddy: Support & Privacy Questions",
+    description:
+      "Get in touch with IronBuddy for app support, feedback or privacy questions. Find our email address and what to include so we can help you faster.",
+    summary: "How to reach IronBuddy for support, feedback or privacy questions, and what to include.",
+    published: CONTACT_ADDED,
+    modified: CONTACT_ADDED,
   },
   privacy: {
     path: "/privacy/",

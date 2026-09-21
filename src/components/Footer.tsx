@@ -35,23 +35,16 @@ export function Footer() {
                   </li>
                 ))}
                 {group.title === "Company" ? (
-                  <>
-                    <li>
-                      <a href={`mailto:${siteConfig.contactEmail}`} className={linkClass}>
-                        Contact
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={siteConfig.playStoreUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                      >
-                        Google Play
-                      </a>
-                    </li>
-                  </>
+                  <li>
+                    <a
+                      href={siteConfig.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
+                      Google Play
+                    </a>
+                  </li>
                 ) : null}
               </ul>
             </nav>
