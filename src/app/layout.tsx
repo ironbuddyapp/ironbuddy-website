@@ -1,18 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { preload } from "react-dom";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import "./fonts.css";
 import "./globals.css";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plus-jakarta",
-  display: "swap",
-  preload: true,
-});
 
 export const viewport: Viewport = {
   themeColor: "#050B14",
@@ -80,8 +73,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Same as next/font's preload: fetch the Latin font file early, since every page uses it.
+  preload("/fonts/plus-jakarta-sans/latin.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  });
+
   return (
-    <html lang="en" className={`dark ${plusJakarta.variable}`}>
+    <html lang="en" className="dark">
       <body className="min-h-screen bg-background font-sans text-white antialiased">
         <a
           href="#main"
