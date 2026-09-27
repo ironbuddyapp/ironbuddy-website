@@ -63,7 +63,7 @@ export const pages = {
       "IronBuddy's offline gym log: track sets, reps and weight, build training splits, chart volume and estimated 1RM, log body metrics, and search 800+ exercises.",
     summary: "Workout logging, training splits, progress charts, body metrics and the exercise library.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: "2026-09-25",
     images: screenshotImages,
   },
   offline: {
@@ -86,7 +86,7 @@ export const pages = {
       `IronBuddy is a workout app with no subscription and no ads. Try it free for ${siteConfig.freeTrialDays} days, then pay ${siteConfig.price.label} once to keep using it. Works offline, no account.`,
     summary: "How the free trial and one-time purchase work, and how to check any workout app for ads and subscriptions.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: "2026-09-25",
   },
   privacyFocused: {
     path: "/privacy-focused-fitness-app/",
@@ -108,7 +108,7 @@ export const pages = {
       "Looking for a Strong, Hevy, FitNotes or JEFIT alternative? IronBuddy is an Android workout tracker with offline use, no account, no ads and no subscription.",
     summary: "Who IronBuddy fits, who it does not, and a checklist for comparing any workout tracker.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: "2026-09-25",
   },
   faq: {
     path: "/faq/",
@@ -119,7 +119,7 @@ export const pages = {
       "Answers about IronBuddy: does it work offline, need a subscription, show ads, require an account, or store data on your phone? Plus progressive overload.",
     summary: "Answers about offline use, pricing, ads, accounts, data storage and progress tracking.",
     published: UPDATED,
-    modified: CONTACT_ADDED,
+    modified: "2026-09-25",
   },
   about: {
     path: "/about/",
@@ -130,7 +130,7 @@ export const pages = {
       "IronBuddy is an Android workout tracker built on one idea: your training data belongs to you. See how it works, what it costs, and how to get in touch.",
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
     published: UPDATED,
-    modified: CONTACT_ADDED,
+    modified: "2026-09-25",
   },
   guides: {
     path: "/guides/",
@@ -152,7 +152,7 @@ export const pages = {
       "Learn how to track progressive overload with sets, reps, weight and estimated 1RM. Includes a double progression example and a simple weekly review routine.",
     summary: "A simple method for tracking progressive overload with sets, reps, weight, volume and estimated 1RM.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: "2026-09-25",
   },
   logWorkouts: {
     path: "/guides/how-to-log-workouts/",
@@ -185,7 +185,8 @@ export const pages = {
       "IronBuddy's privacy policy: workout data is stored on your device. No account, no ads, no third-party analytics SDKs, and a one-time purchase via Google Play.",
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
-    modified: UPDATED,
+    // Matches the "Last updated" date in the policy repo.
+    modified: "2026-09-21",
   },
 } as const satisfies Record<string, PageDef>;
 

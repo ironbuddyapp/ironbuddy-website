@@ -41,7 +41,7 @@ export default function AboutPage() {
             { term: "Android package", detail: <Code>{siteConfig.playStoreId}</Code> },
             {
               term: "Pricing",
-              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase of ${siteConfig.price.label} is required to keep using the app. No subscription.`,
+              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} unlocks everything and is required to keep using the app. No subscription.`,
             },
             { term: "Ads and analytics", detail: "No ads and no third-party analytics SDKs." },
             { term: "Account", detail: "None. There is no sign-up or sign-in." },

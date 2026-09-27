@@ -1,3 +1,4 @@
+import { trialDetails } from "@/lib/content";
 import { pages } from "@/lib/pages";
 import type { PageDef } from "@/lib/pages";
 import { absoluteUrl } from "@/lib/seo";
@@ -26,6 +27,7 @@ export function GET() {
     "- Account required: no",
     "- Ads: none",
     "- Subscription: none",
+    `- Free trial: ${trialDetails.includes} ${trialDetails.unlocks} ${trialDetails.afterTrial}`,
     `- Price: ${siteConfig.price.label} one-time, after the ${siteConfig.freeTrialDays}-day free trial (Google Play shows the final amount for your country)`,
     `- Contact: ${siteConfig.contactEmail}`,
     "",

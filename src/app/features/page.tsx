@@ -88,7 +88,7 @@ export default function FeaturesPage() {
                 { term: "Ads", detail: "None." },
                 {
                   term: "Pricing",
-                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase of ${siteConfig.price.label} is required to keep using the app. No subscription.`,
+                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} unlocks everything and is required to keep using the app. No subscription.`,
                 },
                 {
                   term: "Your data",
@@ -145,8 +145,14 @@ export default function FeaturesPage() {
           >
             <p>
               The Progress tab has three views: Volume, Strength, and Body. Volume shows total and
-              average workout volume, plus a chart for any single exercise. Strength follows your
-              estimated 1RM. Choose a range from one week to all time.
+              average workout volume, plus a chart for any single exercise. Strength charts your
+              estimated 1RM for each exercise. Choose a range from one week to all time.
+            </p>
+            <p>
+              IronBuddy estimates your 1RM with the Epley formula, weight × (1 + reps ÷ 30), using
+              the best completed set of each workout. Sets of more than 12 reps count as 12, where
+              the formula stops being reliable. When you save a workout with a heavier weight than
+              you have logged before for an exercise, the app marks it as a PR.
             </p>
             <p>
               These are the numbers most lifters use to check progressive overload: are you lifting
@@ -171,8 +177,9 @@ export default function FeaturesPage() {
               more), and see a demonstration thumbnail for each one.
             </p>
             <p>
-              Browse exercises and your 1RM history from the Exercise Library. The library works
-              offline, like the rest of the app.
+              Open any exercise to see what you did last time: the date, your sets, the best set&apos;s
+              estimated 1RM, and your all-time estimated 1RM. The library works offline, like the
+              rest of the app.
             </p>
           </FeatureBlock>
 

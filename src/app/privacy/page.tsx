@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata(pages.privacy);
 
 /*
  * The policy text below is ported verbatim from the source of truth:
- * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 20 September 2026).
+ * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, commit 20f0423, last updated 21 September 2026).
  * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
  */
 
@@ -116,9 +116,9 @@ export default function PrivacyPage() {
             <li>We do not sell personal data.</li>
             <li>The App does not include ads or third-party analytics SDKs.</li>
             <li>
-              IronBuddy is free to download. It includes a free trial and one optional, one-time
-              in-app purchase that unlocks the full app. The purchase is handled entirely by Google
-              Play (see section 4).
+              IronBuddy is free to download. It includes a free trial, and after the trial a one-time
+              in-app purchase is required to keep using the app. The purchase is handled entirely by
+              Google Play (see section 4).
             </li>
             <li>
               Copies of your data can exist outside the App’s private storage in three ways, all
@@ -181,8 +181,8 @@ export default function PrivacyPage() {
         <ContentSection id="purchases" title="4. Purchases and payment processing">
           <p>
             IronBuddy is free to download and use for a free trial period (currently 5 days). After
-            the trial, the full app can be unlocked with one optional, one-time in-app purchase;
-            there are no subscriptions. The purchase is made and processed entirely by Google Play
+            the trial, a one-time in-app purchase is required to keep using the app; there are no
+            subscriptions. The purchase is made and processed entirely by Google Play
             using Google Play Billing. The App receives from Google Play only confirmation that the
             purchase exists (the product identifier and a purchase token) and stores it on your
             device so it can unlock features and check your purchase again when you open the App or
@@ -277,7 +277,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <Strong>Google Play Billing:</Strong> lets the App ask Google Play about, and
-              complete, the optional in-app purchase.
+              complete, the one-time in-app purchase.
             </li>
             <li>
               <Strong>Storage / media access (as required by Android version):</Strong> to save the

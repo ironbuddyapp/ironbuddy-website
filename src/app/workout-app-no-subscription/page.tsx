@@ -12,6 +12,7 @@ import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { trialDetails } from "@/lib/content";
 import type { Faq } from "@/lib/content";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
@@ -56,14 +57,16 @@ export default function NoSubscriptionPage() {
           <NumberedList>
             <li>Download IronBuddy from Google Play. The download is free.</li>
             <li>
-              Use the free trial (currently {trial}) to log workouts and see whether the app fits
-              how you train.
+              Use the free trial to see whether the app fits how you train.{" "}
+              {trialDetails.includes}
             </li>
             <li>
               To keep using IronBuddy after the trial, make a one-time in-app purchase of{" "}
-              {siteConfig.price.label}. There is no subscription and no renewal date.
+              {siteConfig.price.label}. It unlocks every split, the full library of 800+ exercises,
+              and your own custom splits. There is no subscription and no renewal date.
             </li>
           </NumberedList>
+          <p>{trialDetails.afterTrial}</p>
           <p>
             Google Play handles the purchase. IronBuddy never sees your card or billing details, and
             it only stores confirmation that the purchase exists so it can unlock the app. Google Play

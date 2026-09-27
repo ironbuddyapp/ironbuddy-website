@@ -25,6 +25,28 @@ export function GooglePlayButton({
     }
   }, []);
 
+  const size = compact ? "h-10" : "h-12 sm:h-[53px]";
+  const badge = (alt: string) => (
+    <img
+      src="/badges/google-play-badge.svg"
+      alt={alt}
+      width={180}
+      height={53}
+      decoding="async"
+      loading={lazy ? "lazy" : undefined}
+      className={cn("w-auto", size)}
+    />
+  );
+
+  // Before launch the badge is shown but is not a link, so nobody lands on Play's "not found" page.
+  if (!siteConfig.playListingLive) {
+    return (
+      <span className={cn("inline-flex items-center justify-center rounded-[13px]", size, className)}>
+        {badge("IronBuddy on Google Play, coming soon")}
+      </span>
+    );
+  }
+
   return (
     <a
       href={href}
@@ -32,20 +54,12 @@ export function GooglePlayButton({
       rel="noopener noreferrer"
       className={cn(
         "inline-flex items-center justify-center rounded-[13px] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-        compact ? "h-10" : "h-12 sm:h-[53px]",
+        size,
         className,
       )}
     >
       {/* The alt text is the link's accessible name and the anchor text search engines read. */}
-      <img
-        src="/badges/google-play-badge.svg"
-        alt="Get IronBuddy on Google Play"
-        width={180}
-        height={53}
-        decoding="async"
-        loading={lazy ? "lazy" : undefined}
-        className={cn("w-auto", compact ? "h-10" : "h-12 sm:h-[53px]")}
-      />
+      {badge("Get IronBuddy on Google Play")}
     </a>
   );
 }

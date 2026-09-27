@@ -62,13 +62,17 @@ export const metadata: Metadata = {
     },
   },
   category: "fitness",
-  appLinks: {
-    android: {
-      package: siteConfig.playStoreId,
-      app_name: siteConfig.name,
-      url: siteConfig.playStoreUrl,
-    },
-  },
+  ...(siteConfig.playListingLive
+    ? {
+        appLinks: {
+          android: {
+            package: siteConfig.playStoreId,
+            app_name: siteConfig.name,
+            url: siteConfig.playStoreUrl,
+          },
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({

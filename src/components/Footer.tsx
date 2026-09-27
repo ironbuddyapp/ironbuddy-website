@@ -34,7 +34,7 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
-                {group.title === "Company" ? (
+                {group.title === "Company" && siteConfig.playListingLive ? (
                   <li>
                     <a
                       href={siteConfig.playStoreUrl}

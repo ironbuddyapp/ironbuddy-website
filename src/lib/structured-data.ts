@@ -93,9 +93,14 @@ function appNode(): JsonLdNode {
       caption: shot.alt,
     })),
     featureList: appFeatureList,
-    downloadUrl: siteConfig.playStoreUrl,
-    installUrl: siteConfig.playStoreUrl,
-    sameAs: [siteConfig.playStoreUrl],
+    // Only point at the Play listing once it is public; before that it returns "not found".
+    ...(siteConfig.playListingLive
+      ? {
+          downloadUrl: siteConfig.playStoreUrl,
+          installUrl: siteConfig.playStoreUrl,
+          sameAs: [siteConfig.playStoreUrl],
+        }
+      : {}),
     // The download is free, but after the trial a one-time purchase is required to keep using the app. `price` is
     // that one-time price, never "0" (which would tell search engines and AI systems the app is free). It must also
     // appear in the page text (it does, in the Download section), because markup has to match what visitors can see.
@@ -105,7 +110,7 @@ function appNode(): JsonLdNode {
       price: siteConfig.price.amount,
       priceCurrency: siteConfig.price.currency,
       category: "Free trial, then one-time purchase",
-      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using the app. No subscription.`,
+      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play unlocks everything and is required to keep using the app. No subscription.`,
     },
     author: { "@id": ids.organization },
     publisher: { "@id": ids.organization },

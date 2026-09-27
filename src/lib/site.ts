@@ -14,6 +14,12 @@ export const siteConfig = {
   description: `Offline workout tracker for Android. Log sets, plan splits and track strength. No account, no ads, no subscription: ${freeTrialDays}-day free trial, then ${price.label} once.`,
   url: "https://ironbuddy.fit",
   locale: "en_US",
+  /**
+   * LAUNCH SWITCH. While false, the Google Play badges show but link nowhere, and the Play URL is left out of
+   * the structured data, because the listing is still in closed testing and returns "not found" to the public.
+   * Set to true the day the listing is public.
+   */
+  playListingLive: false as boolean,
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.ironbuddy.app",
   playStoreId: "com.ironbuddy.app",
   playStoreIntent:

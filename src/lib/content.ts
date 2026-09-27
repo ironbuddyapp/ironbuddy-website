@@ -128,6 +128,18 @@ export type Faq = {
 
 const trial = `free trial (currently ${siteConfig.freeTrialDays} days)`;
 
+/**
+ * What the free trial includes and what happens after it, in one place so every page says the same thing.
+ * Deliberately no counts: the app decides which splits and exercises the trial unlocks, and that may change.
+ * Source: IronBuddy app 1.0.13 (src/lib/split-locking.ts, exercise-locking.ts, routes/paywall.tsx).
+ */
+export const trialDetails = {
+  includes: `The ${siteConfig.freeTrialDays}-day free trial includes workout logging, progress charts, body metrics and backups, with a starter selection of splits and exercises.`,
+  unlocks: `Buying IronBuddy for ${siteConfig.price.label} unlocks every split, the full library of 800+ exercises, and your own custom splits.`,
+  afterTrial:
+    "If you don't buy, the app locks when the trial ends, but nothing is deleted: your data stays on your phone and you can still export it.",
+} as const;
+
 export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
   {
     id: "offline-use",
@@ -169,6 +181,17 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         question: "Does IronBuddy contain ads?",
         answer:
           "No. IronBuddy shows no ads and includes no advertising or third-party analytics SDKs, so nothing interrupts your sets.",
+      },
+      {
+        id: "trial-includes",
+        question: "What is included in the free trial?",
+        answer: `${trialDetails.includes} ${trialDetails.unlocks}`,
+      },
+      {
+        id: "trial-ends",
+        question: "What happens when the free trial ends?",
+        answer: `The app locks until you buy it for ${siteConfig.price.label}. Nothing is deleted: your workouts stay on your phone, and the screen shown when the trial ends has an Export my data button, so you can take a copy of your data without buying.`,
+        more: { href: pages.noSubscription.path, label: "How pricing works" },
       },
     ],
   },
@@ -220,6 +243,13 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         answer:
           "IronBuddy records the numbers progressive overload depends on: sets, reps, and weight for every workout, plus notes. The Progress tab charts your training volume and estimated 1RM over time, from one week to all time, so you can see whether your training is trending up.",
         more: { href: pages.progressiveOverload.path, label: "A simple method for tracking progressive overload" },
+      },
+      {
+        id: "estimated-1rm",
+        question: "How does IronBuddy estimate my 1RM?",
+        answer:
+          "With the Epley formula: weight × (1 + reps ÷ 30). For each workout, IronBuddy uses the completed set that gives the highest estimate, and counts sets of more than 12 reps as 12, where the formula stops being reliable. Progress → Strength charts the result over time, and opening an exercise shows your all-time estimated 1RM.",
+        more: { href: `${pages.progressiveOverload.path}#volume-and-1rm`, label: "Estimated 1RM explained" },
       },
       {
         id: "what-track",

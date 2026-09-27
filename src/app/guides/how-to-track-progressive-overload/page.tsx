@@ -179,8 +179,9 @@ export default function ProgressiveOverloadGuidePage() {
           <p>
             <Strong>Estimated 1RM</Strong> predicts the heaviest single rep you could lift, based on
             a heavier set of several reps. One widely used formula, Epley, multiplies the weight by
-            (1 + reps ÷ 30), so 60 kg for 8 reps comes out at about 76 kg. Different apps use
-            different formulas, so treat the number as a trend line, not a promise.
+            (1 + reps ÷ 30), so 60 kg for 8 reps comes out at about 76 kg. IronBuddy uses Epley.
+            Other apps may use other formulas, and estimates get less reliable at high reps, so
+            treat the number as a trend line, not a promise.
           </p>
           <p>Compare like with like: the same exercise, across several weeks.</p>
         </ContentSection>
@@ -221,7 +222,15 @@ export default function ProgressiveOverloadGuidePage() {
               Open Progress, then Volume, to see total and average workout volume, and pick an
               exercise to see its volume over time.
             </li>
-            <li>Open Progress, then Strength, to follow your estimated 1RM.</li>
+            <li>
+              Open Progress, then Strength, to follow your estimated 1RM. IronBuddy works it out
+              with the Epley formula from the best completed set of each workout, counting sets of
+              more than 12 reps as 12.
+            </li>
+            <li>
+              Watch for the PR notification when you save a workout: it appears when you lift a
+              heavier weight than you have logged before for that exercise.
+            </li>
             <li>
               Choose 1M or 3M to look at a few weeks at a time, or All to see the whole picture.
             </li>
