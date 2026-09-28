@@ -33,6 +33,7 @@ const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
 const PPL_ADDED = "2026-09-28";
+const ALTERNATIVES_SPLIT = "2026-09-28";
 
 const screenshotImages = [
   "/screenshots/dashboard.webp",
@@ -109,7 +110,53 @@ export const pages = {
       "Looking for a Strong, Hevy, FitNotes or JEFIT alternative? IronBuddy is an Android workout tracker with offline use, no account, no ads and no subscription.",
     summary: "Who IronBuddy fits, who it does not, and a checklist for comparing any workout tracker.",
     published: UPDATED,
-    modified: "2026-09-25",
+    modified: ALTERNATIVES_SPLIT,
+  },
+  // One page per app people search an alternative to. Like the hub above, they state facts about IronBuddy only,
+  // never about the named app (see src/lib/alternatives.tsx).
+  strongAlternative: {
+    path: "/alternatives/strong/",
+    kind: "product",
+    label: "Strong alternative",
+    title: "Strong App Alternative: Offline 1RM & PR Tracker",
+    description:
+      "Looking for a Strong app alternative on Android? IronBuddy tracks estimated 1RM, volume and PRs offline, with no account, no ads and no subscription.",
+    summary: "IronBuddy for lifters coming from Strong: strength tracking, switching steps, and how to compare.",
+    published: ALTERNATIVES_SPLIT,
+    modified: ALTERNATIVES_SPLIT,
+  },
+  hevyAlternative: {
+    path: "/alternatives/hevy/",
+    kind: "product",
+    label: "Hevy alternative",
+    title: "Hevy Alternative: Offline Workout Split Planner",
+    description:
+      "Looking for a Hevy alternative? IronBuddy plans your week with 10 built-in splits or your own, runs offline on Android, and has no account, ads or subscription.",
+    summary: "IronBuddy for lifters coming from Hevy: planning splits, switching steps, and how to compare.",
+    published: ALTERNATIVES_SPLIT,
+    modified: ALTERNATIVES_SPLIT,
+  },
+  fitnotesAlternative: {
+    path: "/alternatives/fitnotes/",
+    kind: "product",
+    label: "FitNotes alternative",
+    title: "FitNotes Alternative: Gym Log With Auto Backups",
+    description:
+      "Looking for a FitNotes alternative? IronBuddy is an offline Android gym log that keeps an automatic backup file on your phone. No account, ads or subscription.",
+    summary: "IronBuddy for lifters coming from FitNotes: backups and exports, switching steps, and how to compare.",
+    published: ALTERNATIVES_SPLIT,
+    modified: ALTERNATIVES_SPLIT,
+  },
+  jefitAlternative: {
+    path: "/alternatives/jefit/",
+    kind: "product",
+    label: "JEFIT alternative",
+    title: "JEFIT Alternative: Offline 800+ Exercise Library",
+    description:
+      "Looking for a JEFIT alternative? IronBuddy has an offline library of 800+ exercises with demos and filters, on Android, with no account, ads or subscription.",
+    summary: "IronBuddy for lifters coming from JEFIT: the exercise library, switching steps, and how to compare.",
+    published: ALTERNATIVES_SPLIT,
+    modified: ALTERNATIVES_SPLIT,
   },
   faq: {
     path: "/faq/",

@@ -137,6 +137,28 @@ export default function AlternativesPage() {
             app&apos;s current Google Play listing and website.
           </p>
           <p>
+            Coming from a specific app? Each of these pages covers one part of IronBuddy in depth
+            and the steps for moving over:
+          </p>
+          <BulletList>
+            <li>
+              <TextLink href={pages.strongAlternative.path}>Strong alternative</TextLink>: tracking
+              estimated 1RM, volume and personal records
+            </li>
+            <li>
+              <TextLink href={pages.hevyAlternative.path}>Hevy alternative</TextLink>: planning your
+              week with training splits
+            </li>
+            <li>
+              <TextLink href={pages.fitnotesAlternative.path}>FitNotes alternative</TextLink>:
+              backups, exports and moving to a new phone
+            </li>
+            <li>
+              <TextLink href={pages.jefitAlternative.path}>JEFIT alternative</TextLink>: the 800+
+              exercise library
+            </li>
+          </BulletList>
+          <p>
             Strong, Hevy, FitNotes, and JEFIT are trademarks of their respective owners. IronBuddy is
             not affiliated with or endorsed by them.
           </p>
