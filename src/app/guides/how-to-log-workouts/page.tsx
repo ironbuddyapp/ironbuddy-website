@@ -104,7 +104,9 @@ export default function LogWorkoutsGuidePage() {
             A training split tells you which exercises to expect on each day, so logging becomes
             filling in numbers instead of deciding what to do. Templates such as Push/Pull/Legs,
             Upper/Lower, and Full Body are a starting point you can edit. See{" "}
-            <TextLink href={`${pages.features.path}#training-splits`}>training splits in IronBuddy</TextLink>.
+            <TextLink href={`${pages.features.path}#training-splits`}>training splits in IronBuddy</TextLink>,
+            or the <TextLink href={pages.pushPullLegs.path}>Push Pull Legs guide</TextLink> for one
+            popular split in detail.
           </p>
         </ContentSection>
 
@@ -152,7 +154,7 @@ export default function LogWorkoutsGuidePage() {
         <CtaBanner />
 
         <RelatedLinks
-          items={[pages.progressiveOverload, pages.features, pages.offline, pages.guides]}
+          items={[pages.progressiveOverload, pages.pushPullLegs, pages.features, pages.guides]}
         />
       </PageBody>
     </main>

@@ -32,6 +32,7 @@ export type PageDef = {
 const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
+const PPL_ADDED = "2026-09-28";
 
 const screenshotImages = [
   "/screenshots/dashboard.webp",
@@ -63,7 +64,7 @@ export const pages = {
       "IronBuddy's offline gym log: track sets, reps and weight, build training splits, chart volume and estimated 1RM, log body metrics, and search 800+ exercises.",
     summary: "Workout logging, training splits, progress charts, body metrics and the exercise library.",
     published: UPDATED,
-    modified: "2026-09-25",
+    modified: PPL_ADDED,
     images: screenshotImages,
   },
   offline: {
@@ -114,23 +115,23 @@ export const pages = {
     path: "/faq/",
     kind: "faq",
     label: "FAQ",
-    title: "IronBuddy FAQ: Offline Use, Pricing & Privacy",
+    title: "FAQ: Offline Use, Pricing, Ads & Privacy",
     description:
       "Answers about IronBuddy: does it work offline, need a subscription, show ads, require an account, or store data on your phone? Plus progressive overload.",
     summary: "Answers about offline use, pricing, ads, accounts, data storage and progress tracking.",
     published: UPDATED,
-    modified: "2026-09-25",
+    modified: PPL_ADDED,
   },
   about: {
     path: "/about/",
     kind: "about",
     label: "About",
-    title: "About IronBuddy: An Offline Android Gym Log",
+    title: "About Us: An Offline Android Gym Log App",
     description:
       "IronBuddy is an Android workout tracker built on one idea: your training data belongs to you. See how it works, what it costs, and how to get in touch.",
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
     published: UPDATED,
-    modified: "2026-09-25",
+    modified: PPL_ADDED,
   },
   guides: {
     path: "/guides/",
@@ -139,9 +140,9 @@ export const pages = {
     title: "Workout Tracking & Progressive Overload Guides",
     description:
       "Practical guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to review your progress.",
-    summary: "Plain-language guides to progressive overload and workout logging.",
+    summary: "Plain-language guides to progressive overload, workout logging and training splits.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: PPL_ADDED,
   },
   progressiveOverload: {
     path: "/guides/how-to-track-progressive-overload/",
@@ -163,18 +164,29 @@ export const pages = {
       "A practical guide to logging gym workouts: the few numbers worth recording, how to stay consistent, and how to review it so your training keeps improving.",
     summary: "The numbers worth recording in a gym log, and how to keep the habit going.",
     published: UPDATED,
-    modified: UPDATED,
+    modified: PPL_ADDED,
+  },
+  pushPullLegs: {
+    path: "/guides/push-pull-legs-split/",
+    kind: "guide",
+    label: "Push Pull Legs split",
+    title: "Push Pull Legs Split: How to Plan and Track It",
+    description:
+      "How to run a Push Pull Legs split: 3-day and 6-day weekly layouts, which lifts go on each day, and how to log and progress a PPL workout routine.",
+    summary: "Three-day and six-day Push Pull Legs layouts, what goes on each day, and how to track a PPL split.",
+    published: PPL_ADDED,
+    modified: PPL_ADDED,
   },
   contact: {
     path: "/contact/",
     kind: "contact",
     label: "Contact",
-    title: "Contact IronBuddy: Support & Privacy Questions",
+    title: "Contact Us: App Support & Privacy Questions",
     description:
       "Get in touch with IronBuddy for app support, feedback or privacy questions. Find our email address and what to include so we can help you faster.",
     summary: "How to reach IronBuddy for support, feedback or privacy questions, and what to include.",
     published: CONTACT_ADDED,
-    modified: CONTACT_ADDED,
+    modified: PPL_ADDED,
   },
   privacy: {
     path: "/privacy/",

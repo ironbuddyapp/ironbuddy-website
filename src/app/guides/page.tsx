@@ -10,7 +10,7 @@ import { collectionPageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.guides);
 
-const guides = [pages.progressiveOverload, pages.logWorkouts];
+const guides = [pages.progressiveOverload, pages.logWorkouts, pages.pushPullLegs];
 
 export default function GuidesPage() {
   const crumbs = trail(pages.home, pages.guides);
@@ -29,7 +29,7 @@ export default function GuidesPage() {
         eyebrow="Guides"
         title="Workout tracking guides"
         updated={pages.guides.modified}
-        lead="Practical, plain-language guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to review your progress."
+        lead="Practical, plain-language guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to plan and track a Push Pull Legs split."
       />
 
       <PageBody>

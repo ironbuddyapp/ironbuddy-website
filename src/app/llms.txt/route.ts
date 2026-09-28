@@ -45,6 +45,7 @@ export function GET() {
     entry(pages.guides),
     entry(pages.progressiveOverload),
     entry(pages.logWorkouts),
+    entry(pages.pushPullLegs),
     "",
     "## Answers and policies",
     "",

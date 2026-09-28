@@ -54,6 +54,9 @@ function websiteNode(): JsonLdNode {
     "@id": ids.website,
     url: absoluteUrl("/"),
     name: siteConfig.name,
+    // Google reads these when choosing the site name shown in results. Other products share the name
+    // "IronBuddy", so the longer form helps tell this one apart.
+    alternateName: ["IronBuddy Workout Tracker", "ironbuddy.fit"],
     description: siteConfig.description,
     inLanguage: "en-US",
     publisher: { "@id": ids.organization },

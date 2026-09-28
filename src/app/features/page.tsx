@@ -135,6 +135,10 @@ export default function FeaturesPage() {
               Make one active, add or remove days, and change the exercises on any day.
             </p>
             <p>You can also export your active split as a PDF.</p>
+            <p>
+              Running PPL? Read{" "}
+              <TextLink href={pages.pushPullLegs.path}>how to plan and track a Push Pull Legs split</TextLink>.
+            </p>
           </FeatureBlock>
 
           <FeatureBlock

@@ -340,6 +340,7 @@ export const footerGroups = [
       { label: "All guides", href: pages.guides.path },
       { label: pages.progressiveOverload.label, href: pages.progressiveOverload.path },
       { label: pages.logWorkouts.label, href: pages.logWorkouts.path },
+      { label: pages.pushPullLegs.label, href: pages.pushPullLegs.path },
     ],
   },
   {
