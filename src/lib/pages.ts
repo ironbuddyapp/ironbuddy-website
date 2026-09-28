@@ -34,6 +34,7 @@ const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
 const PPL_ADDED = "2026-09-28";
 const ALTERNATIVES_SPLIT = "2026-09-28";
+const MORE_ALTERNATIVES = "2026-09-28";
 
 const screenshotImages = [
   "/screenshots/dashboard.webp",
@@ -157,6 +158,28 @@ export const pages = {
     summary: "IronBuddy for lifters coming from JEFIT: the exercise library, switching steps, and how to compare.",
     published: ALTERNATIVES_SPLIT,
     modified: ALTERNATIVES_SPLIT,
+  },
+  boostcampAlternative: {
+    path: "/alternatives/boostcamp/",
+    kind: "product",
+    label: "Boostcamp alternative",
+    title: "Boostcamp Alternative: Offline Set-by-Set Log",
+    description:
+      "Looking for a Boostcamp alternative? IronBuddy logs every set offline, with drop sets, supersets and notes, on Android. No account, no ads, no subscription.",
+    summary: "IronBuddy for lifters coming from Boostcamp: set-by-set logging, switching steps, and how to compare.",
+    published: MORE_ALTERNATIVES,
+    modified: MORE_ALTERNATIVES,
+  },
+  caliberAlternative: {
+    path: "/alternatives/caliber/",
+    kind: "product",
+    label: "Caliber alternative",
+    title: "Caliber Alternative: Lifts & Body Weight Offline",
+    description:
+      "Looking for a Caliber alternative? IronBuddy tracks your lifts, body weight and body fat % offline on Android, with no account, no ads and no subscription.",
+    summary: "IronBuddy for lifters coming from Caliber: body weight and body fat tracking, switching steps, and how to compare.",
+    published: MORE_ALTERNATIVES,
+    modified: MORE_ALTERNATIVES,
   },
   faq: {
     path: "/faq/",

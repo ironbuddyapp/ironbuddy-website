@@ -43,6 +43,8 @@ export function GET() {
     entry(pages.hevyAlternative),
     entry(pages.fitnotesAlternative),
     entry(pages.jefitAlternative),
+    entry(pages.boostcampAlternative),
+    entry(pages.caliberAlternative),
     "",
     "## Guides",
     "",

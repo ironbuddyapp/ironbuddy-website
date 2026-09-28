@@ -11,8 +11,8 @@ import { pages } from "@/lib/pages";
  * (1.0.13) or the privacy policy. Nothing is said about the named app's price, features or policies, which
  * change often. The name only tells the reader what the page is for.
  *
- * Each page covers a different part of IronBuddy (strength tracking, planning, backups, the exercise library)
- * with its own how-to section, so the four pages are not copies of each other. Keep it that way: shared text
+ * Each page covers a different part of IronBuddy (strength tracking, planning, backups, the exercise library,
+ * set-by-set logging, body tracking) with its own how-to section, so the pages are not copies of each other. Keep it that way: shared text
  * belongs on the hub page, linked from here.
  */
 export type Alternative = {
@@ -364,6 +364,180 @@ export const alternatives = {
       question: "Can I add an exercise that is not in IronBuddy's library?",
       answer:
         "Yes. The full app, unlocked by the one-time purchase, lets you create custom exercises and log them like any other. The library already covers more than 800 exercises across barbell, dumbbell, machine and bodyweight movements.",
+    },
+  },
+  boostcamp: {
+    name: "Boostcamp",
+    page: pages.boostcampAlternative,
+    heading: "Looking for a Boostcamp alternative? Log every set offline with IronBuddy",
+    lead: "IronBuddy is built for logging at the gym: reps and weight for every set, set techniques like drop sets and supersets, and notes, on your Android phone with no connection, no account, no ads and no subscription.",
+    focus: {
+      id: "logging",
+      title: "How IronBuddy logs your sets",
+      body: (
+        <>
+          <p>
+            Open a training day from the home screen with Edit &amp; Log, or log a single exercise from
+            its preview. Every set gets its own reps and weight.
+          </p>
+          <BulletList>
+            <li>
+              <Strong>Quick + and − buttons:</Strong> reps step by 1 and weight by 2.5 kg or 5 lb. On
+              an empty field, + starts from the previous set&apos;s value. You can still type any number.
+            </li>
+            <li>
+              <Strong>Sets control:</Strong> + copies your last set and − removes it, so adding a set
+              takes one tap.
+            </li>
+            <li>
+              <Strong>Set techniques:</Strong> add a drop set, rest-pause, myo-rep, cluster set,
+              back-off set, mechanical drop, pyramid or superset to any set.
+            </li>
+            <li>
+              <Strong>Notes:</Strong> add a note to any exercise, and a note for the whole day of up to
+              500 characters.
+            </li>
+            <li>
+              <Strong>Quick log:</Strong> log one exercise into your history without editing the whole
+              day.
+            </li>
+            <li>
+              <Strong>Any date:</Strong> log a workout for today or fill in a past date.
+            </li>
+          </BulletList>
+        </>
+      ),
+    },
+    howTo: {
+      id: "logging-techniques",
+      title: "Logging drop sets and supersets so they stay comparable",
+      body: (
+        <>
+          <BulletList>
+            <li>
+              <Strong>Log the working set first.</Strong> Its weight and reps are the numbers to
+              compare week to week. IronBuddy attaches a technique to the working set and uses the
+              working set for your estimated 1RM, so the extra reps from a drop or rest-pause do not
+              inflate it.
+            </li>
+            <li>
+              <Strong>Use each technique the same way every time.</Strong> If a drop set means one
+              strip of about 20%, keep it that way, so the sessions line up.
+            </li>
+            <li>
+              <Strong>Supersets:</Strong> log each exercise&apos;s own sets, and add the Superset
+              technique to a set to mark it as done back-to-back with the next exercise. Each exercise
+              keeps its own history.
+            </li>
+            <li>
+              <Strong>Write down what changed.</Strong> A new grip, a slower tempo or a sore joint
+              explains a number that looks odd a month later.
+            </li>
+          </BulletList>
+          <p>
+            For what to record and why, read{" "}
+            <TextLink href={pages.logWorkouts.path}>how to log your workouts</TextLink>.
+          </p>
+        </>
+      ),
+    },
+    switching: [
+      "Export your Boostcamp history first if the app offers an export, and keep the file as an archive.",
+      "Write down the program you follow now: the days, the exercises, and the sets and reps for each.",
+      "In IronBuddy, pick the built-in split closest to your program and edit its days to match.",
+      "Log your first session set by set, adding drop sets or supersets where your program uses them.",
+    ],
+    freshStart:
+      "Start a fresh log with your current working weights and log each set as you go; your history builds from the first session.",
+    faq: {
+      id: "set-techniques",
+      question: "Can I log drop sets and supersets in IronBuddy?",
+      answer:
+        "Yes. You can add a drop set, rest-pause, myo-rep, cluster set, back-off set, mechanical drop, pyramid or superset to any set. IronBuddy keeps the working set's weight and reps as the numbers it uses for your estimated 1RM.",
+    },
+  },
+  caliber: {
+    name: "Caliber",
+    page: pages.caliberAlternative,
+    heading: "Looking for a Caliber alternative? Track your lifts and body weight offline with IronBuddy",
+    lead: "IronBuddy keeps your strength training and your body measurements in one place: log your lifts, add your body weight and body fat % whenever you like, and see both charted on your Android phone with no connection, no account, no ads and no subscription.",
+    focus: {
+      id: "body-tracking",
+      title: "How IronBuddy tracks body weight and body fat",
+      body: (
+        <>
+          <BulletList>
+            <li>
+              <Strong>Add an entry:</Strong> in Settings, open Body Tracking and enter your weight,
+              your body fat %, or both. Entries are optional, so you only track what is useful to you.
+            </li>
+            <li>
+              <Strong>See the trend:</Strong> Progress, then Body, charts body weight and body fat %
+              over time, from one week to all time.
+            </li>
+            <li>
+              <Strong>Long histories stay readable:</Strong> once you have a lot of entries, the charts
+              group them into weekly or monthly averages, so day-to-day swings do not hide the trend.
+            </li>
+            <li>
+              <Strong>Next to your lifts:</Strong> the Strength and Volume views on the same Progress
+              tab show your estimated 1RM and training volume, so you can read body changes against
+              strength.
+            </li>
+            <li>
+              <Strong>Kilograms or pounds:</Strong> choose your unit in the app.
+            </li>
+          </BulletList>
+        </>
+      ),
+    },
+    howTo: {
+      id: "weigh-ins",
+      title: "Getting a body weight trend you can trust",
+      body: (
+        <>
+          <BulletList>
+            <li>
+              <Strong>Weigh in the same way each time:</Strong> for example in the morning, before
+              eating, on the same scale.
+            </li>
+            <li>
+              <Strong>Expect daily swings:</Strong> water, food and salt can move the scale by a
+              kilogram or more from one day to the next.
+            </li>
+            <li>
+              <Strong>Compare weeks, not days:</Strong> a weekly average says far more than a single
+              reading.
+            </li>
+            <li>
+              <Strong>Keep body fat estimates consistent:</Strong> use the same method and conditions
+              each time. The trend matters more than the exact number.
+            </li>
+            <li>
+              <Strong>Read weight and strength together:</Strong> the same change on the scale means
+              something different when your estimated 1RM is rising than when it is falling.
+            </li>
+          </BulletList>
+          <p>
+            For turning strength numbers into next week&apos;s targets, read{" "}
+            <TextLink href={pages.progressiveOverload.path}>how to track progressive overload</TextLink>.
+          </p>
+        </>
+      ),
+    },
+    switching: [
+      "Export your Caliber history first if the app offers an export, and keep the file as an archive.",
+      "Note your current body weight and, if you track it, your body fat %.",
+      "Install IronBuddy and add them in Settings, under Body Tracking, so your body chart starts today.",
+      "Log your usual workouts; the Body, Strength and Volume views fill in as you go.",
+    ],
+    freshStart:
+      "Add today's body weight in Settings, under Body Tracking, and start logging your workouts; both charts start from day one.",
+    faq: {
+      id: "body-fat",
+      question: "Does IronBuddy calculate my body fat percentage?",
+      answer:
+        "No. You enter your body fat % yourself, from whichever method you use, and IronBuddy charts it over time alongside your body weight. It tracks what you enter; it does not estimate body fat.",
     },
   },
 } as const satisfies Record<string, Alternative>;
