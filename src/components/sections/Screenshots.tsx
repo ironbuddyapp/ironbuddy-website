@@ -10,7 +10,7 @@ export function Screenshots() {
         <Reveal>
           <SectionHeading
             eyebrow="Screenshots"
-            title="A workout log built for the gym floor."
+            title="See the app: logging, splits and progress charts."
             description="A dark, distraction-free interface designed to stay out of the way while you train."
           />
         </Reveal>

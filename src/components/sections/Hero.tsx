@@ -20,13 +20,16 @@ export function Hero() {
           {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
           <h1 className="max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Offline workout tracker<span className="hidden lg:inline"> for Android</span>
+              Workout tracker for Android
               <span className="sr-only">. </span>
             </span>
             <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
-              No Subscription. Yours for Life.
+              Offline gym tracker &amp; workout log.
             </span>
           </h1>
+          <p className="mt-2 text-sm font-semibold tracking-tight text-white/85 sm:text-base lg:mt-3 lg:text-2xl">
+            Track progressive overload. Pay once, no subscription.
+          </p>
 
           <ul
             aria-label="Key benefits"
@@ -76,7 +79,7 @@ export function Hero() {
         <div className="relative flex min-h-0 items-center justify-center animate-fade-up max-lg:order-1">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
           {/* Width also shrinks on short screens (100svh minus header, install bar and text block) so the phone is never clipped. */}
-          <PhoneMockup float className="relative max-lg:w-[min(200px,calc((100svh_-_21rem)_*_0.4615))]">
+          <PhoneMockup float className="relative max-lg:w-[min(200px,calc((100svh_-_25rem)_*_0.4615))]">
             <AppScreen id="dashboard" priority />
           </PhoneMockup>
         </div>

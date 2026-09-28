@@ -27,35 +27,35 @@ export const features: Array<{
   icon: FeatureIcon;
 }> = [
   {
-    title: "Log Every Workout",
+    title: "Workout Log",
     description:
-      "Log sets, reps, weight and notes in a clean, offline gym log.",
+      "Sets, reps, weight and notes for every workout.",
     icon: "clipboard",
   },
   {
-    title: "Build Training Splits",
+    title: "Training Splits",
     description:
-      "Start from Push Pull Legs, Upper Lower or Full Body, or build your own.",
+      "Push Pull Legs, Upper Lower, Full Body, or your own.",
     icon: "calendar",
   },
   {
-    title: "Track Strength Progress",
+    title: "Progressive Overload Tracking",
     description: "Follow estimated 1RM and training volume over time.",
     icon: "chart",
   },
   {
-    title: "Body Metrics",
-    description: "Track body weight and body fat percentage in one place.",
+    title: "Body Weight & Body Fat",
+    description: "Track body weight and body fat % in one place.",
     icon: "scale",
   },
   {
-    title: "Exercise Library",
-    description: "Search 800+ exercises with demonstrations and filters.",
+    title: "800+ Exercise Library",
+    description: "Form demos, with muscle and equipment filters.",
     icon: "library",
   },
   {
-    title: "Privacy First",
-    description: "Stored on your phone, not our servers. No account required.",
+    title: "Offline & Private",
+    description: "Works offline, stored on your phone, no account.",
     icon: "shield",
   },
 ];

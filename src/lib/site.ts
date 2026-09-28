@@ -10,8 +10,9 @@ const price = { amount: "6.99", currency: "EUR", label: "€6.99" } as const;
 export const siteConfig = {
   name: "IronBuddy",
   tagline: "Your lifelong gym companion.",
-  title: "IronBuddy: Offline Workout Tracker, No Ads or Subscription",
-  description: `Offline workout tracker for Android. Log sets, plan splits and track strength. No account, no ads, no subscription: ${freeTrialDays}-day free trial, then ${price.label} once.`,
+  title: "IronBuddy: Workout Tracker & Gym Log App for Android",
+  description:
+    "Offline workout tracker and gym log app for Android: track progressive overload, plan splits and log every set. No subscription, no ads, no account.",
   url: "https://ironbuddy.fit",
   locale: "en_US",
   /**

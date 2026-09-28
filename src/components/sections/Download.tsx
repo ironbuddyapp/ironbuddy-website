@@ -18,7 +18,7 @@ export function Download() {
                 Download
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                Pay Once. Train Forever.
+                Download IronBuddy: pay once, train forever.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-lg">
                 Free to download with a {siteConfig.freeTrialDays}-day free trial. After that, pay{" "}

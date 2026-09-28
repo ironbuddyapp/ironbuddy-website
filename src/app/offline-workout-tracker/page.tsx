@@ -41,8 +41,8 @@ export default function OfflineWorkoutTrackerPage() {
       <JsonLd data={pageGraph(pages.offline, { trail: crumbs, about: "app", faqs })} />
       <PageHero
         trail={crumbs}
-        eyebrow="Offline workout tracker"
-        title="Offline workout tracker for Android: no signal, no Wi-Fi, no login"
+        eyebrow="Offline workout app"
+        title="Offline workout app for Android: no signal, no Wi-Fi, no login"
         updated={pages.offline.modified}
         lead="IronBuddy is an offline-first workout tracker for Android. You can log sets, reps, and weight, review your history, and browse the exercise library with no signal, no Wi-Fi, and no login, because your training log is stored on your phone rather than on a server."
       >

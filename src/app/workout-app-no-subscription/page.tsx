@@ -45,7 +45,7 @@ export default function NoSubscriptionPage() {
       <PageHero
         trail={crumbs}
         eyebrow="No subscription, no ads"
-        title="A workout app with no subscription and no ads"
+        title="A workout tracker app with no subscription and no ads"
         updated={pages.noSubscription.modified}
         lead={`IronBuddy has no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using it.`}
       >
@@ -74,6 +74,22 @@ export default function NoSubscriptionPage() {
             tax. The{" "}
             <TextLink href={`${pages.privacy.path}#purchases`}>purchases section of the privacy policy</TextLink>{" "}
             has the details.
+          </p>
+        </ContentSection>
+
+        {/* Google Trends: the top related search for "no subscription" workout apps is "free workout apps no
+            subscription". This answers that searcher honestly instead of implying IronBuddy is free. */}
+        <ContentSection id="free" title="Looking for a free workout app?">
+          <p>
+            Many people searching for a workout app with no subscription want one that costs nothing
+            at all. IronBuddy is not free: it is free to download with a{" "}
+            {siteConfig.freeTrialDays}-day free trial, and after that a one-time purchase of{" "}
+            {siteConfig.price.label} is required to keep using it.
+          </p>
+          <p>
+            What you get for that one payment is an app with no subscription, no renewal, no ads and
+            no account, and a training log that is stored on your phone. Use the trial to decide
+            whether that is worth it to you before you pay anything.
           </p>
         </ContentSection>
 

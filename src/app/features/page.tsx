@@ -65,7 +65,7 @@ export default function FeaturesPage() {
         wide
         trail={crumbs}
         eyebrow="Features"
-        title="Gym log, workout planner, and progress tracking in one offline app"
+        title="Workout log, training splits and progressive overload tracking in one offline app"
         updated={pages.features.modified}
         lead="IronBuddy is an Android workout tracker built around what lifters actually do at the gym: log sets, follow a training split, and check whether the numbers are going up. It works offline, needs no account, and has no ads or subscription."
       >
