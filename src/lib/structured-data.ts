@@ -1,5 +1,5 @@
 import type { Faq } from "@/lib/content";
-import { screenshots } from "@/lib/content";
+import { appScreenshots as screenshots } from "@/lib/content";
 import type { PageDef } from "@/lib/pages";
 import { absoluteUrl, fullTitle, ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -90,7 +90,7 @@ function appNode(): JsonLdNode {
     image: ogImage.url,
     screenshot: screenshots.map((shot) => ({
       "@type": "ImageObject",
-      contentUrl: absoluteUrl(`/screenshots/${shot.id}.webp`),
+      contentUrl: absoluteUrl(`/screenshots/${shot.file}`),
       encodingFormat: "image/webp",
       width: shot.width,
       height: shot.height,

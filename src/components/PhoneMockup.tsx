@@ -43,7 +43,7 @@ export function AppScreen({
 
   return (
     <img
-      src={`/screenshots/${id}.webp`}
+      src={`/screenshots/${shot.file}`}
       alt={alt ?? shot.alt}
       width={shot.width}
       height={shot.height}

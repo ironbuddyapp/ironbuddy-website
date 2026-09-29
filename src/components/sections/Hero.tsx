@@ -3,11 +3,11 @@ import { Container } from "@/components/Container";
 import { ExploreIronBuddyButton } from "@/components/ExploreIronBuddyButton";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
-import { heroBullets, heroHighlights } from "@/lib/content";
+import { heroBullets, heroHighlights, screenshotSrc } from "@/lib/content";
 import { preload } from "react-dom";
 
 export function Hero() {
-  preload("/screenshots/dashboard.webp", { as: "image", fetchPriority: "high" });
+  preload(screenshotSrc("dashboard"), { as: "image", fetchPriority: "high" });
 
   return (
     <section id="home" className="relative overflow-hidden max-lg:scroll-mt-0 max-lg:py-0 sm:pb-24 sm:pt-16 lg:scroll-mt-24 lg:pb-28 lg:pt-20">

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { Icon } from "@/components/icons";
-import { screenshots } from "@/lib/content";
+import { appScreenshots as screenshots } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 export function ScreenshotCarousel() {

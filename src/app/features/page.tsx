@@ -106,6 +106,10 @@ export default function FeaturesPage() {
               add exercises on the fly.
             </p>
             <p>
+              Drag exercises into the order you train them, add set techniques such as drop sets,
+              rest-pause and supersets, and write a day note about the whole session.
+            </p>
+            <p>
               Exercises without reps or weight are skipped, so an unfinished row does not clutter
               your history. When you edit a training day, the “Also update my plan” switch lets you
               choose whether the change applies to that date only or to the same day in later weeks.
@@ -118,10 +122,11 @@ export default function FeaturesPage() {
 
           <FeatureBlock id="weekly-view" title="Your week at a glance" shot="dashboard" flip>
             <p>
-              The home screen shows this week&apos;s plan with each training day&apos;s status: full,
-              partial, or missed. Switch between a week and a month view, see how many workouts you
-              have logged this week and in total, and jump into your last workout, which is
-              summarized with its total volume.
+              The home screen shows your active split with a progress line for the week (for example,
+              1 of 3 workouts logged) and each training day&apos;s status: full, partial, or missed.
+              Switch between a week and a month view, see how many workouts you have logged this week
+              and in total, and jump into your last workout, which is summarized with its total
+              volume.
             </p>
             <p>
               Shortcuts take you straight to your training splits and to the Exercise Library.
@@ -130,9 +135,10 @@ export default function FeaturesPage() {
 
           <FeatureBlock id="training-splits" title="Training splits and workout planning" shot="splits">
             <p>
-              Start from a template or build your own program. IronBuddy includes templates such as
-              Full Body 3×, Upper/Lower, Push/Pull/Legs (3× and 6×), Bro Split, and Arnold Split.
-              Make one active, add or remove days, and change the exercises on any day.
+              Start from a template or build your own program. IronBuddy includes 10 templates: Full
+              Body 3×, Upper/Lower, Push/Pull/Legs (3× and 6×), Bro Split, Arnold Split, PHUL, PHAT,
+              5/3/1 (BBB) and Push/Pull (2×). Make one active, add or remove days, and change the
+              exercises on any day.
             </p>
             <p>You can also export your active split as a PDF.</p>
             <p>
@@ -143,20 +149,28 @@ export default function FeaturesPage() {
 
           <FeatureBlock
             id="progress-tracking"
-            title="Progress tracking: training volume and estimated strength"
+            title="Training volume: total and per exercise"
             shot="progress"
             flip
           >
             <p>
-              The Progress tab has three views: Volume, Strength, and Body. Volume shows total and
-              average workout volume, plus a chart for any single exercise. Strength charts your
-              estimated 1RM for each exercise. Choose a range from one week to all time.
+              The Progress tab has three views: Volume, Strength, and Body. Volume shows your total
+              training volume and the average per workout, plus a chart for any single exercise, so
+              you can see whether you are doing more work over time.
             </p>
             <p>
-              IronBuddy estimates your 1RM with the Epley formula, weight × (1 + reps ÷ 30), using
-              the best completed set of each workout. Sets of more than 12 reps count as 12, where
-              the formula stops being reliable. When you save a workout with a heavier weight than
-              you have logged before for an exercise, the app marks it as a PR.
+              Choose a range from one week to all time. With months or years of history, the charts
+              group sessions into weeks or months, so the trend stays readable.
+            </p>
+          </FeatureBlock>
+
+          <FeatureBlock id="estimated-1rm" title="Estimated 1RM and personal records" shot="strength">
+            <p>
+              Strength charts your estimated one-rep max for each exercise. IronBuddy uses the Epley
+              formula, weight × (1 + reps ÷ 30), on the best completed set of each workout. Sets of
+              more than 12 reps count as 12, where the formula stops being reliable. When you save a
+              workout with a heavier weight than you have logged before for an exercise, the app
+              marks it as a PR.
             </p>
             <p>
               These are the numbers most lifters use to check progressive overload: are you lifting
@@ -166,15 +180,15 @@ export default function FeaturesPage() {
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="body-metrics" title="Body metrics: weight and body fat percentage" shot="metrics">
+          <FeatureBlock id="body-metrics" title="Body metrics: weight and body fat percentage" shot="metrics" flip>
             <p>
-              Log body weight and body fat percentage whenever you want to, and see each as a chart
-              over the same time ranges as your training. Body metrics are optional, so you only
-              track what is useful to you.
+              Log body weight and body fat percentage whenever you want to, in Settings under Body
+              Tracking, and see each as a chart over the same time ranges as your training. Body
+              metrics are optional, so you only track what is useful to you.
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="exercise-library" title="Exercise library with demonstrations" shot="library" flip>
+          <FeatureBlock id="exercise-library" title="Exercise library with demonstrations" shot="library">
             <p>
               Search more than 800 exercises, filter by muscle group (chest, back, traps, legs,
               shoulders, and more) and by equipment (barbell, dumbbell, machine, bodyweight, and

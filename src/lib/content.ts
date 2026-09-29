@@ -60,50 +60,90 @@ export const features: Array<{
   },
 ];
 
+/**
+ * App screenshots in public/screenshots/ (WebP, recorded 30 September 2026 from app 1.0.13). `carousel: true`
+ * marks the current set: it drives the home page carousel, the app's structured data and the image sitemap.
+ * Keep the array in carousel order.
+ *
+ * Alt text leads with the search term the screen matches (a different one per image), stays under about 125
+ * characters, and keeps one concrete detail. File names are descriptive for Google Images; if you rename one,
+ * update screenshotImages in pages.ts too.
+ */
 export const screenshots = [
   {
     id: "dashboard",
+    file: "ironbuddy-workout-tracker-home.webp",
     label: "Dashboard",
-    alt: "IronBuddy home screen showing the week's Push Pull Legs split, each day's workout status, and the last workout's volume",
+    alt: "IronBuddy Android workout tracker home screen with the active Full Body split, weekly progress and last workout volume",
     width: 720,
-    height: 1600,
+    height: 1516,
+    carousel: true,
   },
   {
     id: "logging",
+    file: "ironbuddy-workout-log.webp",
     label: "Workout Logging",
-    alt: "IronBuddy workout logging screen for a Pull day, listing exercises with sets, reps and weight and a Log workout button",
+    alt: "IronBuddy workout log: sets, reps and weight for each exercise in a full body workout, with a day note",
     width: 720,
-    height: 1600,
+    height: 1516,
+    carousel: true,
   },
   {
     id: "splits",
+    file: "ironbuddy-training-splits.webp",
     label: "Training Splits",
-    alt: "IronBuddy training splits screen with an active Push Pull Legs split and Full Body, Upper Lower and Bro Split templates",
+    alt: "IronBuddy training split planner with an active Full Body split and templates like Push/Pull/Legs, Upper/Lower and PHUL",
     width: 720,
-    height: 1600,
+    height: 1516,
+    carousel: true,
   },
   {
     id: "progress",
-    label: "Progress Tracking",
-    alt: "IronBuddy Progress tab with workout volume and per-exercise volume charts and time ranges from one week to all time",
+    file: "ironbuddy-training-volume.webp",
+    label: "Training Volume",
+    alt: "IronBuddy training volume charts: total workout volume and bench press volume over time",
     width: 720,
-    height: 1600,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "strength",
+    file: "ironbuddy-estimated-1rm-chart.webp",
+    label: "Strength (1RM)",
+    alt: "IronBuddy progressive overload tracking: estimated 1RM chart for the deadlift rising over two years",
+    width: 720,
+    height: 1516,
+    carousel: true,
   },
   {
     id: "metrics",
+    file: "ironbuddy-body-weight-tracker.webp",
     label: "Body Metrics",
-    alt: "IronBuddy body metrics charts tracking body weight and body fat percentage over time",
-    width: 720,
-    height: 1600,
+    alt: "IronBuddy body weight and body fat % tracker with six months of charts",
+    width: 573,
+    height: 1206,
+    carousel: true,
   },
   {
     id: "library",
+    file: "ironbuddy-exercise-library.webp",
     label: "Exercise Library",
-    alt: "IronBuddy exercise library with search, muscle group and equipment filters, and demonstration thumbnails for 800+ exercises",
+    alt: "IronBuddy exercise library with 873 exercises, muscle and equipment filters, and demonstration thumbnails",
     width: 720,
-    height: 1558,
+    height: 1516,
+    carousel: true,
   },
 ] as const;
+
+/** The current screenshot set (see above). */
+export const appScreenshots = screenshots.filter((shot) => shot.carousel);
+
+/** Public path of a screenshot, e.g. "/screenshots/ironbuddy-workout-log.webp". */
+export function screenshotSrc(id: ScreenshotId) {
+  const shot = screenshots.find((item) => item.id === id);
+  if (!shot) throw new Error(`Unknown screenshot: ${id}`);
+  return `/screenshots/${shot.file}`;
+}
 
 export type ScreenshotId = (typeof screenshots)[number]["id"];
 

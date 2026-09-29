@@ -149,7 +149,12 @@ for (const p of indexable) {
         need(app.offers.priceCurrency, "offers.priceCurrency is required alongside price");
         need(textOf(html).includes(app.offers.price), `offers.price ${app.offers.price} must be visible in the page text (markup has to match what visitors see)`);
       }
-      need(app?.screenshot?.length === 6, "6 screenshots");
+      need(app?.screenshot?.length >= 3, "at least 3 screenshots");
+      for (const shot of app?.screenshot ?? []) {
+        const file = path.join(out, new URL(shot.contentUrl).pathname);
+        need(fs.existsSync(file), `screenshot file exists: ${shot.contentUrl}`);
+        need(shot.width > 0 && shot.height > 0, `screenshot has width and height: ${shot.contentUrl}`);
+      }
     }
     const article = nodes.find((n) => n["@type"] === "Article");
     if (article) {

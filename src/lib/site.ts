@@ -34,7 +34,7 @@ export const siteConfig = {
   ogImageHeight: 630,
   ogImageType: "image/jpeg",
   ogImageAlt:
-    "IronBuddy offline workout tracker for Android: no subscription, yours for life, shown beside the app's home and training split screens",
+    "IronBuddy workout tracker for Android: offline gym tracker and workout log. No account, no ads, no subscription.",
   freeTrialDays,
   price,
 } as const;

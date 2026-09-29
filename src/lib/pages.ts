@@ -36,13 +36,15 @@ const PPL_ADDED = "2026-09-28";
 const ALTERNATIVES_SPLIT = "2026-09-28";
 const MORE_ALTERNATIVES = "2026-09-28";
 
+/** The current screenshot set (appScreenshots in content.ts). */
 const screenshotImages = [
-  "/screenshots/dashboard.webp",
-  "/screenshots/logging.webp",
-  "/screenshots/splits.webp",
-  "/screenshots/progress.webp",
-  "/screenshots/metrics.webp",
-  "/screenshots/library.webp",
+  "/screenshots/ironbuddy-workout-tracker-home.webp",
+  "/screenshots/ironbuddy-workout-log.webp",
+  "/screenshots/ironbuddy-training-splits.webp",
+  "/screenshots/ironbuddy-training-volume.webp",
+  "/screenshots/ironbuddy-estimated-1rm-chart.webp",
+  "/screenshots/ironbuddy-body-weight-tracker.webp",
+  "/screenshots/ironbuddy-exercise-library.webp",
 ] as const;
 
 export const pages = {
@@ -54,7 +56,7 @@ export const pages = {
     description: siteConfig.description,
     summary: "Offline Android workout tracker with no account, ads, or subscription.",
     published: LAUNCH,
-    modified: "2026-09-28",
+    modified: "2026-09-30",
     images: screenshotImages,
   },
   features: {
@@ -66,7 +68,7 @@ export const pages = {
       "IronBuddy's offline workout log: track sets, reps and weight, follow training splits, and chart progressive overload with volume and estimated 1RM.",
     summary: "Workout logging, training splits, progress charts, body metrics and the exercise library.",
     published: UPDATED,
-    modified: "2026-09-28",
+    modified: "2026-09-30",
     images: screenshotImages,
   },
   offline: {
