@@ -16,11 +16,11 @@ export const siteConfig = {
   url: "https://ironbuddy.fit",
   locale: "en_US",
   /**
-   * LAUNCH SWITCH. While false, the Google Play badges show but link nowhere, and the Play URL is left out of
-   * the structured data, because the listing is still in closed testing and returns "not found" to the public.
-   * Set to true the day the listing is public.
+   * LAUNCH SWITCH. True since the Play listing went public on 30 Sep 2026, so the Google Play badges link to the
+   * listing and the Play URL is in the structured data. Set it back to false only if the listing is ever
+   * unpublished: the badges then stop linking, so nobody lands on Play's "not found" page.
    */
-  playListingLive: false as boolean,
+  playListingLive: true as boolean,
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.ironbuddy.app",
   playStoreId: "com.ironbuddy.app",
   playStoreIntent:

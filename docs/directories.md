@@ -16,7 +16,7 @@ Create an account, then use **Add application** (top right). After it is approve
 |---|---|
 | Name | IronBuddy |
 | Website | https://ironbuddy.fit |
-| Google Play | Add https://play.google.com/store/apps/details?id=com.ironbuddy.app after the public launch |
+| Google Play | https://play.google.com/store/apps/details?id=com.ironbuddy.app |
 | Platform | Android |
 | License / pricing | Paid (one-time purchase), with a 5-day free trial. If the form offers "Freemium" or "Free trial" as separate options, pick the one closest to "free trial, then a one-time purchase". |
 | Category | Health & Fitness |
