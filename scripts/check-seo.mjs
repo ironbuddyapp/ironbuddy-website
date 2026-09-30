@@ -186,7 +186,12 @@ for (const p of indexable.concat(pages.filter((x) => x.is404))) {
     if (/^(https?:|mailto:|tel:)/.test(href)) continue;
     const [pathPart, frag] = href.split("#");
     const target = pathPart === "" ? p.urlPath : pathPart;
-    if (!known.has(target)) { if (!/\.(png|webp|svg|jpg|ico|txt|xml)$/.test(target)) warn(p.urlPath, `broken internal link: ${href}`); continue; }
+    if (!known.has(target)) {
+      // Links to files (images, llms.txt, the press kit ZIP) must point at a file that exists in the export.
+      if (/\.(png|webp|svg|jpg|ico|txt|xml|zip)$/.test(target)) { if (!fs.existsSync(path.join(out, target))) warn(p.urlPath, `link to missing file: ${href}`); }
+      else warn(p.urlPath, `broken internal link: ${href}`);
+      continue;
+    }
     if (frag && !idsByPage.get(target)?.has(frag)) warn(p.urlPath, `anchor not found: ${href}`);
   }
 }
@@ -233,6 +238,8 @@ const llms = fs.existsSync(llmsPath) ? fs.readFileSync(llmsPath, "utf8") : "";
 for (const m of llms.matchAll(/\]\((https:\/\/ironbuddy\.fit[^)]*)\)/g)) { const u = new URL(m[1]).pathname; if (!known.has(u)) warn("llms.txt", `link to missing page ${u}`); }
 const manifest = JSON.parse(fs.readFileSync(path.join(out, "manifest.webmanifest"), "utf8"));
 for (const ic of manifest.icons) if (!fs.existsSync(path.join(out, ic.src))) warn("manifest", `icon missing ${ic.src}`);
+const pressZip = path.join(out, "press", "ironbuddy-press-kit.zip");
+if (fs.existsSync(pressZip) && fs.readFileSync(pressZip).readUInt32LE(0) !== 0x04034b50) warn("press kit", "ironbuddy-press-kit.zip is not a ZIP file");
 
 // ---- report
 console.log(`Pages checked: ${indexable.length} (+404)  |  Sitemap URLs: ${locs.length}  |  Sitemap images: ${imgLocs.length}`);

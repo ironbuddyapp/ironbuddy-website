@@ -387,6 +387,7 @@ export const footerGroups = [
     title: "Company",
     links: [
       { label: pages.about.label, href: pages.about.path },
+      { label: pages.press.label, href: pages.press.path },
       { label: pages.contact.label, href: pages.contact.path },
       { label: pages.privacy.label, href: pages.privacy.path },
     ],

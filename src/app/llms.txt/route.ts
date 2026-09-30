@@ -58,6 +58,7 @@ export function GET() {
     "",
     entry(pages.faq),
     entry(pages.about),
+    entry(pages.press),
     entry(pages.contact),
     entry(pages.privacy),
     "",

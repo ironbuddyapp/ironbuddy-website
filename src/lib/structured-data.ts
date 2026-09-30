@@ -70,7 +70,7 @@ function websiteNode(): JsonLdNode {
 }
 
 /** Every entry maps to something the app or its privacy policy states. Do not add features that are not shipped. */
-const appFeatureList = [
+export const appFeatureList = [
   "Offline workout logging with sets, reps, weight and notes",
   "Training splits and templates (Push Pull Legs, Upper Lower, Full Body, custom)",
   "Estimated 1RM and training volume charts",

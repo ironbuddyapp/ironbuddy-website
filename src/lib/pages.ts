@@ -8,6 +8,7 @@ export type PageKind =
   | "guides"
   | "guide"
   | "contact"
+  | "press"
   | "legal";
 
 export type PageDef = {
@@ -35,6 +36,7 @@ const CONTACT_ADDED = "2026-09-21";
 const PPL_ADDED = "2026-09-28";
 const ALTERNATIVES_SPLIT = "2026-09-28";
 const MORE_ALTERNATIVES = "2026-09-28";
+const PRESS_ADDED = "2026-09-30";
 
 /** The current screenshot set (appScreenshots in content.ts). */
 const screenshotImages = [
@@ -204,6 +206,18 @@ export const pages = {
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
     published: UPDATED,
     modified: PPL_ADDED,
+  },
+  press: {
+    path: "/press/",
+    kind: "press",
+    label: "Press kit",
+    title: "Press Kit: App Icon, Screenshots & Fact Sheet",
+    description:
+      "Download the IronBuddy press kit: a fact sheet, ready-to-use descriptions, the app icon and screenshots of the offline workout tracker for Android.",
+    summary: "Fact sheet, ready-to-use descriptions, the app icon and screenshots for writing about IronBuddy.",
+    published: PRESS_ADDED,
+    modified: PRESS_ADDED,
+    images: ["/press/ironbuddy-app-icon-1024.png"],
   },
   guides: {
     path: "/guides/",
