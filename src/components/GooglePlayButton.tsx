@@ -16,7 +16,7 @@ export function GooglePlayButton({
   /** Set for instances below the fold so the badge does not compete with the hero image. */
   lazy?: boolean;
 }) {
-  const [href, setHref] = useState<string>(siteConfig.playStoreUrl);
+  const [href, setHref] = useState<string>(siteConfig.playStoreLinkUrl);
 
   useEffect(() => {
     const ua = navigator.userAgent;

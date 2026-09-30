@@ -37,7 +37,7 @@ export function Footer() {
                 {group.title === "Company" && siteConfig.playListingLive ? (
                   <li>
                     <a
-                      href={siteConfig.playStoreUrl}
+                      href={siteConfig.playStoreLinkUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={linkClass}

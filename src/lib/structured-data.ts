@@ -44,7 +44,12 @@ function organizationNode(): JsonLdNode {
         availableLanguage: "English",
       },
     ],
-    sameAs: [siteConfig.githubUrl, siteConfig.instagramUrl, siteConfig.tiktokUrl],
+    sameAs: [
+      siteConfig.githubUrl,
+      siteConfig.instagramUrl,
+      siteConfig.tiktokUrl,
+      ...(siteConfig.playListingLive ? [siteConfig.playDeveloperUrl] : []),
+    ],
   };
 }
 

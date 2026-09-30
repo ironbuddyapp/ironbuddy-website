@@ -7,6 +7,16 @@ const freeTrialDays = 5;
  */
 const price = { amount: "6.99", currency: "EUR", label: "€6.99" } as const;
 
+const playStoreId = "com.ironbuddy.app";
+/** The listing's canonical address, for structured data, app links and llms.txt. */
+const playStoreUrl = `https://play.google.com/store/apps/details?id=${playStoreId}`;
+/**
+ * UTM tags for the site's own Play links, so installs from this website show up in Play Console under
+ * Statistics / acquisition reports as "Tracked channels (UTM)". Play reads them from the URL-encoded `referrer`.
+ */
+const playReferrer = encodeURIComponent("utm_source=ironbuddy.fit&utm_medium=website&utm_campaign=website");
+const playStoreLinkUrl = `${playStoreUrl}&referrer=${playReferrer}`;
+
 export const siteConfig = {
   name: "IronBuddy",
   tagline: "Your lifelong gym companion.",
@@ -21,10 +31,13 @@ export const siteConfig = {
    * unpublished: the badges then stop linking, so nobody lands on Play's "not found" page.
    */
   playListingLive: true as boolean,
-  playStoreUrl: "https://play.google.com/store/apps/details?id=com.ironbuddy.app",
-  playStoreId: "com.ironbuddy.app",
-  playStoreIntent:
-    "intent://details?id=com.ironbuddy.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.ironbuddy.app;end",
+  playStoreUrl,
+  playStoreId,
+  /** What the badges and the footer link to: the listing plus the UTM tags above. */
+  playStoreLinkUrl,
+  /** Opens the Play Store app directly from in-app browsers (Instagram, TikTok, ...), with the same UTM tags. */
+  playStoreIntent: `intent://details?id=${playStoreId}&referrer=${playReferrer}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(playStoreLinkUrl)};end`,
+  playDeveloperUrl: "https://play.google.com/store/apps/developer?id=IronBuddy",
   githubUrl: "https://github.com/ironbuddyapp",
   instagramUrl: "https://www.instagram.com/ironbuddy_app/",
   tiktokUrl: "https://www.tiktok.com/@ironbuddyapp",
