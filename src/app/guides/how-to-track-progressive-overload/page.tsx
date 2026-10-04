@@ -170,14 +170,14 @@ export default function ProgressiveOverloadGuidePage() {
           </p>
         </ContentSection>
 
-        <ContentSection id="volume-and-1rm" title="Reading volume and estimated 1RM">
+        <ContentSection id="volume-and-1rm" title="Reading volume and 1RM">
           <p>
             <Strong>Training volume</Strong> is commonly calculated as sets × reps × weight. Three
             sets of 8 reps at 60 kg is 1,440 kg of volume. If volume for an exercise rises over
             several weeks while your form holds up, you are doing more work.
           </p>
           <p>
-            <Strong>Estimated 1RM</Strong> predicts the heaviest single rep you could lift, based on
+            <Strong>1RM</Strong> (one-rep max), calculated with the Epley formula, predicts the heaviest single rep you could lift, based on
             a heavier set of several reps. One widely used formula, Epley, multiplies the weight by
             (1 + reps ÷ 30), so 60 kg for 8 reps comes out at about 76 kg. IronBuddy uses Epley.
             Other apps may use other formulas, and estimates get less reliable at high reps, so
@@ -223,7 +223,7 @@ export default function ProgressiveOverloadGuidePage() {
               exercise to see its volume over time.
             </li>
             <li>
-              Open Progress, then Strength, to follow your estimated 1RM. IronBuddy works it out
+              Open Progress, then Strength, to follow your 1RM. IronBuddy works it out
               with the Epley formula from the best completed set of each workout, counting sets of
               more than 12 reps as 12.
             </li>

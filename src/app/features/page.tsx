@@ -164,17 +164,16 @@ export default function FeaturesPage() {
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="estimated-1rm" title="Estimated 1RM and personal records" shot="strength">
+          <FeatureBlock id="estimated-1rm" title="1RM and personal records" shot="strength">
             <p>
-              Strength charts your estimated one-rep max for each exercise. IronBuddy uses the Epley
-              formula, weight × (1 + reps ÷ 30), on the best completed set of each workout. Sets of
+              Strength charts your 1RM (one-rep max), calculated with the Epley formula, for each exercise. The formula is weight × (1 + reps ÷ 30), applied to the best completed set of each workout. Sets of
               more than 12 reps count as 12, where the formula stops being reliable. When you save a
               workout with a heavier weight than you have logged before for an exercise, the app
               marks it as a PR.
             </p>
             <p>
               These are the numbers most lifters use to check progressive overload: are you lifting
-              more total volume, or a heavier estimated max, than a few weeks ago? For a simple
+              more total volume, or a heavier 1RM, than a few weeks ago? For a simple
               method, read{" "}
               <TextLink href={pages.progressiveOverload.path}>how to track progressive overload</TextLink>.
             </p>
@@ -196,7 +195,7 @@ export default function FeaturesPage() {
             </p>
             <p>
               Open any exercise to see what you did last time: the date, your sets, the best set&apos;s
-              estimated 1RM, and your all-time estimated 1RM. The library works offline, like the
+              1RM, and your all-time 1RM. The library works offline, like the
               rest of the app.
             </p>
           </FeatureBlock>

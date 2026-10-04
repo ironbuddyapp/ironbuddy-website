@@ -35,7 +35,7 @@ IronBuddy is an offline workout tracker and gym log for Android. Your workouts a
 
 Plan your training with 10 built-in splits (including Push/Pull/Legs, Upper/Lower, Full Body, PHUL and PHAT) or your own, and see each week or month at a glance. Log reps and weight for every set, including drop sets, rest-pause and supersets, and add notes to any day or exercise.
 
-Progress charts show workout volume, volume per exercise, estimated 1RM (Epley formula, from your best set of each workout) and body weight and body fat. The exercise library has 800+ exercises with form demos, filtered by muscle group and equipment.
+Progress charts show workout volume, volume per exercise, 1RM (one-rep max), calculated with the Epley formula from your best set of each workout, and body weight and body fat. The exercise library has 800+ exercises with form demos, filtered by muscle group and equipment.
 
 Everything works offline. IronBuddy keeps an always-current backup file in your Downloads folder, Android can back up the app to your Google account, and you can export your data as JSON or your active split as a PDF at any time.
 
@@ -66,13 +66,13 @@ describes IronBuddy, never the other app.
 For Hevy, Strong and JEFIT:
 
 ```
-IronBuddy works fully offline with no account: your workouts, splits and body metrics stay on your phone. It has no ads and no subscription (a 5-day free trial, then a one-time purchase), with progress charts for volume and estimated 1RM, 10 built-in splits and an 800+ exercise library.
+IronBuddy works fully offline with no account: your workouts, splits and body metrics stay on your phone. It has no ads and no subscription (a 5-day free trial, then a one-time purchase), with progress charts for volume and 1RM (one-rep max), calculated with the Epley formula, 10 built-in splits and an 800+ exercise library.
 ```
 
 For FitNotes:
 
 ```
-IronBuddy is another offline, account-free Android gym log. It adds 10 built-in splits you can edit, a week and month plan view, estimated 1RM and volume charts, body weight and body fat tracking, an 800+ exercise library with form demos, and an automatic backup file in your Downloads folder.
+IronBuddy is another offline, account-free Android gym log. It adds 10 built-in splits you can edit, a week and month plan view, 1RM (one-rep max), calculated with the Epley formula, and volume charts, body weight and body fat tracking, an 800+ exercise library with form demos, and an automatic backup file in your Downloads folder.
 ```
 
 ### Screenshots

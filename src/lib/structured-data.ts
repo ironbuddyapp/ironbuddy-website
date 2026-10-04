@@ -73,7 +73,7 @@ function websiteNode(): JsonLdNode {
 export const appFeatureList = [
   "Offline workout logging with sets, reps, weight and notes",
   "Training splits and templates (Push Pull Legs, Upper Lower, Full Body, custom)",
-  "Estimated 1RM and training volume charts",
+  "1RM and training volume charts",
   "Body weight and body fat percentage tracking",
   "Exercise library with 800+ exercises and demonstrations",
   "JSON backup and export, and a PDF export of the active split",

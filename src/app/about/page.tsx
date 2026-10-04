@@ -68,7 +68,7 @@ export default function AboutPage() {
         <ContentSection id="what-it-does" title="What IronBuddy does">
           <p>
             IronBuddy helps you log sets, reps, weight, and notes for every workout, follow a
-            training split, chart training volume and estimated 1RM, and track body weight and body
+            training split, chart training volume and 1RM (one-rep max), calculated with the Epley formula, and track body weight and body
             fat percentage. An exercise library of more than 800 exercises with demonstrations helps
             you pick the right movement, and it all works offline.
           </p>

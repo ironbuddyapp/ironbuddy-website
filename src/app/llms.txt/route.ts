@@ -17,7 +17,7 @@ export function GET() {
   const body = [
     `# ${siteConfig.name}`,
     "",
-    `> IronBuddy is an offline workout tracker for Android. It logs sets, reps and weight, supports training splits, charts training volume and estimated 1RM, and tracks body weight and body fat percentage. There is no account, no ads and no subscription: the app is free to download with a ${siteConfig.freeTrialDays}-day free trial, and after the trial a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using it. Workout data is stored on the device and is not sent to IronBuddy servers.`,
+    `> IronBuddy is an offline workout tracker for Android. It logs sets, reps and weight, supports training splits, charts training volume and 1RM (one-rep max), calculated with the Epley formula, and tracks body weight and body fat percentage. There is no account, no ads and no subscription: the app is free to download with a ${siteConfig.freeTrialDays}-day free trial, and after the trial a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using it. Workout data is stored on the device and is not sent to IronBuddy servers.`,
     "",
     "Key facts:",
     "",

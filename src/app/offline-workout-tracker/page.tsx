@@ -59,7 +59,7 @@ export default function OfflineWorkoutTrackerPage() {
             <li>Logging sets, reps, weight, and notes for any workout, today or on a past date</li>
             <li>Your workout history and weekly plan</li>
             <li>Training splits and templates</li>
-            <li>Progress charts for training volume, estimated 1RM, and body metrics</li>
+            <li>Progress charts for training volume, 1RM (one-rep max), calculated with the Epley formula, and body metrics</li>
             <li>
               The exercise library, including search, muscle-group and equipment filters, and
               demonstration thumbnails

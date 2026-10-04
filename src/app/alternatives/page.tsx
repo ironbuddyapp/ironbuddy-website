@@ -143,7 +143,7 @@ export default function AlternativesPage() {
           <BulletList>
             <li>
               <TextLink href={pages.strongAlternative.path}>Strong alternative</TextLink>: tracking
-              estimated 1RM, volume and personal records
+              1RM (one-rep max), calculated with the Epley formula, plus volume and personal records
             </li>
             <li>
               <TextLink href={pages.hevyAlternative.path}>Hevy alternative</TextLink>: planning your

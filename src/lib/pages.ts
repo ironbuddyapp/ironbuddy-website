@@ -67,7 +67,7 @@ export const pages = {
     label: "Features",
     title: "Workout Log & Progressive Overload Tracker",
     description:
-      "IronBuddy's offline workout log: track sets, reps and weight, follow training splits, and chart progressive overload with volume and estimated 1RM.",
+      "IronBuddy's offline workout log: track sets, reps and weight, follow training splits, and chart progressive overload with training volume and 1RM.",
     summary: "Workout logging, training splits, progress charts, body metrics and the exercise library.",
     published: UPDATED,
     modified: "2026-09-30",
@@ -125,7 +125,7 @@ export const pages = {
     label: "Strong alternative",
     title: "Strong App Alternative: Offline 1RM & PR Tracker",
     description:
-      "Looking for a Strong app alternative on Android? IronBuddy tracks estimated 1RM, volume and PRs offline, with no account, no ads and no subscription.",
+      "Looking for a Strong app alternative on Android? IronBuddy tracks your 1RM, volume and PRs offline, with no account, no ads and no subscription.",
     summary: "IronBuddy for lifters coming from Strong: strength tracking, switching steps, and how to compare.",
     published: ALTERNATIVES_SPLIT,
     modified: ALTERNATIVES_SPLIT,
@@ -236,8 +236,8 @@ export const pages = {
     label: "How to track progressive overload",
     title: "How to Track Progressive Overload (Simple Guide)",
     description:
-      "Learn how to track progressive overload with sets, reps, weight and estimated 1RM. Includes a double progression example and a simple weekly review routine.",
-    summary: "A simple method for tracking progressive overload with sets, reps, weight, volume and estimated 1RM.",
+      "Learn how to track progressive overload with sets, reps, weight and 1RM. Includes a double progression example and a simple weekly review routine.",
+    summary: "A simple method for tracking progressive overload with sets, reps, weight, volume and 1RM.",
     published: UPDATED,
     modified: "2026-09-25",
   },

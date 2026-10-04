@@ -55,7 +55,7 @@ export const alternatives = {
     name: "Strong",
     page: pages.strongAlternative,
     heading: "Looking for a Strong alternative? Track your strength offline with IronBuddy",
-    lead: "If the numbers you care about are your estimated 1RM, your training volume and your personal records, IronBuddy charts all three on your Android phone, with no connection, no account, no ads and no subscription.",
+    lead: "If the numbers you care about are your 1RM (one-rep max), calculated with the Epley formula, your training volume and your personal records, IronBuddy charts all three on your Android phone, with no connection, no account, no ads and no subscription.",
     focus: {
       id: "tracking-strength",
       title: "How IronBuddy tracks your strength",
@@ -67,8 +67,8 @@ export const alternatives = {
           </p>
           <BulletList>
             <li>
-              <Strong>Estimated 1RM:</Strong> Progress, then Strength, charts an estimated one-rep
-              max for each exercise. IronBuddy uses the Epley formula, weight × (1 + reps ÷ 30), on
+              <Strong>1RM:</Strong> Progress, then Strength, charts the 1RM for each
+              exercise. IronBuddy uses the Epley formula, weight × (1 + reps ÷ 30), on
               the best completed set of each workout, and counts sets of more than 12 reps as 12.
             </li>
             <li>
@@ -81,7 +81,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Last time, at a glance:</Strong> open any exercise to see the date and sets of
-              your last session, that session&apos;s best estimated 1RM, and your all-time estimate.
+              your last session, that session&apos;s best 1RM, and your all-time 1RM.
             </li>
           </BulletList>
           <p>Choose a range from one week to all time.</p>
@@ -108,7 +108,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Reps count too.</Strong> The PR marker is about weight, so more reps at the same
-              weight shows up in your estimated 1RM and volume instead.
+              weight shows up in your 1RM and volume instead.
             </li>
           </BulletList>
           <p>
@@ -122,7 +122,7 @@ export const alternatives = {
       "Export your Strong history first if the app offers an export, and keep the file as an archive.",
       "Write down your current working weight and reps for each main lift. These are your starting numbers.",
       "Install IronBuddy, start the free trial, and pick the split closest to the one you run now.",
-      "Log your first week as normal. Your estimated 1RM and volume charts start from these sessions.",
+      "Log your first week as normal. Your 1RM and volume charts start from these sessions.",
     ],
     freshStart:
       "Start a fresh log with your current working weights for the main lifts, and your strength charts fill in within a few weeks.",
@@ -130,7 +130,7 @@ export const alternatives = {
       id: "personal-records",
       question: "Does IronBuddy show personal records?",
       answer:
-        "Yes. When you save a workout with a heavier weight than you have logged before for an exercise, IronBuddy marks it as a personal record. Opening an exercise also shows your all-time estimated 1RM.",
+        "Yes. When you save a workout with a heavier weight than you have logged before for an exercise, IronBuddy marks it as a personal record. Opening an exercise also shows your all-time 1RM.",
     },
   },
   hevy: {
@@ -310,7 +310,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Your history per exercise:</Strong> open an exercise to see what you did last
-              time, that session&apos;s best estimated 1RM, and your all-time estimate.
+              time, that session&apos;s best 1RM (one-rep max), calculated with the Epley formula, and your all-time 1RM.
             </li>
             <li>
               <Strong>Works offline:</Strong> the library is stored on your phone, so searching and
@@ -417,7 +417,7 @@ export const alternatives = {
             <li>
               <Strong>Log the working set first.</Strong> Its weight and reps are the numbers to
               compare week to week. IronBuddy attaches a technique to the working set and uses the
-              working set for your estimated 1RM, so the extra reps from a drop or rest-pause do not
+              working set for your 1RM (one-rep max), calculated with the Epley formula, so the extra reps from a drop or rest-pause do not
               inflate it.
             </li>
             <li>
@@ -453,7 +453,7 @@ export const alternatives = {
       id: "set-techniques",
       question: "Can I log drop sets and supersets in IronBuddy?",
       answer:
-        "Yes. You can add a drop set, rest-pause, myo-rep, cluster set, back-off set, mechanical drop, pyramid or superset to any set. IronBuddy keeps the working set's weight and reps as the numbers it uses for your estimated 1RM.",
+        "Yes. You can add a drop set, rest-pause, myo-rep, cluster set, back-off set, mechanical drop, pyramid or superset to any set. IronBuddy keeps the working set's weight and reps as the numbers it uses for your 1RM.",
     },
   },
   caliber: {
@@ -481,7 +481,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Next to your lifts:</Strong> the Strength and Volume views on the same Progress
-              tab show your estimated 1RM and training volume, so you can read body changes against
+              tab show your 1RM (one-rep max), calculated with the Epley formula, and training volume, so you can read body changes against
               strength.
             </li>
             <li>
@@ -515,7 +515,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Read weight and strength together:</Strong> the same change on the scale means
-              something different when your estimated 1RM is rising than when it is falling.
+              something different when your 1RM is rising than when it is falling.
             </li>
           </BulletList>
           <p>

@@ -40,7 +40,7 @@ export const features: Array<{
   },
   {
     title: "Progressive Overload Tracking",
-    description: "Follow estimated 1RM and training volume over time.",
+    description: "Follow 1RM and training volume over time.",
     icon: "chart",
   },
   {
@@ -110,7 +110,7 @@ export const screenshots = [
     id: "strength",
     file: "ironbuddy-estimated-1rm-chart.webp",
     label: "Strength (1RM)",
-    alt: "IronBuddy progressive overload tracking: estimated 1RM chart for the deadlift rising over two years",
+    alt: "IronBuddy progressive overload tracking: 1RM chart for the deadlift rising over two years",
     width: 720,
     height: 1516,
     carousel: true,
@@ -281,21 +281,21 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         id: "overload",
         question: "Is IronBuddy good for progressive overload tracking?",
         answer:
-          "IronBuddy records the numbers progressive overload depends on: sets, reps, and weight for every workout, plus notes. The Progress tab charts your training volume and estimated 1RM over time, from one week to all time, so you can see whether your training is trending up.",
+          "IronBuddy records the numbers progressive overload depends on: sets, reps, and weight for every workout, plus notes. The Progress tab charts your training volume and 1RM (one-rep max), calculated with the Epley formula, over time, from one week to all time, so you can see whether your training is trending up.",
         more: { href: pages.progressiveOverload.path, label: "A simple method for tracking progressive overload" },
       },
       {
         id: "estimated-1rm",
-        question: "How does IronBuddy estimate my 1RM?",
+        question: "How does IronBuddy calculate my 1RM?",
         answer:
-          "With the Epley formula: weight × (1 + reps ÷ 30). For each workout, IronBuddy uses the completed set that gives the highest estimate, and counts sets of more than 12 reps as 12, where the formula stops being reliable. Progress → Strength charts the result over time, and opening an exercise shows your all-time estimated 1RM.",
-        more: { href: `${pages.progressiveOverload.path}#volume-and-1rm`, label: "Estimated 1RM explained" },
+          "With the Epley formula: weight × (1 + reps ÷ 30). For each workout, IronBuddy uses the completed set that gives the highest estimate, and counts sets of more than 12 reps as 12, where the formula stops being reliable. Progress → Strength charts the result over time, and opening an exercise shows your all-time 1RM.",
+        more: { href: `${pages.progressiveOverload.path}#volume-and-1rm`, label: "1RM explained" },
       },
       {
         id: "what-track",
         question: "What can I track in IronBuddy?",
         answer:
-          "You can log sets, reps, weight, and notes for each workout, follow a training split, chart workout volume and estimated 1RM, and record body weight and body fat percentage. An exercise library of more than 800 exercises with demonstration thumbnails helps you find the right movement.",
+          "You can log sets, reps, weight, and notes for each workout, follow a training split, chart workout volume and 1RM, and record body weight and body fat percentage. An exercise library of more than 800 exercises with demonstration thumbnails helps you find the right movement.",
         more: { href: pages.features.path, label: "All features" },
       },
       {

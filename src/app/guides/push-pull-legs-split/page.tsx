@@ -202,7 +202,7 @@ export default function PushPullLegsGuidePage() {
               IronBuddy saves your version as your own copy.
             </li>
             <li>Open each day from the home screen, enter your reps and weight, and tap Log workout.</li>
-            <li>Check Progress to follow volume and estimated 1RM for each lift over time.</li>
+            <li>Check Progress to follow volume and 1RM (one-rep max), calculated with the Epley formula, for each lift over time.</li>
           </NumberedList>
           <p>
             {trialDetails.includes} {trialDetails.unlocks} See{" "}
