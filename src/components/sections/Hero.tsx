@@ -20,15 +20,15 @@ export function Hero() {
           {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
           <h1 className="max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Workout tracker for Android
+              Workout tracker app for Android
               <span className="sr-only">. </span>
             </span>
             <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
-              Offline gym tracker &amp; workout log.
+              Gym log &amp; workout log that works offline.
             </span>
           </h1>
           <p className="mt-2 text-sm font-semibold tracking-tight text-white/85 sm:text-base lg:mt-3 lg:text-2xl">
-            Track progressive overload. Pay once, no subscription.
+            Track progressive overload offline. Pay once, no subscription.
           </p>
 
           <ul
