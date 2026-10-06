@@ -37,6 +37,7 @@ const PPL_ADDED = "2026-09-28";
 const ALTERNATIVES_SPLIT = "2026-09-28";
 const MORE_ALTERNATIVES = "2026-09-28";
 const PRESS_ADDED = "2026-09-30";
+const COMPARISON_ADDED = "2026-10-06";
 
 /** The current screenshot set (appScreenshots in content.ts). */
 const screenshotImages = [
@@ -184,6 +185,17 @@ export const pages = {
     summary: "IronBuddy for lifters coming from Caliber: body weight and body fat tracking, switching steps, and how to compare.",
     published: MORE_ALTERNATIVES,
     modified: MORE_ALTERNATIVES,
+  },
+  comparison: {
+    path: "/workout-tracker-app-comparison/",
+    kind: "product",
+    label: "App comparison",
+    title: "Android Workout Tracker Apps Compared: Facts",
+    description:
+      "Seven Android workout tracker apps side by side: ads label, in-app purchases, declared data collection and pricing, from Google Play and official pages.",
+    summary: "IronBuddy and six popular Android workout trackers compared on Google Play facts and published prices, with sources and dates.",
+    published: COMPARISON_ADDED,
+    modified: COMPARISON_ADDED,
   },
   faq: {
     path: "/faq/",

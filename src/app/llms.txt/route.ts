@@ -46,6 +46,7 @@ export function GET() {
     entry(pages.jefitAlternative),
     entry(pages.boostcampAlternative),
     entry(pages.caliberAlternative),
+    entry(pages.comparison),
     "",
     "## Guides",
     "",

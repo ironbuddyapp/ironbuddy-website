@@ -167,6 +167,12 @@ export default function AlternativesPage() {
             </li>
           </BulletList>
           <p>
+            Want the facts side by side? The{" "}
+            <TextLink href={pages.comparison.path}>Android workout tracker comparison</TextLink> sets
+            these six apps and IronBuddy next to each other, using each app&apos;s Google Play page and
+            official pricing page.
+          </p>
+          <p>
             Strong, Hevy, FitNotes, JEFIT, Boostcamp, and Caliber are trademarks of their respective owners. IronBuddy is
             not affiliated with or endorsed by them.
           </p>

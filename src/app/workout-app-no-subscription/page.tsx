@@ -152,7 +152,7 @@ export default function NoSubscriptionPage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.features, pages.alternatives, pages.faq, pages.about]} />
+        <RelatedLinks items={[pages.comparison, pages.alternatives, pages.features, pages.faq]} />
       </PageBody>
     </main>
   );
