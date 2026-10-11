@@ -1,5 +1,5 @@
 /** Length of the free trial. Keep in sync with the privacy policy (section 4) and the Play listing. */
-const freeTrialDays = 5;
+const freeTrialDays = 7;
 
 /**
  * One-time price charged after the trial. Keep in sync with the Play listing. Google Play shows it in local

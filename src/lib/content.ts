@@ -170,14 +170,14 @@ const trial = `free trial (currently ${siteConfig.freeTrialDays} days)`;
 
 /**
  * What the free trial includes and what happens after it, in one place so every page says the same thing.
- * Deliberately no counts: the app decides which splits and exercises the trial unlocks, and that may change.
- * Source: IronBuddy app 1.0.13 (src/lib/split-locking.ts, exercise-locking.ts, routes/paywall.tsx).
+ * Source: IronBuddy app 1.0.19 (7-day trial with every feature except export, import and the local data copy;
+ * read-only afterwards; Android backup works in both).
  */
 export const trialDetails = {
-  includes: `The ${siteConfig.freeTrialDays}-day free trial includes workout logging, progress charts, body metrics and backups, with a starter selection of splits and exercises.`,
-  unlocks: `Buying IronBuddy for ${siteConfig.price.label} unlocks every split, the full library of 800+ exercises, and your own custom splits.`,
+  includes: `The ${siteConfig.freeTrialDays}-day free trial includes every feature except export, import and the local copy of your data: workout logging, progress charts, body metrics, the full library of 800+ exercises, every split and your own custom splits.`,
+  unlocks: `Buying IronBuddy for ${siteConfig.price.label} keeps everything unlocked after the trial, and adds export and import of your data and a local copy of your data kept on your phone. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on.`,
   afterTrial:
-    "If you don't buy, the app locks when the trial ends, but nothing is deleted: your data stays on your phone and you can still export it.",
+    "If you don't buy, the app becomes read-only when the trial ends: nothing is deleted and your data stays visible on your phone, but logging and editing need the purchase.",
 } as const;
 
 export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
@@ -213,7 +213,7 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
       {
         id: "subscription",
         question: "Does IronBuddy require a subscription?",
-        answer: `No. IronBuddy has no subscriptions. It is free to download and includes a ${trial}. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep using the app.`,
+        answer: `No. IronBuddy has no subscriptions. It is free to download and includes a ${trial}. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep logging and editing after the trial.`,
         more: { href: pages.noSubscription.path, label: "How pricing works" },
       },
       {
@@ -230,7 +230,7 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
       {
         id: "trial-ends",
         question: "What happens when the free trial ends?",
-        answer: `The app locks until you buy it for ${siteConfig.price.label}. Nothing is deleted: your workouts stay on your phone, and the screen shown when the trial ends has an Export my data button, so you can take a copy of your data without buying.`,
+        answer: `The app becomes read-only until you buy it for ${siteConfig.price.label}. Nothing is deleted: your workouts, splits and history stay on your phone and stay visible, but logging and editing need the purchase.`,
         more: { href: pages.noSubscription.path, label: "How pricing works" },
       },
     ],
@@ -263,7 +263,7 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         id: "transfer",
         question: "Can I back up, export, or move my data to another phone?",
         answer:
-          "Yes. You can export a JSON copy of your data (or a PDF of your active split) from the app and import a backup file on another device you own. IronBuddy can also keep an automatic backup file in your Downloads folder, which you can turn off in Settings. Nothing is uploaded to IronBuddy servers.",
+          "Yes. In the full version you can export a JSON copy of your data and import a backup file on another device you own, and IronBuddy keeps an automatic backup file in your Downloads folder (you can turn it off in Settings). A PDF of your active split can be saved or shared in any version, and Android's own backup works in any version if Google backup is on. During the free trial, Android's backup is what protects your data. Nothing is uploaded to IronBuddy servers.",
       },
       {
         id: "uninstall",

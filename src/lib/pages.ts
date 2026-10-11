@@ -91,7 +91,7 @@ export const pages = {
     label: "No subscription, no ads",
     title: "Workout Tracker App With No Subscription",
     description:
-      `IronBuddy is a workout app with no subscription and no ads. Try it free for ${siteConfig.freeTrialDays} days, then pay ${siteConfig.price.label} once to keep using it. Works offline, no account.`,
+      `IronBuddy is a workout app with no subscription and no ads. Try it free for ${siteConfig.freeTrialDays} days, then pay ${siteConfig.price.label} once to keep it all unlocked. Works offline, no account.`,
     summary: "How the free trial and one-time purchase work, and how to check any workout app for ads and subscriptions.",
     published: UPDATED,
     modified: "2026-09-28",

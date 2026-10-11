@@ -118,9 +118,7 @@ export default function LogWorkoutsGuidePage() {
             shows a simple routine.
           </p>
           <p>
-            A log is also only useful if it survives a lost phone. Keep a backup. IronBuddy can save
-            an automatic JSON backup file in your Downloads folder, and you can export a copy
-            yourself whenever you like.
+            A log is also only useful if it survives a lost phone. Keep a backup. Turn on Google backup on your phone, and in the full version IronBuddy also saves an automatic JSON backup file in your Downloads folder and lets you export a copy whenever you like.
           </p>
         </ContentSection>
 

@@ -223,9 +223,7 @@ export const alternatives = {
           </p>
           <BulletList>
             <li>
-              <Strong>Automatic backup file:</Strong> IronBuddy keeps one up-to-date file, named
-              ironbuddy-backup.json, in your phone&apos;s Download → IronBuddy folder. You can turn it
-              off in Settings.
+              <Strong>Automatic backup file:</Strong> In the full version, IronBuddy keeps one up-to-date file, named ironbuddy-backup.json, in your phone&apos;s Download → IronBuddy folder. You can turn it off in Settings.
             </li>
             <li>
               <Strong>Android backup:</Strong> when Google backup is turned on in your phone&apos;s
@@ -233,11 +231,10 @@ export const alternatives = {
               reinstall IronBuddy or move to a new phone.
             </li>
             <li>
-              <Strong>Manual export:</Strong> save or share a JSON copy of all your data whenever you
-              like, or a PDF of your active split.
+              <Strong>Manual export:</Strong> in the full version, save or share a JSON copy of all your data whenever you like. A PDF of your active split is available in any version.
             </li>
             <li>
-              <Strong>Restore with an undo:</Strong> import a backup file from Settings. IronBuddy
+              <Strong>Restore with an undo:</Strong> in the full version, import a backup file from Settings. IronBuddy
               keeps a copy of your data from just before the import, so you can undo it.
             </li>
           </BulletList>

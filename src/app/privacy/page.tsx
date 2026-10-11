@@ -116,7 +116,7 @@ export default function PrivacyPage() {
             <li>We do not sell personal data.</li>
             <li>The App does not include ads or third-party analytics SDKs.</li>
             <li>
-              IronBuddy is free to download. It includes a 7-day free trial with full access. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
+              IronBuddy is free to download. It includes a 7-day free trial with every feature except export and import of your data and the local copy kept in Download/IronBuddy. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
               Google Play (see section 4).
             </li>
             <li>
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
 
         <ContentSection id="purchases" title="4. Purchases and payment processing">
           <p>
-            IronBuddy is free to download and use for a free trial period (currently 7 days), during which the whole app is available. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
+            IronBuddy is free to download and use for a free trial period (currently 7 days), during which every feature is available except export and import of your data and the local copy kept in Download/IronBuddy. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
             subscriptions. The purchase is made and processed entirely by Google Play
             using Google Play Billing. The App receives from Google Play only confirmation that the
             purchase exists (the product identifier and a purchase token) and stores it on your

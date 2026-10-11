@@ -88,7 +88,7 @@ export default function FeaturesPage() {
                 { term: "Ads", detail: "None." },
                 {
                   term: "Pricing",
-                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} unlocks everything and is required to keep using the app. No subscription.`,
+                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
                 },
                 {
                   term: "Your data",
@@ -220,9 +220,7 @@ export default function FeaturesPage() {
                   <TextLink href={pages.privacyFocused.path}>what IronBuddy stores and where</TextLink>.
                 </li>
                 <li>
-                  <Strong>Backups you control:</Strong> an automatic JSON backup file in your
-                  Downloads folder (you can turn it off in Settings), manual JSON export, and import
-                  with an undo copy kept from just before the import.
+                  <Strong>Backups you control:</Strong> in the full version, an automatic JSON backup file in your Downloads folder (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.
                 </li>
                 <li>
                   <Strong>Reset All Data:</Strong> clears what IronBuddy stores on the device.

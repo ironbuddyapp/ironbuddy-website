@@ -24,7 +24,7 @@ export function CtaBanner({
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
           {children ??
-            `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, pay ${siteConfig.price.label} once to keep using IronBuddy. No account, no ads, no subscription.`}
+            `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, pay ${siteConfig.price.label} once to keep it all unlocked. No account, no ads, no subscription.`}
         </p>
         <div className="mt-7 flex justify-center">
           <GooglePlayButton lazy />

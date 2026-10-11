@@ -22,7 +22,7 @@ export function Download() {
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-lg">
                 Free to download with a {siteConfig.freeTrialDays}-day free trial. After that, pay{" "}
-                {siteConfig.price.label} once to keep using IronBuddy, with no subscription. Your
+                {siteConfig.price.label} once to keep it all unlocked, with no subscription. Your
                 workouts are stored on your phone, ready every time you walk into the gym.
               </p>
               <div className="mt-8 flex justify-center">

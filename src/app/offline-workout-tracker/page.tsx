@@ -23,7 +23,7 @@ const faqs: Faq[] = [
     id: "sync",
     question: "Does IronBuddy sync between devices?",
     answer:
-      "No. IronBuddy does not operate a cloud sync service. To move your log to another device you own, export a backup file and import it there.",
+      "No. IronBuddy does not operate a cloud sync service. To move your log to another device you own, use the full version to export a backup file and import it there.",
   },
   {
     id: "library-offline",
@@ -125,15 +125,14 @@ export default function OfflineWorkoutTrackerPage() {
 
         <ContentSection id="backups" title="Keep your offline log safe">
           <p>
-            Because your workouts are stored on your device, backups matter. IronBuddy gives you
-            three layers:
+            Because your workouts are stored on your device, backups matter. IronBuddy gives you three layers (the first and third are part of the full version):
           </p>
           <BulletList>
             <li>
               <Strong>An automatic backup file:</Strong> each time your data changes, IronBuddy saves
               an up-to-date JSON copy in your Downloads folder
               (Download/IronBuddy/ironbuddy-backup.json). You can turn this off in Settings, under
-              Backup &amp; Data.
+              Data → Backup.
             </li>
             <li>
               <Strong>Android Auto Backup:</Strong> if Google backup is turned on for your phone,

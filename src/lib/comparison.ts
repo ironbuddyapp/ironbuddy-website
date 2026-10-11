@@ -48,7 +48,7 @@ export const comparedApps: ComparedApp[] = [
       lastUpdated: "30 Sep 2026",
     },
     pricing: {
-      text: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time purchase of ${siteConfig.price.label} is required to keep using the app. No subscription.`,
+      text: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time purchase of ${siteConfig.price.label} is required to keep logging and editing. No subscription.`,
       sources: [{ label: "IronBuddy on Google Play", href: siteConfig.playStoreUrl }],
     },
   },

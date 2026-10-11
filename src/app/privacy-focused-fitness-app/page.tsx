@@ -100,8 +100,7 @@ export default function PrivacyFocusedPage() {
           </p>
           <BulletList>
             <li>
-              <Strong>An automatic backup file</Strong> in your Downloads folder, updated whenever
-              your data changes. You can turn it off in Settings.
+              <Strong>An automatic backup file</Strong> in your Downloads folder, updated whenever your data changes (full version only). You can turn it off in Settings.
             </li>
             <li>
               <Strong>Android Auto Backup</Strong> to your Google account, if Google backup is on

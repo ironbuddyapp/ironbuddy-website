@@ -43,7 +43,7 @@ const criteria = [
   {
     check: "Can you export your history?",
     ironbuddy:
-      "Yes: a JSON copy of your data, a PDF of your active split, and an automatic backup file.",
+      "Yes, in the full version: a JSON copy of your data and an automatic backup file. A PDF of your active split is available in any version.",
     how: "Look in the app's settings for export or backup options before you log months of data.",
   },
 ];
@@ -58,7 +58,7 @@ const faqs: Faq[] = [
   {
     id: "try-first",
     question: "Can I try IronBuddy before paying?",
-    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) with a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} unlocks everything and is required to keep using it.`,
+    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing.`,
   },
 ];
 

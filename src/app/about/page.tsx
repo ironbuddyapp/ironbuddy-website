@@ -41,7 +41,7 @@ export default function AboutPage() {
             { term: "Android package", detail: <Code>{siteConfig.playStoreId}</Code> },
             {
               term: "Pricing",
-              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes a starter selection of splits and exercises. After the trial, a one-time in-app purchase of ${siteConfig.price.label} unlocks everything and is required to keep using the app. No subscription.`,
+              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
             },
             { term: "Ads and analytics", detail: "No ads and no third-party analytics SDKs." },
             { term: "Account", detail: "None. There is no sign-up or sign-in." },
@@ -83,8 +83,7 @@ export default function AboutPage() {
             Your workouts, body metrics, notes, and settings are stored on your device. IronBuddy
             has no account system and does not operate a cloud sync service, so your training data
             is not sent to IronBuddy servers. Copies can exist only in ways you control or Android
-            provides: an automatic backup file, Android Auto Backup if you have Google backup
-            turned on, and files you export or share.
+            provides: Android Auto Backup if you have Google backup turned on and, in the full version, an automatic backup file and files you export or share.
           </p>
           <p>
             Read the plain-language overview,{" "}
@@ -96,8 +95,7 @@ export default function AboutPage() {
         <ContentSection id="how-it-is-paid-for" title="How IronBuddy is priced">
           <p>
             IronBuddy has no ads and no subscriptions. It is free to download with a free trial,
-            and after the trial a one-time in-app purchase of {siteConfig.price.label} through
-            Google Play is required to keep using the app. Details are on the{" "}
+            and after the trial a one-time in-app purchase of {siteConfig.price.label} through Google Play is required to keep logging and editing after the trial. Details are on the{" "}
             <TextLink href={pages.noSubscription.path}>no subscription, no ads</TextLink> page.
           </p>
         </ContentSection>
