@@ -296,7 +296,7 @@ export const pages = {
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
     // Matches the "Last updated" date in the policy repo.
-    modified: "2026-09-21",
+    modified: "2026-10-11",
   },
 } as const satisfies Record<string, PageDef>;
 

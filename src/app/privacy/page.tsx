@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata(pages.privacy);
 
 /*
  * The policy text below is ported verbatim from the source of truth:
- * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, commit 20f0423, last updated 21 September 2026).
+ * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 11 October 2026).
  * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
  */
 
@@ -116,15 +116,13 @@ export default function PrivacyPage() {
             <li>We do not sell personal data.</li>
             <li>The App does not include ads or third-party analytics SDKs.</li>
             <li>
-              IronBuddy is free to download. It includes a free trial, and after the trial a one-time
-              in-app purchase is required to keep using the app. The purchase is handled entirely by
+              IronBuddy is free to download. It includes a 7-day free trial with full access. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
               Google Play (see section 4).
             </li>
             <li>
               Copies of your data can exist outside the App’s private storage in three ways, all
-              explained in section 7: an automatic backup file in Download/IronBuddy on your device;
-              Android’s own backup to your Google account, if Google backup is turned on; and files
-              you choose to export or share.
+              explained in section 7: an automatic backup file in Download/IronBuddy on your device (full version only);
+              Android’s own backup to your Google account, if Google backup is turned on; and files you choose to export or share (full version only).
             </li>
           </BulletList>
         </ContentSection>
@@ -180,8 +178,7 @@ export default function PrivacyPage() {
 
         <ContentSection id="purchases" title="4. Purchases and payment processing">
           <p>
-            IronBuddy is free to download and use for a free trial period (currently 5 days). After
-            the trial, a one-time in-app purchase is required to keep using the app; there are no
+            IronBuddy is free to download and use for a free trial period (currently 7 days), during which the whole app is available. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
             subscriptions. The purchase is made and processed entirely by Google Play
             using Google Play Billing. The App receives from Google Play only confirmation that the
             purchase exists (the product identifier and a purchase token) and stores it on your
@@ -220,12 +217,10 @@ export default function PrivacyPage() {
           <p>Copies of your data can exist in these ways:</p>
           <BulletList>
             <li>
-              <Strong>Automatic backup file (on your device):</Strong> each time your data changes,
-              the App saves one up-to-date JSON copy of it at
+              <Strong>Automatic backup file (on your device):</Strong> in the full version, each time your data changes, the App saves one up-to-date JSON copy of it at
               Download/IronBuddy/ironbuddy-backup.json, replacing the previous copy — the App does
               not keep numbered copies. The file stays on your device; it can be read by you and by
-              other apps you allow to access your files. You can turn this off in Settings → Backup
-              &amp; Data. After reinstalling the App, Android may ask you to choose the IronBuddy
+              other apps you allow to access your files. You can turn this off in Settings → Data → Backup. After reinstalling the App, Android may ask you to choose the IronBuddy
               folder once so the App can replace the file left by the earlier installation; the App
               uses only the folder you choose.
             </li>
@@ -240,11 +235,10 @@ export default function PrivacyPage() {
               Backup settings.
             </li>
             <li>
-              <Strong>Export a copy / Share:</Strong> the system share sheet for a JSON copy of your
-              data or a PDF of your active split; you choose where it goes.
+              <Strong>Export a copy / Share:</Strong> in the full version, the system share sheet for a JSON copy of your data; you choose where it goes. A PDF of your active split can be saved or shared in any version.
             </li>
             <li>
-              <Strong>Import / restore:</Strong> you may choose a backup file to load into the App.
+              <Strong>Import / restore:</Strong> in the full version, you may choose a backup file to load into the App.
               The App keeps one copy of your data from just before an import inside the App so you
               can undo it.
             </li>
@@ -256,6 +250,7 @@ export default function PrivacyPage() {
             does not automatically delete files already saved in Downloads or a backup stored in
             your Google account.
           </p>
+          <p>The backup file in Download → IronBuddy and export of your data are available in the full version. During the free trial, your data is protected only by Android’s own backup, if you turn it on.</p>
         </ContentSection>
 
         <ContentSection id="transmission" title="8. Data handling and transmission">
