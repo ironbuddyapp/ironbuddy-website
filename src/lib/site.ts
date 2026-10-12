@@ -38,6 +38,8 @@ export const siteConfig = {
   /** Opens the Play Store app directly from in-app browsers (Instagram, TikTok, ...), with the same UTM tags. */
   playStoreIntent: `intent://details?id=${playStoreId}&referrer=${playReferrer}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(playStoreLinkUrl)};end`,
   playDeveloperUrl: "https://play.google.com/store/apps/developer?id=IronBuddy",
+  /** GoatCounter endpoint for the website's page view counts (the app has no analytics). */
+  goatcounterUrl: "https://ironbuddy.goatcounter.com/count",
   githubUrl: "https://github.com/ironbuddyapp",
   instagramUrl: "https://www.instagram.com/ironbuddy_app/",
   tiktokUrl: "https://www.tiktok.com/@ironbuddyapp",

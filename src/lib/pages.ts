@@ -295,8 +295,9 @@ export const pages = {
       "IronBuddy's privacy policy: workout data is stored on your device. No account, no ads, no third-party analytics SDKs, and a one-time purchase via Google Play.",
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
-    // Matches the "Last updated" date in the policy repo.
-    modified: "2026-10-11",
+    // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
+    // it adds the website-only GoatCounter note, which is not part of the app policy.
+    modified: "2026-10-12",
   },
 } as const satisfies Record<string, PageDef>;
 

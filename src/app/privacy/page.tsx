@@ -20,6 +20,9 @@ export const metadata: Metadata = pageMetadata(pages.privacy);
  * The policy text below is ported verbatim from the source of truth:
  * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 11 October 2026).
  * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
+ *
+ * Exception: the notes about GoatCounter (summary, section 6 and section 13) are about this website only and are
+ * not in the policy repo, because the app itself has no analytics.
  */
 
 const googlePrivacyUrl = "https://policies.google.com/privacy";
@@ -116,6 +119,10 @@ export default function PrivacyPage() {
             <li>We do not sell personal data.</li>
             <li>The App does not include ads or third-party analytics SDKs.</li>
             <li>
+              This website, ironbuddy.fit (not the App), uses GoatCounter to count page views and
+              referrers, without cookies and without storing IP addresses (see section 13).
+            </li>
+            <li>
               IronBuddy is free to download. It includes a 7-day free trial with every feature except export and import of your data and the local copy kept in Download/IronBuddy. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
               Google Play (see section 4).
             </li>
@@ -211,6 +218,10 @@ export default function PrivacyPage() {
             <li>Receive your payment card or billing details (these stay with Google Play)</li>
             <li>Access your contacts, precise location, microphone, or camera</li>
           </BulletList>
+          <p>
+            This list is about the App. The website ironbuddy.fit uses GoatCounter to count page
+            views and referrers, as described in section 13.
+          </p>
         </ContentSection>
 
         <ContentSection id="backups" title="7. Backups, exports, and sharing">
@@ -340,6 +351,15 @@ export default function PrivacyPage() {
             through other apps, make a purchase through Google Play, or use Android’s backup, those
             services are governed by their own terms and privacy policies. IronBuddy does not
             control them.
+          </p>
+          <p>
+            <Strong>Website analytics:</Strong> this website, ironbuddy.fit, uses GoatCounter to count
+            page views and referrers (the site a visitor came from, including a source tag in the
+            link, such as utm_source). GoatCounter does not use cookies or store anything in your
+            browser, and does not store IP addresses. It records the page, the referrer, and general
+            details such as browser, operating system, screen width and country. This applies to the
+            website only: the App contains no analytics. See{" "}
+            <TextLink href="https://www.goatcounter.com/help/privacy">GoatCounter&apos;s privacy policy</TextLink>.
           </p>
         </ContentSection>
 

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
 import { Footer } from "@/components/Footer";
+import { GoatCounter } from "@/components/GoatCounter";
 import { Header } from "@/components/Header";
 import { ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -92,6 +93,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <GoatCounter />
       </body>
     </html>
   );
