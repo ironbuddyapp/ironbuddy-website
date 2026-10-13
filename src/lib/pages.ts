@@ -53,6 +53,10 @@ const screenshotImages = [
   "/screenshots/ironbuddy-muscle-balance.webp",
   "/screenshots/ironbuddy-workout-summary.webp",
   "/screenshots/ironbuddy-share-card.webp",
+  "/screenshots/ironbuddy-exercise-page.webp",
+  "/screenshots/ironbuddy-customizable-home.webp",
+  "/screenshots/ironbuddy-accent-colors.webp",
+  "/screenshots/ironbuddy-offline-data.webp",
 ] as const;
 
 export const pages = {

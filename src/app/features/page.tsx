@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { ContentSection, BulletList, Strong, TextLink } from "@/components/content";
+import { BulletList, Strong, TextLink } from "@/components/content";
 import { CtaBanner, HeroCta } from "@/components/CtaBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { KeyFacts } from "@/components/KeyFacts";
@@ -132,21 +132,29 @@ export default function FeaturesPage() {
               muscles you worked this week on a body map, your last workout, an exercise chart, personal
               records, workout counts, body weight, Muscle Balance and volume per muscle.
             </p>
-            <p>
-              In the full version Home is customizable: drag cards into your own order, resize them by
-              dragging a corner, and add or remove cards.
-            </p>
+            <p>In the full version you arrange Home yourself (see below).</p>
           </FeatureBlock>
 
-          <FeatureBlock id="muscle-balance" title="Muscle Balance and muscles worked" shot="balance">
+          <FeatureBlock id="customizable-home" title="A Home you arrange yourself (full version)" shot="customise">
+            <p>
+              Tap Customise, or hold a card, to arrange Home your way: drag a card to move it, drag its
+              corner handle to make it small, wide, tall or large, remove the cards you don&apos;t need
+              and add others, such as a chart for the exercise you care about most. A dashed outline
+              shows where a card will land and at what size.
+            </p>
+            <p>Every card shows more as it gets bigger, and Reset puts the default cards back.</p>
+          </FeatureBlock>
+
+          <FeatureBlock id="muscle-balance" title="Muscle Balance and muscles worked" shot="balance" flip>
             <p>
               Muscle Balance shows your working sets this week for six body areas (chest, shoulders,
               arms, core, legs and back) against last week, and lists the areas you have not trained
               yet. Each set counts for the main muscle of the exercise.
             </p>
             <p>
-              Open any exercise to see its target muscles on a front and back body map, primary muscles
-              solid and secondary ones faded.
+              On Home, Muscles worked lights up every muscle you trained this week on a front and back
+              body map. Open any exercise to see its target muscles, primary muscles solid and secondary
+              ones faded.
             </p>
           </FeatureBlock>
 
@@ -234,24 +242,31 @@ export default function FeaturesPage() {
             </p>
             <p>
               Sort exercises A–Z or by the ones you did most recently, which also appear in a Recent
-              section with when you last did them. Open any exercise to see your last workout (sets,
-              best set and its 1RM), your records and the muscles it targets. The library works
-              offline, like the rest of the app.
+              section with when you last did them. The library works offline, like the rest of the app.
             </p>
           </FeatureBlock>
 
-          <ContentSection id="make-it-yours" title="Make it yours" className="max-w-3xl">
-            <p className="text-[15px] leading-relaxed text-muted sm:text-base">
-              Light, dark or follow your phone&apos;s theme. In the full version, pick one of seven accent
-              colors. Settings has a search box that finds any setting.
+          <FeatureBlock id="exercise-page" title="Exercise pages: form, last workout and records" shot="exercise" flip>
+            <p>
+              Open any exercise, from the library, your split or a workout, to see its demonstration,
+              your last workout (sets, best set and its estimated 1RM) and your records: heaviest
+              weight, most reps, best session volume and best estimated 1RM, each with its date.
             </p>
-          </ContentSection>
+            <p>
+              Below them, the muscles the exercise targets on a front and back body map, and written
+              cues for good form.
+            </p>
+          </FeatureBlock>
 
-          <ContentSection
-            id="your-data"
-            title="Your data: offline, private, and portable"
-            className="max-w-3xl"
-          >
+          <FeatureBlock id="make-it-yours" title="Make it yours" shot="colors">
+            <p>
+              Light, dark or follow your phone&apos;s theme. In the full version, pick your accent color:
+              it recolors buttons, charts, the body map and highlights, in light and dark theme.
+            </p>
+            <p>Settings has a search box that finds any setting, such as &ldquo;theme&rdquo; or &ldquo;backup&rdquo;.</p>
+          </FeatureBlock>
+
+          <FeatureBlock id="your-data" title="Your data: offline, private, and portable" shot="data" flip>
               <BulletList>
                 <li>
                   <Strong>Offline:</Strong> logging, history, and the exercise library work without a
@@ -273,7 +288,7 @@ export default function FeaturesPage() {
                   <Strong>Reset All Data:</Strong> clears what IronBuddy stores on the device.
                 </li>
             </BulletList>
-          </ContentSection>
+          </FeatureBlock>
 
           <CtaBanner />
 

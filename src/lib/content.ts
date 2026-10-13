@@ -79,7 +79,7 @@ export const features: Array<{
 ];
 
 /**
- * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0 with sample data). `carousel: true`
+ * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0.1 with sample data). `carousel: true`
  * marks the current set: it drives the home page carousel, the app's structured data and the image sitemap.
  * Keep the array in carousel order.
  *
@@ -110,7 +110,7 @@ export const screenshots = [
     id: "splits",
     file: "ironbuddy-training-splits.webp",
     label: "Training Splits",
-    alt: "IronBuddy training split planner with an active Full Body split and templates like Push/Pull/Legs, Upper/Lower and PHUL",
+    alt: "IronBuddy training split planner: Push/Pull/Legs (3×) active among presets like Full Body 3× and Upper/Lower, with filters",
     width: 720,
     height: 1516,
     carousel: true,
@@ -119,7 +119,7 @@ export const screenshots = [
     id: "progress",
     file: "ironbuddy-training-volume.webp",
     label: "Training Volume",
-    alt: "IronBuddy training volume charts: total workout volume and bench press volume over time",
+    alt: "IronBuddy training volume chart: total volume per workout over 12 weeks and the average per workout",
     width: 720,
     height: 1516,
     carousel: true,
@@ -128,7 +128,7 @@ export const screenshots = [
     id: "strength",
     file: "ironbuddy-estimated-1rm-chart.webp",
     label: "1RM Chart",
-    alt: "IronBuddy progressive overload tracking: 1RM chart for the deadlift rising over two years",
+    alt: "IronBuddy progressive overload tracking: hack squat estimated 1RM chart, up 35 kg since the first session",
     width: 720,
     height: 1516,
     carousel: true,
@@ -174,6 +174,42 @@ export const screenshots = [
     file: "ironbuddy-share-card.webp",
     label: "Share Cards",
     alt: "IronBuddy share card: a new hack squat personal record as an image to share",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "exercise",
+    file: "ironbuddy-exercise-page.webp",
+    label: "Exercise Page",
+    alt: "IronBuddy exercise page for the leverage chest press: form demo, last workout and personal records",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "customise",
+    file: "ironbuddy-customizable-home.webp",
+    label: "Customizable Home",
+    alt: "IronBuddy customizable home screen: cards with remove and resize handles, Add, Reset and Done",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "colors",
+    file: "ironbuddy-accent-colors.webp",
+    label: "Accent Colors",
+    alt: "IronBuddy appearance settings: dark theme and accent colors, with Gold picked and saved",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "data",
+    file: "ironbuddy-offline-data.webp",
+    label: "Your Data",
+    alt: "IronBuddy data settings: Android backup, JSON export and import, undo import and a split plan PDF",
     width: 720,
     height: 1516,
     carousel: true,
