@@ -79,7 +79,7 @@ export const features: Array<{
 ];
 
 /**
- * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0.1 with sample data). `carousel: true`
+ * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0.2 with sample data). `carousel: true`
  * marks the current set: it drives the home page carousel, the app's structured data and the image sitemap.
  * Keep the array in carousel order.
  *
