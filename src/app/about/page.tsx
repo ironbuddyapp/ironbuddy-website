@@ -41,7 +41,7 @@ export default function AboutPage() {
             { term: "Android package", detail: <Code>{siteConfig.playStoreId}</Code> },
             {
               term: "Pricing",
-              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
             },
             { term: "Ads and analytics", detail: "No ads and no third-party analytics SDKs." },
             { term: "Account", detail: "None. There is no sign-up or sign-in." },

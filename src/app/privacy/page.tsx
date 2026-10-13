@@ -123,7 +123,7 @@ export default function PrivacyPage() {
               referrers, without cookies and without storing IP addresses (see section 13).
             </li>
             <li>
-              IronBuddy is free to download. It includes a 7-day free trial with every feature except export and import of your data and the local copy kept in Download/IronBuddy. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
+              IronBuddy is free to download and includes a 7-day free trial. During the trial you can log, plan and track everything. These come with the full version: exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home cards, and keeping an accent color; during the trial you can try a color, but it isn’t saved). Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
               Google Play (see section 4).
             </li>
             <li>
@@ -165,7 +165,9 @@ export default function PrivacyPage() {
             </li>
             <li>
               <Strong>App settings:</Strong> preferences such as theme, units, and whether the
-              automatic backup file is turned on.
+              automatic backup file is turned on; in the full version, also your customizations: the
+              layout and sizes of your Home cards and your accent color. They stay on your device and
+              are included when you export a copy.
             </li>
             <li>
               <Strong>Purchase and trial status:</Strong> the date your free trial started and
@@ -185,7 +187,7 @@ export default function PrivacyPage() {
 
         <ContentSection id="purchases" title="4. Purchases and payment processing">
           <p>
-            IronBuddy is free to download and use for a free trial period (currently 7 days), during which every feature is available except export and import of your data and the local copy kept in Download/IronBuddy. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
+            IronBuddy is free to download and use for a free trial period (currently 7 days), during which you can log, plan and track everything. Exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home cards, and keeping an accent color) come with the full version. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
             subscriptions. The purchase is made and processed entirely by Google Play
             using Google Play Billing. The App receives from Google Play only confirmation that the
             purchase exists (the product identifier and a purchase token) and stores it on your
@@ -247,6 +249,9 @@ export default function PrivacyPage() {
             </li>
             <li>
               <Strong>Export a copy / Share:</Strong> in the full version, the system share sheet for a JSON copy of your data; you choose where it goes. A PDF of your active split can be saved or shared in any version.
+            </li>
+            <li>
+              <Strong>Share images:</Strong> in the full version, an image of a workout, a record or a chart, made on your device. You choose to share it through the system share sheet or save it to Pictures/IronBuddy.
             </li>
             <li>
               <Strong>Import / restore:</Strong> in the full version, you may choose a backup file to load into the App.
@@ -313,8 +318,8 @@ export default function PrivacyPage() {
               <Strong>Uninstall:</Strong> uninstalling removes the App’s private storage.
             </li>
             <li>
-              <Strong>Backup files:</Strong> the automatic backup file and any JSON or PDF files you
-              saved under Downloads (or shared elsewhere) are not removed by uninstalling or by
+              <Strong>Backup files:</Strong> the automatic backup file, any JSON or PDF files you
+              saved under Downloads, and images saved under Pictures (or shared elsewhere) are not removed by uninstalling or by
               Reset All Data; delete them manually if you no longer want those copies.
             </li>
             <li>

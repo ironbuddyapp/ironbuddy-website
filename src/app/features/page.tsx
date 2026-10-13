@@ -88,7 +88,7 @@ export default function FeaturesPage() {
                 { term: "Ads", detail: "None." },
                 {
                   term: "Pricing",
-                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
                 },
                 {
                   term: "Your data",
@@ -120,16 +120,33 @@ export default function FeaturesPage() {
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="weekly-view" title="Your week at a glance" shot="dashboard" flip>
+          <FeatureBlock id="weekly-view" title="Home: your week and your cards" shot="dashboard" flip>
             <p>
               The home screen shows your active split with a progress line for the week (for example,
-              1 of 3 workouts logged) and each training day&apos;s status: full, partial, or missed.
-              Switch between a week and a month view, see how many workouts you have logged this week
-              and in total, and jump into your last workout, which is summarized with its total
-              volume.
+              2 of 3 workouts logged), each day&apos;s status (full, partial or missed) and how many
+              workouts you have logged this week and in total. Every workout counts, planned or not.
+              Switch between a week and a month view.
             </p>
             <p>
-              Shortcuts take you straight to your training splits and to the Exercise Library.
+              Below it, swipe between three pages of cards that fit the screen without scrolling: the
+              muscles you worked this week on a body map, your last workout, an exercise chart, personal
+              records, workout counts, body weight, Muscle Balance and volume per muscle.
+            </p>
+            <p>
+              In the full version Home is customizable: drag cards into your own order, resize them by
+              dragging a corner, and add or remove cards.
+            </p>
+          </FeatureBlock>
+
+          <FeatureBlock id="muscle-balance" title="Muscle Balance and muscles worked" shot="balance">
+            <p>
+              Muscle Balance shows your working sets this week for six body areas (chest, shoulders,
+              arms, core, legs and back) against last week, and lists the areas you have not trained
+              yet. Each set counts for the main muscle of the exercise.
+            </p>
+            <p>
+              Open any exercise to see its target muscles on a front and back body map, primary muscles
+              solid and secondary ones faded.
             </p>
           </FeatureBlock>
 
@@ -140,6 +157,10 @@ export default function FeaturesPage() {
               5/3/1 (BBB) and Push/Pull (2×). Make one active, add or remove days, and change the
               exercises on any day.
             </p>
+            <p>
+              Your own splits and the templates are listed separately, and the templates can be filtered
+              by days a week, style and level.
+            </p>
             <p>You can also export your active split as a PDF.</p>
             <p>
               Running PPL? Read{" "}
@@ -149,33 +170,51 @@ export default function FeaturesPage() {
 
           <FeatureBlock
             id="progress-tracking"
-            title="Training volume: total and per exercise"
+            title="Progress charts"
             shot="progress"
             flip
           >
             <p>
-              The Progress tab has three views: Volume, Strength, and Body. Volume shows your total
-              training volume and the average per workout, plus a chart for any single exercise, so
-              you can see whether you are doing more work over time.
+              The Progress tab has three views: Workouts, Exercises and Body. Workouts shows your total
+              training volume and the average per workout. Exercises charts one exercise at a time: best
+              weight, 1RM, weight against reps, volume or reps. Body charts your weight and body fat.
             </p>
             <p>
-              Choose a range from one week to all time. With months or years of history, the charts
-              group sessions into weeks or months, so the trend stays readable.
+              Every chart shows its headline number and how it changed, a range from one week to all
+              time, and a full-screen view. With months or years of history, the charts group sessions
+              into weeks or months, so the trend stays readable.
             </p>
           </FeatureBlock>
 
           <FeatureBlock id="estimated-1rm" title="1RM and personal records" shot="strength">
             <p>
-              Strength charts your 1RM (one-rep max), calculated with the Epley formula, for each exercise. The formula is weight × (1 + reps ÷ 30), applied to the best completed set of each workout. Sets of
+              The Exercises view charts your 1RM (one-rep max), calculated with the Epley formula, for each exercise. The formula is weight × (1 + reps ÷ 30), applied to the best completed set of each workout. Sets of
               more than 12 reps count as 12, where the formula stops being reliable. When you save a
               workout with a heavier weight than you have logged before for an exercise, the app
-              marks it as a PR.
+              marks it as a PR. Each exercise also keeps its records: heaviest weight, most reps, best
+              session volume and best estimated 1RM, with the date of each.
             </p>
             <p>
               These are the numbers most lifters use to check progressive overload: are you lifting
               more total volume, or a heavier 1RM, than a few weeks ago? For a simple
               method, read{" "}
               <TextLink href={pages.progressiveOverload.path}>how to track progressive overload</TextLink>.
+            </p>
+          </FeatureBlock>
+
+          <FeatureBlock id="workout-summary" title="Workout summary" shot="summary" flip>
+            <p>
+              Open a workout in History to see each exercise against last time (+2.5 kg, +2 reps, same
+              as last time, or first time), a PR marker on a new record, the muscles you worked and the
+              volume per muscle.
+            </p>
+          </FeatureBlock>
+
+          <FeatureBlock id="share-cards" title="Share cards (full version)" shot="share">
+            <p>
+              Turn a workout, a personal record or a progress chart into an image and share it with
+              Android&apos;s share sheet, or save it to your phone. The image is made on your phone;
+              nothing is uploaded.
             </p>
           </FeatureBlock>
 
@@ -194,11 +233,19 @@ export default function FeaturesPage() {
               more), and see a demonstration thumbnail for each one.
             </p>
             <p>
-              Open any exercise to see what you did last time: the date, your sets, the best set&apos;s
-              1RM, and your all-time 1RM. The library works offline, like the
-              rest of the app.
+              Sort exercises A–Z or by the ones you did most recently, which also appear in a Recent
+              section with when you last did them. Open any exercise to see your last workout (sets,
+              best set and its 1RM), your records and the muscles it targets. The library works
+              offline, like the rest of the app.
             </p>
           </FeatureBlock>
+
+          <ContentSection id="make-it-yours" title="Make it yours" className="max-w-3xl">
+            <p className="text-[15px] leading-relaxed text-muted sm:text-base">
+              Light, dark or follow your phone&apos;s theme. In the full version, pick one of seven accent
+              colors. Settings has a search box that finds any setting.
+            </p>
+          </ContentSection>
 
           <ContentSection
             id="your-data"

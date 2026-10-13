@@ -73,10 +73,15 @@ function websiteNode(): JsonLdNode {
 export const appFeatureList = [
   "Offline workout logging with sets, reps, weight and notes",
   "Training splits and templates (Push Pull Legs, Upper Lower, Full Body, custom)",
-  "1RM and training volume charts",
+  "1RM, best weight and training volume charts",
+  "Muscles worked body map and weekly Muscle Balance",
+  "Workout summary with changes against last time and personal records",
   "Body weight and body fat percentage tracking",
   "Exercise library with 800+ exercises and demonstrations",
   "JSON backup and export (full version), and a PDF export of the active split",
+  "Customizable Home: cards you arrange and resize (full version)",
+  "Share cards: workouts, records and charts as images (full version)",
+  "Light, dark or system theme; accent colors (full version)",
   "No account, no ads and no subscription",
 ];
 
@@ -119,7 +124,7 @@ function appNode(): JsonLdNode {
       price: siteConfig.price.amount,
       priceCurrency: siteConfig.price.currency,
       category: "Free trial, then one-time purchase",
-      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play keeps everything unlocked and is required to keep logging and editing. No subscription.`,
     },
     author: { "@id": ids.organization },
     publisher: { "@id": ids.organization },

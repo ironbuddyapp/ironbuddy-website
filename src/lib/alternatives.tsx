@@ -63,17 +63,17 @@ export const alternatives = {
         <>
           <p>
             Every set you log, with its weight and reps, feeds the Progress tab. It has three views:
-            Volume, Strength and Body.
+            Workouts, Exercises and Body.
           </p>
           <BulletList>
             <li>
-              <Strong>1RM:</Strong> Progress, then Strength, charts the 1RM for each
+              <Strong>1RM:</Strong> Progress, then Exercises, charts the 1RM for each
               exercise. IronBuddy uses the Epley formula, weight × (1 + reps ÷ 30), on
               the best completed set of each workout, and counts sets of more than 12 reps as 12.
             </li>
             <li>
-              <Strong>Training volume:</Strong> Progress, then Volume, shows total and average
-              workout volume, plus a chart for any single exercise.
+              <Strong>Training volume:</Strong> Progress, then Workouts, shows total and average
+              workout volume, and Exercises charts any single exercise.
             </li>
             <li>
               <Strong>Personal records:</Strong> when you save a workout with a heavier weight than
@@ -81,7 +81,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Last time, at a glance:</Strong> open any exercise to see the date and sets of
-              your last session, that session&apos;s best 1RM, and your all-time 1RM.
+              your last session, that session&apos;s best 1RM, and its records, including your best estimated 1RM.
             </li>
           </BulletList>
           <p>Choose a range from one week to all time.</p>
@@ -130,7 +130,7 @@ export const alternatives = {
       id: "personal-records",
       question: "Does IronBuddy show personal records?",
       answer:
-        "Yes. When you save a workout with a heavier weight than you have logged before for an exercise, IronBuddy marks it as a personal record. Opening an exercise also shows your all-time 1RM.",
+        "Yes. When you save a workout with a heavier weight than you have logged before for an exercise, IronBuddy marks it as a personal record. Opening an exercise also shows its records, including your best estimated 1RM.",
     },
   },
   hevy: {
@@ -307,7 +307,7 @@ export const alternatives = {
             </li>
             <li>
               <Strong>Your history per exercise:</Strong> open an exercise to see what you did last
-              time, that session&apos;s best 1RM (one-rep max), calculated with the Epley formula, and your all-time 1RM.
+              time, that session&apos;s best 1RM (one-rep max), calculated with the Epley formula, and its records, including your best estimated 1RM.
             </li>
             <li>
               <Strong>Works offline:</Strong> the library is stored on your phone, so searching and
@@ -477,7 +477,7 @@ export const alternatives = {
               group them into weekly or monthly averages, so day-to-day swings do not hide the trend.
             </li>
             <li>
-              <Strong>Next to your lifts:</Strong> the Strength and Volume views on the same Progress
+              <Strong>Next to your lifts:</Strong> the Exercises and Workouts views on the same Progress
               tab show your 1RM (one-rep max), calculated with the Epley formula, and training volume, so you can read body changes against
               strength.
             </li>
@@ -526,7 +526,7 @@ export const alternatives = {
       "Export your Caliber history first if the app offers an export, and keep the file as an archive.",
       "Note your current body weight and, if you track it, your body fat %.",
       "Install IronBuddy and add them in Settings, under Body Tracking, so your body chart starts today.",
-      "Log your usual workouts; the Body, Strength and Volume views fill in as you go.",
+      "Log your usual workouts; the Body, Exercises and Workouts views fill in as you go.",
     ],
     freshStart:
       "Add today's body weight in Settings, under Body Tracking, and start logging your workouts; both charts start from day one.",

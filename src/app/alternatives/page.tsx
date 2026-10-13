@@ -58,7 +58,7 @@ const faqs: Faq[] = [
   {
     id: "try-first",
     question: "Can I try IronBuddy before paying?",
-    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) that includes every feature except export, import and the local copy of your data. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing.`,
+    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing.`,
   },
 ];
 

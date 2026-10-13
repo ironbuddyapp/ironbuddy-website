@@ -5,6 +5,9 @@ export type LucideIconName =
   | "scale"
   | "library"
   | "shield"
+  | "body"
+  | "layout"
+  | "share"
   | "check"
   | "close"
   | "menu"
@@ -94,6 +97,36 @@ export function Icon({
             strokeLinejoin="round"
           />
           <path d="M9.5 12.2l1.8 1.8 3.4-3.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "body":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="4.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+          <path
+            d="M6 9.5c2 .8 4 1.2 6 1.2s4-.4 6-1.2M12 10.7V15m0 0-2.2 5.5M12 15l2.2 5.5"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "layout":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="7" height="17" rx="2" stroke="currentColor" strokeWidth="1.6" />
+          <rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="1.6" />
+          <rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      );
+    case "share":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="18" cy="5.5" r="2.5" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="6" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="18" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="1.6" />
+          <path d="m8.2 13.3 7.6 4M15.8 6.7l-7.6 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
         </svg>
       );
     case "check":

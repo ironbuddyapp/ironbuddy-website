@@ -19,7 +19,10 @@ export type FeatureIcon =
   | "chart"
   | "scale"
   | "library"
-  | "shield";
+  | "shield"
+  | "body"
+  | "layout"
+  | "share";
 
 export const features: Array<{
   title: string;
@@ -40,8 +43,13 @@ export const features: Array<{
   },
   {
     title: "Progressive Overload Tracking",
-    description: "Follow 1RM and training volume over time.",
+    description: "Follow 1RM, volume and personal records over time.",
     icon: "chart",
+  },
+  {
+    title: "Muscles Worked & Balance",
+    description: "See which muscles you trained and what you skipped.",
+    icon: "body",
   },
   {
     title: "Body Weight & Body Fat",
@@ -54,6 +62,16 @@ export const features: Array<{
     icon: "library",
   },
   {
+    title: "Customizable Home",
+    description: "Arrange and resize your cards (full version).",
+    icon: "layout",
+  },
+  {
+    title: "Share Cards",
+    description: "Workouts, records and charts as images (full version).",
+    icon: "share",
+  },
+  {
     title: "Offline & Private",
     description: "Works offline, stored on your phone, no account.",
     icon: "shield",
@@ -61,7 +79,7 @@ export const features: Array<{
 ];
 
 /**
- * App screenshots in public/screenshots/ (WebP, recorded 30 September 2026 from app 1.0.13). `carousel: true`
+ * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0 with sample data). `carousel: true`
  * marks the current set: it drives the home page carousel, the app's structured data and the image sitemap.
  * Keep the array in carousel order.
  *
@@ -74,7 +92,7 @@ export const screenshots = [
     id: "dashboard",
     file: "ironbuddy-workout-tracker-home.webp",
     label: "Dashboard",
-    alt: "IronBuddy Android workout tracker home screen with the active Full Body split, weekly progress and last workout volume",
+    alt: "IronBuddy Android workout tracker home screen: a Push/Pull/Legs week fully logged and the muscles worked this week",
     width: 720,
     height: 1516,
     carousel: true,
@@ -83,7 +101,7 @@ export const screenshots = [
     id: "logging",
     file: "ironbuddy-workout-log.webp",
     label: "Workout Logging",
-    alt: "IronBuddy workout log: sets, reps and weight for each exercise in a full body workout, with a day note",
+    alt: "IronBuddy workout log: reps and weight for each set of hack squat on a legs day",
     width: 720,
     height: 1516,
     carousel: true,
@@ -109,7 +127,7 @@ export const screenshots = [
   {
     id: "strength",
     file: "ironbuddy-estimated-1rm-chart.webp",
-    label: "Strength (1RM)",
+    label: "1RM Chart",
     alt: "IronBuddy progressive overload tracking: 1RM chart for the deadlift rising over two years",
     width: 720,
     height: 1516,
@@ -119,16 +137,43 @@ export const screenshots = [
     id: "metrics",
     file: "ironbuddy-body-weight-tracker.webp",
     label: "Body Metrics",
-    alt: "IronBuddy body weight and body fat % tracker with six months of charts",
-    width: 573,
-    height: 1206,
+    alt: "IronBuddy body weight and body fat % tracker with three months of charts",
+    width: 720,
+    height: 1516,
     carousel: true,
   },
   {
     id: "library",
     file: "ironbuddy-exercise-library.webp",
     label: "Exercise Library",
-    alt: "IronBuddy exercise library with 873 exercises, muscle and equipment filters, and demonstration thumbnails",
+    alt: "IronBuddy exercise library with recently done exercises, A–Z or Recent sorting and a filter button",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "balance",
+    file: "ironbuddy-muscle-balance.webp",
+    label: "Muscle Balance",
+    alt: "IronBuddy Muscle Balance: working sets per body area this week against last week",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "summary",
+    file: "ironbuddy-workout-summary.webp",
+    label: "Workout Summary",
+    alt: "IronBuddy workout summary: each exercise against last time, with new personal records marked",
+    width: 720,
+    height: 1516,
+    carousel: true,
+  },
+  {
+    id: "share",
+    file: "ironbuddy-share-card.webp",
+    label: "Share Cards",
+    alt: "IronBuddy share card: a new hack squat personal record as an image to share",
     width: 720,
     height: 1516,
     carousel: true,
@@ -170,12 +215,12 @@ const trial = `free trial (currently ${siteConfig.freeTrialDays} days)`;
 
 /**
  * What the free trial includes and what happens after it, in one place so every page says the same thing.
- * Source: IronBuddy app 1.0.19 (7-day trial with every feature except export, import and the local data copy;
- * read-only afterwards; Android backup works in both).
+ * Source: IronBuddy app 2.0 (7-day trial of the whole tracker; the full version adds export, import, the local
+ * data copy, share cards, a customizable Home and accent colors; read-only afterwards; Android backup works in both).
  */
 export const trialDetails = {
-  includes: `The ${siteConfig.freeTrialDays}-day free trial includes every feature except export, import and the local copy of your data: workout logging, progress charts, body metrics, the full library of 800+ exercises, every split and your own custom splits.`,
-  unlocks: `Buying IronBuddy for ${siteConfig.price.label} keeps everything unlocked after the trial, and adds export and import of your data and a local copy of your data kept on your phone. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on.`,
+  includes: `The ${siteConfig.freeTrialDays}-day free trial includes the whole workout tracker: workout logging, progress charts, body metrics, the full library of 800+ exercises, every split and your own custom splits.`,
+  unlocks: `Buying IronBuddy for ${siteConfig.price.label} keeps everything unlocked after the trial, and adds export and import of your data, a local copy of your data kept on your phone, share cards, a customizable Home and accent colors. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on.`,
   afterTrial:
     "If you don't buy, the app becomes read-only when the trial ends: nothing is deleted and your data stays visible on your phone, but logging and editing need the purchase.",
 } as const;
@@ -249,7 +294,7 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         id: "storage",
         question: "Where is my workout data stored?",
         answer:
-          "On your device. Your workouts, splits, notes, body metrics, and settings are stored in the app's on-device storage, and IronBuddy does not send them to any IronBuddy server. Copies exist only in ways you control or Android provides: an automatic backup file in your Downloads folder (you can turn it off), Android Auto Backup to your Google account if Google backup is on, and files you export or share.",
+          "On your device. Your workouts, splits, notes, body metrics, and settings are stored in the app's on-device storage, and IronBuddy does not send them to any IronBuddy server. Copies exist only in ways you control or Android provides: in the full version an automatic backup file in your Downloads folder (you can turn it off), Android Auto Backup to your Google account if Google backup is on, and files you export or share.",
         more: { href: pages.privacyFocused.path, label: "Privacy in detail" },
       },
       {
@@ -288,14 +333,14 @@ export const faqGroups: Array<{ id: string; title: string; items: Faq[] }> = [
         id: "estimated-1rm",
         question: "How does IronBuddy calculate my 1RM?",
         answer:
-          "With the Epley formula: weight × (1 + reps ÷ 30). For each workout, IronBuddy uses the completed set that gives the highest estimate, and counts sets of more than 12 reps as 12, where the formula stops being reliable. Progress → Strength charts the result over time, and opening an exercise shows your all-time 1RM.",
+          "With the Epley formula: weight × (1 + reps ÷ 30). For each workout, IronBuddy uses the completed set that gives the highest estimate, and counts sets of more than 12 reps as 12, where the formula stops being reliable. Progress → Exercises → 1RM charts the result over time, and each exercise's Records show your best estimated 1RM.",
         more: { href: `${pages.progressiveOverload.path}#volume-and-1rm`, label: "1RM explained" },
       },
       {
         id: "what-track",
         question: "What can I track in IronBuddy?",
         answer:
-          "You can log sets, reps, weight, and notes for each workout, follow a training split, chart workout volume and 1RM, and record body weight and body fat percentage. An exercise library of more than 800 exercises with demonstration thumbnails helps you find the right movement.",
+          "You can log sets, reps, weight, and notes for each workout, follow a training split, chart workout volume, best weight and 1RM, see the muscles you worked and your Muscle Balance for the week, and record body weight and body fat percentage. An exercise library of more than 800 exercises with demonstration thumbnails and target muscles helps you find the right movement.",
         more: { href: pages.features.path, label: "All features" },
       },
       {

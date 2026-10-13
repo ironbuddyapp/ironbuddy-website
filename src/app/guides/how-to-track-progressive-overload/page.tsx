@@ -219,11 +219,11 @@ export default function ProgressiveOverloadGuidePage() {
               Log every set with its weight and reps. IronBuddy also has a notes field for context.
             </li>
             <li>
-              Open Progress, then Volume, to see total and average workout volume, and pick an
-              exercise to see its volume over time.
+              Open Progress, then Workouts, to see total and average workout volume; in Exercises,
+              pick an exercise and choose Volume to see its volume over time.
             </li>
             <li>
-              Open Progress, then Strength, to follow your 1RM. IronBuddy works it out
+              Open Progress, then Exercises, and choose 1RM to follow it. IronBuddy works it out
               with the Epley formula from the best completed set of each workout, counting sets of
               more than 12 reps as 12.
             </li>

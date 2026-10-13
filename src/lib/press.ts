@@ -14,6 +14,8 @@ import { appFeatureList } from "@/lib/structured-data";
 
 /** The day IronBuddy went public on Google Play. */
 export const releaseDate = "2026-09-30";
+/** When the screenshots were taken (app 2.0). */
+export const screenshotsDate = "2026-10-13";
 
 export const pressZipPath = "/press/ironbuddy-press-kit.zip";
 
@@ -108,7 +110,7 @@ export const brandColors = [
 export const brandNotes = [
   "Write the name as IronBuddy: one word, with a capital I and a capital B.",
   "Use the app icon as supplied. Please do not recolour, stretch or crop it, or add effects.",
-  `The screenshots show the app as it was on ${formatDate(releaseDate)}.`,
+  `The screenshots show the app as it was on ${formatDate(screenshotsDate)}.`,
 ] as const;
 
 export function formatBytes(bytes: number) {
