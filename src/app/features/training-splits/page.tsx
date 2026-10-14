@@ -142,6 +142,27 @@ export default function TrainingSplitsPage() {
           </BulletList>
         </ContentSection>
 
+        <ContentSection id="guides" title="A guide to each preset">
+          <p>
+            Each preset has a guide that explains the split, lists every day with its exercises, shows
+            ways to lay out the week and how to track it in IronBuddy.
+          </p>
+          <RelatedLinks
+            id="split-guides"
+            title="Training split guides"
+            items={[
+              pages.fullBody,
+              pages.upperLower,
+              pages.pushPullLegs,
+              pages.phul,
+              pages.phat,
+              pages.broSplit,
+              pages.arnoldSplit,
+              pages.fiveThreeOne,
+            ]}
+          />
+        </ContentSection>
+
         <ContentSection id="faq" title="Training split questions">
           <FaqList items={faqs} />
         </ContentSection>

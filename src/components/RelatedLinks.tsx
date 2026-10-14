@@ -4,16 +4,20 @@ import type { PageDef } from "@/lib/pages";
 
 /** Descriptive internal links to related pages: gives crawlers topical anchor text and readers a next step. */
 export function RelatedLinks({
+  id = "related",
   title = "Keep reading",
   items,
 }: {
+  /** Prefix for the heading id; set it when a page has more than one RelatedLinks block. */
+  id?: string;
   title?: string;
   items: PageDef[];
 }) {
+  const headingId = `${id}-heading`;
   return (
-    <nav aria-labelledby="related-heading">
+    <nav aria-labelledby={headingId}>
       <h2
-        id="related-heading"
+        id={headingId}
         className="text-2xl font-semibold tracking-tight text-white sm:text-[1.75rem]"
       >
         {title}

@@ -222,7 +222,7 @@ export default function PushPullLegsGuidePage() {
         <CtaBanner />
 
         <RelatedLinks
-          items={[pages.progressiveOverload, pages.logWorkouts, pages.features, pages.guides]}
+          items={[pages.upperLower, pages.arnoldSplit, pages.progressiveOverload, pages.trainingSplits]}
         />
       </PageBody>
     </main>

@@ -141,8 +141,13 @@ export default function FeaturesPage() {
               split as a PDF.
             </p>
             <p>
-              Running PPL? Read{" "}
-              <TextLink href={pages.pushPullLegs.path}>how to plan and track a Push Pull Legs split</TextLink>.
+              Every preset has a guide: <TextLink href={pages.fullBody.path}>Full Body</TextLink>,{" "}
+              <TextLink href={pages.upperLower.path}>Upper Lower</TextLink>,{" "}
+              <TextLink href={pages.pushPullLegs.path}>Push Pull Legs</TextLink>,{" "}
+              <TextLink href={pages.phul.path}>PHUL</TextLink>, <TextLink href={pages.phat.path}>PHAT</TextLink>,{" "}
+              <TextLink href={pages.broSplit.path}>bro split</TextLink>,{" "}
+              <TextLink href={pages.arnoldSplit.path}>Arnold split</TextLink> and{" "}
+              <TextLink href={pages.fiveThreeOne.path}>5/3/1 Boring But Big</TextLink>.
             </p>
           </FeatureBlock>
 

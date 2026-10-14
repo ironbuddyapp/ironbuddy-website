@@ -10,7 +10,17 @@ import { collectionPageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.guides);
 
-const guides = [pages.progressiveOverload, pages.logWorkouts, pages.pushPullLegs];
+const guides = [pages.progressiveOverload, pages.logWorkouts];
+const splitGuides = [
+  pages.pushPullLegs,
+  pages.upperLower,
+  pages.fullBody,
+  pages.phul,
+  pages.phat,
+  pages.broSplit,
+  pages.arnoldSplit,
+  pages.fiveThreeOne,
+];
 
 export default function GuidesPage() {
   const crumbs = trail(pages.home, pages.guides);
@@ -21,7 +31,7 @@ export default function GuidesPage() {
         data={collectionPageGraph(
           pages.guides,
           crumbs,
-          guides.map((guide) => ({ name: guide.label, path: guide.path })),
+          [...guides, ...splitGuides].map((guide) => ({ name: guide.label, path: guide.path })),
         )}
       />
       <PageHero
@@ -29,11 +39,13 @@ export default function GuidesPage() {
         eyebrow="Guides"
         title="Workout tracking guides"
         updated={pages.guides.modified}
-        lead="Practical, plain-language guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to plan and track a Push Pull Legs split."
+        lead="Practical, plain-language guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to plan and track the common training splits, from a three-day full body plan to PHAT and the Arnold split."
       />
 
       <PageBody>
-        <RelatedLinks title="All guides" items={guides} />
+        <RelatedLinks title="Tracking guides" items={guides} />
+
+        <RelatedLinks id="split-guides" title="Training split guides" items={splitGuides} />
 
         <ContentSection id="about-these-guides" title="About these guides">
           <p>

@@ -34,6 +34,7 @@ export type PageDef = {
 const RELEASE_20 = "2026-10-13";
 /** IronBuddy 2.0.3: one page per feature, What's new, the easier Customise Home. */
 const RELEASE_203 = "2026-10-14";
+const SPLIT_GUIDES = "2026-10-14";
 const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
@@ -362,7 +363,7 @@ export const pages = {
     label: "Guides",
     title: "Workout Tracking & Progressive Overload Guides",
     description:
-      "Practical guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to review your progress.",
+      "Practical guides for lifters who log their training: progressive overload, what to record in a gym log, and how to run PPL, Upper Lower, PHUL, PHAT and more.",
     summary: "Plain-language guides to progressive overload, workout logging and training splits.",
     published: UPDATED,
     modified: PPL_ADDED,
@@ -399,6 +400,83 @@ export const pages = {
     summary: "Three-day and six-day Push Pull Legs layouts, what goes on each day, and how to track a PPL split.",
     published: PPL_ADDED,
     modified: PPL_ADDED,
+  },
+  upperLower: {
+    path: "/guides/upper-lower-split/",
+    kind: "guide",
+    label: "Upper Lower split",
+    title: "Upper Lower Split: 4-Day Workout Plan & Tracking",
+    description:
+      "How to run a four-day Upper Lower split: two upper and two lower sessions a week, the exercises on each day, how to lay out the week, and how to track it.",
+    summary: "Two upper and two lower sessions a week: what goes on each day, weekly layouts, and how to track an Upper Lower split.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  fullBody: {
+    path: "/guides/full-body-workout-3-days/",
+    kind: "guide",
+    label: "Full body workout, 3 days a week",
+    title: "Full Body Workout 3 Days a Week: Plan & Track It",
+    description:
+      "A three-day full body workout plan: three sessions that each train the whole body, the exercises on each one, why it suits beginners, and how to track progress.",
+    summary: "Three full-body sessions a week: the exercises on each day, why it suits beginners, and how to track it.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  phul: {
+    path: "/guides/phul-workout/",
+    kind: "guide",
+    label: "PHUL split",
+    title: "PHUL Workout Split: 4 Days, Power + Hypertrophy",
+    description:
+      "PHUL explained: a four-day upper/lower split with two power days and two hypertrophy days. The exercises on each day, who it suits, and how to log and track it.",
+    summary: "The four-day Power Hypertrophy Upper Lower split: what each day trains, who it suits, and how to run and track it.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  phat: {
+    path: "/guides/phat-workout/",
+    kind: "guide",
+    label: "PHAT split",
+    title: "PHAT Workout Split: 5 Days, Power + Hypertrophy",
+    description:
+      "PHAT explained: the five-day Power Hypertrophy Adaptive Training split, what each day trains, who it suits, how it compares with PHUL, and how to log it.",
+    summary: "The five-day Power Hypertrophy Adaptive Training split: what each day trains, who it suits, and how to track it.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  broSplit: {
+    path: "/guides/bro-split/",
+    kind: "guide",
+    label: "Bro split",
+    title: "Bro Split: 5-Day Body Part Workout Routine",
+    description:
+      "The bro split explained: one body part a day, Monday to Friday. What each day trains, who it suits, its trade-offs, and how to log and progress it.",
+    summary: "One body part a day, Monday to Friday: what each day trains, the trade-offs, and how to track a bro split.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  arnoldSplit: {
+    path: "/guides/arnold-split/",
+    kind: "guide",
+    label: "Arnold split",
+    title: "Arnold Split: 6-Day Workout Plan and Tracking",
+    description:
+      "The Arnold split explained: chest and back, shoulders and arms, then legs, each twice a week. The exercises on each day, who it suits, and how to track it.",
+    summary: "Chest and back, shoulders and arms, legs, each twice a week: what goes on each day and how to track the Arnold split.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
+  },
+  fiveThreeOne: {
+    path: "/guides/531-boring-but-big/",
+    kind: "guide",
+    label: "5/3/1 Boring But Big",
+    title: "5/3/1 Boring But Big: A Simple 3-Day Version",
+    description:
+      "A simplified 5/3/1 Boring But Big: three days a week, a main lift then 5×10 of the same lift. How it differs from the original, and how to run and track it.",
+    summary: "A three-day take on 5/3/1 Boring But Big: a main lift then 5×10 of it, how it differs from the original, and how to track it.",
+    published: SPLIT_GUIDES,
+    modified: SPLIT_GUIDES,
   },
   contact: {
     path: "/contact/",
