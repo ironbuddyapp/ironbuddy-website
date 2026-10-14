@@ -75,7 +75,9 @@ export default function MuscleBalancePage() {
           <p>
             Research on hypertrophy usually points to roughly 10 to 20 working sets per muscle group
             per week. IronBuddy doesn&apos;t set a target for you; it shows your real numbers so you
-            can judge them against whatever programme you follow.
+            can judge them against whatever programme you follow. Read{" "}
+            <TextLink href={pages.setsPerWeek.path}>how many sets per muscle group per week</TextLink>{" "}
+            for what the research suggests and how to count.
           </p>
         </FeatureBlock>
 
@@ -127,7 +129,7 @@ export default function MuscleBalancePage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.workoutSummary, pages.customizableHome, pages.progressCharts, pages.features]} />
+        <RelatedLinks items={[pages.setsPerWeek, pages.workoutSummary, pages.customizableHome, pages.progressCharts]} />
       </PageBody>
     </main>
   );

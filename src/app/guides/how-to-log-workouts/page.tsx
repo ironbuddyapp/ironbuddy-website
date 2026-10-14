@@ -152,7 +152,7 @@ export default function LogWorkoutsGuidePage() {
         <CtaBanner />
 
         <RelatedLinks
-          items={[pages.progressiveOverload, pages.pushPullLegs, pages.features, pages.guides]}
+          items={[pages.logTechniques, pages.progressiveOverload, pages.pushPullLegs, pages.guides]}
         />
       </PageBody>
     </main>

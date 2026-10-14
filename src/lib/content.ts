@@ -552,6 +552,7 @@ export const footerGroups = [
       { label: pages.progressiveOverload.label, href: pages.progressiveOverload.path },
       { label: pages.logWorkouts.label, href: pages.logWorkouts.path },
       { label: pages.pushPullLegs.label, href: pages.pushPullLegs.path },
+      { label: pages.setsPerWeek.label, href: pages.setsPerWeek.path },
     ],
   },
   {

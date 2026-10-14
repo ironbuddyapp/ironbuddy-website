@@ -120,7 +120,7 @@ export default function ProgressChartsPage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.workoutSummary, pages.progressiveOverload, pages.customizableHome, pages.shareCards]} />
+        <RelatedLinks items={[pages.oneRmChart, pages.workoutSummary, pages.progressiveOverload, pages.customizableHome]} />
       </PageBody>
     </main>
   );

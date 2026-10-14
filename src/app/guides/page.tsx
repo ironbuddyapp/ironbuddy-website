@@ -10,7 +10,13 @@ import { collectionPageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.guides);
 
-const guides = [pages.progressiveOverload, pages.logWorkouts];
+const guides = [
+  pages.progressiveOverload,
+  pages.logWorkouts,
+  pages.setsPerWeek,
+  pages.logTechniques,
+  pages.oneRmChart,
+];
 const splitGuides = [
   pages.pushPullLegs,
   pages.upperLower,

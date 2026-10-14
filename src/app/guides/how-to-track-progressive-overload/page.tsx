@@ -255,7 +255,7 @@ export default function ProgressiveOverloadGuidePage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.logWorkouts, pages.features, pages.faq, pages.guides]} />
+        <RelatedLinks items={[pages.oneRmChart, pages.setsPerWeek, pages.logWorkouts, pages.guides]} />
       </PageBody>
     </main>
   );

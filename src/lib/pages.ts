@@ -35,6 +35,7 @@ const RELEASE_20 = "2026-10-13";
 /** IronBuddy 2.0.3: one page per feature, What's new, the easier Customise Home. */
 const RELEASE_203 = "2026-10-14";
 const SPLIT_GUIDES = "2026-10-14";
+const TRAINING_GUIDES = "2026-10-14";
 const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
@@ -477,6 +478,39 @@ export const pages = {
     summary: "A three-day take on 5/3/1 Boring But Big: a main lift then 5×10 of it, how it differs from the original, and how to track it.",
     published: SPLIT_GUIDES,
     modified: SPLIT_GUIDES,
+  },
+  setsPerWeek: {
+    path: "/guides/sets-per-muscle-group-per-week/",
+    kind: "guide",
+    label: "Sets per muscle group per week",
+    title: "How Many Sets per Muscle Group per Week?",
+    description:
+      "How many working sets each muscle group needs per week, what counts as a set, how to spread them across the week, and how to check your own numbers in your log.",
+    summary: "What the research suggests for weekly sets per muscle, what counts as a set, and how to check your own week.",
+    published: TRAINING_GUIDES,
+    modified: TRAINING_GUIDES,
+  },
+  logTechniques: {
+    path: "/guides/drop-sets-supersets-rest-pause/",
+    kind: "guide",
+    label: "Drop sets, supersets and rest-pause",
+    title: "Drop Sets, Supersets & Rest-Pause, Explained",
+    description:
+      "What drop sets, supersets and rest-pause sets are, how to do each one, when they help and when they get in the way, and how to log them so your volume is right.",
+    summary: "How to do drop sets, supersets and rest-pause sets, when to use them, and how to log them properly.",
+    published: TRAINING_GUIDES,
+    modified: TRAINING_GUIDES,
+  },
+  oneRmChart: {
+    path: "/guides/how-to-read-your-1rm-chart/",
+    kind: "guide",
+    label: "Reading your 1RM chart",
+    title: "Estimated 1RM: Reading Your One-Rep Max Chart",
+    description:
+      "What an estimated one-rep max is, how the Epley formula works, why the chart moves the way it does, how to pick your next weight from it, and when to doubt it.",
+    summary: "What an estimated 1RM is, how the Epley formula works, how to read the trend, and when the number misleads.",
+    published: TRAINING_GUIDES,
+    modified: TRAINING_GUIDES,
   },
   contact: {
     path: "/contact/",

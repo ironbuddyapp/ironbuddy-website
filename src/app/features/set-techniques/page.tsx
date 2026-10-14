@@ -134,7 +134,7 @@ export default function SetTechniquesPage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.logWorkouts, pages.workoutSummary, pages.trainingSplits, pages.exerciseLibrary]} />
+        <RelatedLinks items={[pages.logTechniques, pages.logWorkouts, pages.workoutSummary, pages.trainingSplits]} />
       </PageBody>
     </main>
   );
