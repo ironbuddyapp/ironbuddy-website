@@ -24,6 +24,7 @@ export function GET() {
     "- Platform: Android, on Google Play. Not available on iPhone yet.",
     `- Android package: ${siteConfig.playStoreId}`,
     ...(siteConfig.playListingLive ? [`- Google Play: ${siteConfig.playStoreUrl}`] : []),
+    `- YouTube: ${siteConfig.youtubeUrl} (two-minute tour: ${siteConfig.promoVideo.url})`,
     "- Works offline: yes (logging, history and the exercise library need no connection)",
     "- Account required: no",
     "- Ads: none",

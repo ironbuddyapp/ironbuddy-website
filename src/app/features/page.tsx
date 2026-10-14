@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { VideoCard } from "@/components/VideoCard";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -19,7 +20,7 @@ export default function FeaturesPage() {
 
   return (
     <main id="main">
-      <JsonLd data={pageGraph(pages.features, { trail: crumbs, about: "app" })} />
+      <JsonLd data={pageGraph(pages.features, { trail: crumbs, about: "app", video: true })} />
       <PageHero
         wide
         trail={crumbs}
@@ -57,6 +58,17 @@ export default function FeaturesPage() {
               ]}
             />
           </div>
+
+          <section id="video" aria-labelledby="video-heading" className="max-w-3xl">
+            <h2 id="video-heading" className="text-2xl font-semibold tracking-tight text-white sm:text-[1.75rem]">
+              See it in two minutes
+            </h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-muted sm:text-base">
+              The Play Store tour: every screen of IronBuddy 2.0, from logging a set to sharing a
+              record, with no voice-over.
+            </p>
+            <VideoCard className="mt-5" />
+          </section>
 
           <FeatureBlock
             id="workout-logging"

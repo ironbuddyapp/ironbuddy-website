@@ -19,9 +19,23 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
+function YouTubeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M21.4 7.2a2.5 2.5 0 0 0-1.76-1.77C18.1 5 12 5 12 5s-6.1 0-7.64.43A2.5 2.5 0 0 0 2.6 7.2 26 26 0 0 0 2.2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.9 19 12 19 12 19s6.1 0 7.64-.43a2.5 2.5 0 0 0 1.76-1.77 26 26 0 0 0 .4-4.8 26 26 0 0 0-.4-4.8Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path d="M10 9.3v5.4l4.6-2.7L10 9.3Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 const socials = [
   { name: "IronBuddy on Instagram", href: siteConfig.instagramUrl, Icon: InstagramIcon },
   { name: "IronBuddy on TikTok", href: siteConfig.tiktokUrl, Icon: TikTokIcon },
+  { name: "IronBuddy on YouTube", href: siteConfig.youtubeUrl, Icon: YouTubeIcon },
 ] as const;
 
 export function SocialLinks({ className }: { className?: string }) {

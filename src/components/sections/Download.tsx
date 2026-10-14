@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Reveal } from "@/components/Reveal";
 import { SocialLinks } from "@/components/SocialLinks";
+import { VideoCard } from "@/components/VideoCard";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 
@@ -27,6 +28,9 @@ export function Download() {
               </p>
               <div className="mt-8 flex justify-center">
                 <GooglePlayButton lazy />
+              </div>
+              <div className="mx-auto mt-6 max-w-md sm:mt-8">
+                <VideoCard variant="compact" />
               </div>
               <div className="mt-8 flex flex-col items-center gap-5 lg:hidden">
                 <SocialLinks />

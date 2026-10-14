@@ -43,6 +43,23 @@ export const siteConfig = {
   githubUrl: "https://github.com/ironbuddyapp",
   instagramUrl: "https://www.instagram.com/ironbuddy_app/",
   tiktokUrl: "https://www.tiktok.com/@ironbuddyapp",
+  youtubeUrl: "https://www.youtube.com/@IronBuddyApp",
+  /**
+   * The two-minute tour on YouTube (also the promo video on the Play listing). The site links to it and
+   * serves its own thumbnail; it is never embedded, so no request goes to Google until a visitor clicks.
+   */
+  promoVideo: {
+    id: "JpDATxAtmZY",
+    url: "https://youtu.be/JpDATxAtmZY",
+    title: "IronBuddy: Offline Workout Tracker & Gym Log for Android",
+    description:
+      "A two-minute tour of IronBuddy 2.0, the offline workout tracker for Android: your week on Home, logging a workout, the summary against last time, progress charts, the exercise library, training splits, the customizable Home, accent colours and share cards. No account, no ads, no subscription.",
+    uploadDate: "2026-10-14",
+    durationSeconds: 122,
+    thumbnail: "/video/ironbuddy-tour.jpg",
+    thumbnailWidth: 1280,
+    thumbnailHeight: 720,
+  },
   contactEmail: "iron.buddy.app@gmail.com",
   ogImage: "/og.jpg",
   ogImageWidth: 1200,

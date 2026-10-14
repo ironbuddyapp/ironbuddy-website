@@ -12,6 +12,7 @@ const ids = {
   website: absoluteUrl("/#website"),
   app: absoluteUrl("/#app"),
   logo: absoluteUrl("/#logo"),
+  video: absoluteUrl("/#video"),
 };
 
 const pageId = (page: PageDef, fragment = "webpage") => `${absoluteUrl(page.path)}#${fragment}`;
@@ -48,6 +49,7 @@ function organizationNode(): JsonLdNode {
       siteConfig.githubUrl,
       siteConfig.instagramUrl,
       siteConfig.tiktokUrl,
+      siteConfig.youtubeUrl,
       ...(siteConfig.playListingLive ? [siteConfig.playDeveloperUrl] : []),
     ],
   };
@@ -131,6 +133,28 @@ function appNode(): JsonLdNode {
   };
 }
 
+/** The YouTube tour. Linked from the page, with the thumbnail served from this site. */
+function videoNode(): JsonLdNode {
+  const video = siteConfig.promoVideo;
+  const minutes = Math.floor(video.durationSeconds / 60);
+  const seconds = video.durationSeconds % 60;
+  return {
+    "@type": "VideoObject",
+    "@id": ids.video,
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: [absoluteUrl(video.thumbnail)],
+    uploadDate: video.uploadDate,
+    duration: `PT${minutes}M${seconds}S`,
+    url: video.url,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
+    inLanguage: "en",
+    isFamilyFriendly: true,
+    about: { "@id": ids.app },
+    publisher: { "@id": ids.organization },
+  };
+}
+
 function breadcrumbNode(page: PageDef, crumbs: Crumb[]): JsonLdNode {
   return {
     "@type": "BreadcrumbList",
@@ -162,6 +186,8 @@ type PageOptions = {
   /** A FAQ section that is visible on this page. Each question should appear in markup on one page only. */
   faqs?: Faq[];
   article?: boolean;
+  /** The page shows the VideoCard, so the VideoObject is part of its graph. */
+  video?: boolean;
 };
 
 function pageNode(page: PageDef, options: PageOptions): JsonLdNode {
@@ -185,6 +211,7 @@ function pageNode(page: PageDef, options: PageOptions): JsonLdNode {
       ? { about: { "@id": options.about === "app" ? ids.app : ids.organization } }
       : {}),
     ...(options.trail ? { breadcrumb: { "@id": pageId(page, "breadcrumb") } } : {}),
+    ...(options.video ? { video: { "@id": ids.video } } : {}),
     ...options.extra,
   };
 }
@@ -198,8 +225,9 @@ export function homeGraph(page: PageDef) {
   return graph([
     organizationNode(),
     websiteNode(),
-    pageNode(page, { about: "app" }),
+    pageNode(page, { about: "app", video: true }),
     appNode(),
+    videoNode(),
   ]);
 }
 
@@ -220,6 +248,8 @@ export function pageGraph(page: PageDef, options: PageOptions & { trail: Crumb[]
       mainEntity: questions(options.faqs),
     });
   }
+
+  if (options.video) nodes.push(videoNode());
 
   if (options.article) {
     nodes.push({

@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { formatDate } from "@/lib/format";
 import { pages } from "@/lib/pages";
+import { siteConfig } from "@/lib/site";
 import {
   brandColors,
   brandNotes,
@@ -136,6 +137,15 @@ export default function PressPage() {
               </li>
             ))}
           </ul>
+        </ContentSection>
+
+        <ContentSection id="video" title="Video">
+          <p>
+            The Google Play promo video (2:02, 4K, no voice-over) is on YouTube:{" "}
+            <TextLink href={siteConfig.promoVideo.url}>watch the two-minute tour</TextLink>. For
+            the original 3840×2160 file, or a longer feature-by-feature tour,{" "}
+            <TextLink href={pages.contact.path}>get in touch</TextLink>.
+          </p>
         </ContentSection>
 
         <ContentSection id="app-icon" title="App icon">

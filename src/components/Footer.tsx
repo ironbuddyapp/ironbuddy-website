@@ -46,6 +46,18 @@ export function Footer() {
                     </a>
                   </li>
                 ) : null}
+                {group.title === "Company" ? (
+                  <li>
+                    <a
+                      href={siteConfig.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
+                      YouTube
+                    </a>
+                  </li>
+                ) : null}
               </ul>
             </nav>
           );
