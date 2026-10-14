@@ -2,58 +2,17 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { BulletList, Strong, TextLink } from "@/components/content";
 import { CtaBanner, HeroCta } from "@/components/CtaBanner";
+import { FeatureBlock } from "@/components/FeatureBlock";
 import { JsonLd } from "@/components/JsonLd";
 import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
-import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { RelatedLinks } from "@/components/RelatedLinks";
-import type { ScreenshotId } from "@/lib/content";
-import { cn } from "@/lib/cn";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.features);
-
-/** A feature explained in words next to the real screen it describes. */
-function FeatureBlock({
-  id,
-  title,
-  shot,
-  flip = false,
-  children,
-}: {
-  id: string;
-  title: string;
-  shot: ScreenshotId;
-  flip?: boolean;
-  children: React.ReactNode;
-}) {
-  const headingId = `${id}-heading`;
-  return (
-    <section
-      id={id}
-      aria-labelledby={headingId}
-      className="grid scroll-mt-24 items-center gap-8 lg:grid-cols-[1fr_292px] lg:gap-16"
-    >
-      <div className={cn(flip && "lg:order-2")}>
-        <h2
-          id={headingId}
-          className="text-2xl font-semibold tracking-tight text-white sm:text-[1.75rem]"
-        >
-          {title}
-        </h2>
-        <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-muted sm:text-base">
-          {children}
-        </div>
-      </div>
-      <PhoneMockup className={cn(flip && "lg:order-1")}>
-        <AppScreen id={shot} />
-      </PhoneMockup>
-    </section>
-  );
-}
 
 export default function FeaturesPage() {
   const crumbs = trail(pages.home, pages.features);
@@ -65,9 +24,9 @@ export default function FeaturesPage() {
         wide
         trail={crumbs}
         eyebrow="Features"
-        title="Workout log, training splits and progressive overload tracking in one offline app"
+        title="Workout log, training splits, progress charts and a Home you arrange yourself"
         updated={pages.features.modified}
-        lead="IronBuddy is an Android workout tracker built around what lifters actually do at the gym: log sets, follow a training split, and check whether the numbers are going up. It works offline, needs no account, and has no ads or subscription."
+        lead="IronBuddy is an Android workout tracker built around what lifters actually do at the gym: log sets, follow a training split, and check whether the numbers are going up. It works offline, needs no account, and has no ads or subscription. Each feature below has its own page that goes deeper."
       >
         <HeroCta />
       </PageHero>
@@ -99,77 +58,88 @@ export default function FeaturesPage() {
             />
           </div>
 
-          <FeatureBlock id="workout-logging" title="Workout logging: sets, reps, weight, and notes" shot="logging">
+          <FeatureBlock
+            id="workout-logging"
+            title="Workout logging: sets, reps, weight, techniques and notes"
+            shot="logging"
+            more={{ href: pages.setTechniques.path, label: "Logging and set techniques in detail" }}
+          >
             <p>
-              Record each exercise as sets, reps, and weight, and add notes when something about a
-              set is worth remembering. You can log a workout for today or fill in a past date, and
-              add exercises on the fly.
-            </p>
-            <p>
-              Drag exercises into the order you train them, add set techniques such as drop sets,
-              rest-pause and supersets, and write a day note about the whole session.
+              Record each exercise as sets, reps and weight, for today or a past date, and add
+              exercises on the fly. Drag exercises into the order you train them, write a note on an
+              exercise or on the whole day, and log the techniques you actually use: drop sets,
+              supersets, rest-pause, pyramid, back-off sets, myo-reps, cluster sets and mechanical
+              drops, each with its own reps and weight.
             </p>
             <p>
               Exercises without reps or weight are skipped, so an unfinished row does not clutter
-              your history. When you edit a training day, the “Also update my plan” switch lets you
-              choose whether the change applies to that date only or to the same day in later weeks.
-            </p>
-            <p>
-              New to logging? Read{" "}
+              your history. The &ldquo;Also update my plan&rdquo; switch decides whether a change
+              applies to that date only or to the same day in later weeks. New to logging? Read{" "}
               <TextLink href={pages.logWorkouts.path}>how to log your workouts</TextLink>.
             </p>
           </FeatureBlock>
 
           <FeatureBlock id="weekly-view" title="Home: your week and your cards" shot="dashboard" flip>
             <p>
-              The home screen shows your active split with a progress line for the week (for example,
-              2 of 3 workouts logged), each day&apos;s status (full, partial or missed) and how many
-              workouts you have logged this week and in total. Every workout counts, planned or not.
-              Switch between a week and a month view.
+              Home shows your active split with a progress line for the week (2 of 3 workouts
+              logged), each day&apos;s status (full, partial or missed) and your workout counts.
+              Every workout counts, planned or not, and you can switch between a week and a month
+              view.
             </p>
             <p>
               Below it, swipe between three pages of cards that fit the screen without scrolling: the
-              muscles you worked this week on a body map, your last workout, an exercise chart, personal
-              records, workout counts, body weight, Muscle Balance and volume per muscle.
-            </p>
-            <p>In the full version you arrange Home yourself (see below).</p>
-          </FeatureBlock>
-
-          <FeatureBlock id="customizable-home" title="A Home you arrange yourself (full version)" shot="customise">
-            <p>
-              Tap Customise, or hold a card, to arrange Home your way: drag a card to move it, drag its
-              corner handle to make it small, wide, tall or large, remove the cards you don&apos;t need
-              and add others, such as a chart for the exercise you care about most. A dashed outline
-              shows where a card will land and at what size.
-            </p>
-            <p>Every card shows more as it gets bigger, and Reset puts the default cards back.</p>
-          </FeatureBlock>
-
-          <FeatureBlock id="muscle-balance" title="Muscle Balance and muscles worked" shot="balance" flip>
-            <p>
-              Muscle Balance shows your working sets this week for six body areas (chest, shoulders,
-              arms, core, legs and back) against last week, and lists the areas you have not trained
-              yet. Each set counts for the main muscle of the exercise.
-            </p>
-            <p>
-              On Home, Muscles worked lights up every muscle you trained this week on a front and back
-              body map. Open any exercise to see its target muscles, primary muscles solid and secondary
-              ones faded.
+              muscles you worked this week on a body map, your last workout, an exercise chart,
+              personal records, workout counts, body weight, Muscle Balance and volume per muscle.
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="training-splits" title="Training splits and workout planning" shot="splits">
+          <FeatureBlock
+            id="customizable-home"
+            title="A customizable Home: arrange, resize, add and remove cards (full version)"
+            shot="customise"
+            more={{ href: pages.customizableHome.path, label: "How the customizable Home works" }}
+          >
             <p>
-              Start from a template or build your own program. IronBuddy includes 10 templates: Full
-              Body 3×, Upper/Lower, Push/Pull/Legs (3× and 6×), Bro Split, Arnold Split, PHUL, PHAT,
-              5/3/1 (BBB) and Push/Pull (2×). Make one active, add or remove days, and change the
-              exercises on any day.
+              Tap Customise, or hold a card, and arrange Home your way: hold and drag a card to move
+              it, even to another page; tap or drag its corner handle to make it small, wide, tall or
+              large; remove the cards you don&apos;t need and add others, such as a chart for every
+              exercise you care about. A label under your finger says where a card lands and at what
+              size, and Reset puts the default cards back.
+            </p>
+          </FeatureBlock>
+
+          <FeatureBlock
+            id="muscle-balance"
+            title="Muscle Balance and muscles worked"
+            shot="balance"
+            flip
+            more={{ href: pages.muscleBalance.path, label: "Muscle Balance in detail" }}
+          >
+            <p>
+              Muscle Balance counts your working sets this week for six body areas (chest, shoulders,
+              arms, core, legs and back) against last week, and names the areas you have not trained
+              yet. Each set counts once, for the main muscle of the exercise.
             </p>
             <p>
-              Your own splits and the templates are listed separately, and the templates can be filtered
-              by days a week, style and level.
+              Muscles worked lights up every muscle you trained this week on a front and back body
+              map, glutes included after squats and deadlifts. Open any exercise to see its target
+              muscles, primary solid and secondary faded.
             </p>
-            <p>You can also export your active split as a PDF.</p>
+          </FeatureBlock>
+
+          <FeatureBlock
+            id="training-splits"
+            title="Training splits and workout planning"
+            shot="splits"
+            more={{ href: pages.trainingSplits.path, label: "All ten presets and how splits work" }}
+          >
+            <p>
+              Start from a preset or build your own. IronBuddy includes ten: Full Body 3×, Upper /
+              Lower, Push / Pull / Legs (3× and 6×), Push / Pull (2×), Bro Split, Arnold Split, PHUL,
+              PHAT and 5/3/1 (BBB), each with rep ranges and rest times on every exercise. Filter them
+              by days a week, style and level, make one active, edit any day, and export your active
+              split as a PDF.
+            </p>
             <p>
               Running PPL? Read{" "}
               <TextLink href={pages.pushPullLegs.path}>how to plan and track a Push Pull Legs split</TextLink>.
@@ -178,55 +148,60 @@ export default function FeaturesPage() {
 
           <FeatureBlock
             id="progress-tracking"
-            title="Progress charts"
+            title="Progress charts: best weight, 1RM, volume, reps"
             shot="progress"
             flip
+            more={{ href: pages.progressCharts.path, label: "Every chart, explained" }}
           >
             <p>
-              The Progress tab has three views: Workouts, Exercises and Body. Workouts shows your total
-              training volume and the average per workout. Exercises charts one exercise at a time: best
-              weight, 1RM, weight against reps, volume or reps. Body charts your weight and body fat.
+              The Progress tab has three views. Workouts charts your total training volume and the
+              average per workout. Exercises charts one lift at a time: best weight, estimated 1RM
+              (Epley formula on the best set of each workout), weight against reps, volume or reps.
+              Body charts your weight and body fat.
             </p>
             <p>
-              Every chart shows its headline number and how it changed, a range from one week to all
-              time, and a full-screen view. With months or years of history, the charts group sessions
-              into weeks or months, so the trend stays readable.
-            </p>
-          </FeatureBlock>
-
-          <FeatureBlock id="estimated-1rm" title="1RM and personal records" shot="strength">
-            <p>
-              The Exercises view charts your 1RM (one-rep max), calculated with the Epley formula, for each exercise. The formula is weight × (1 + reps ÷ 30), applied to the best completed set of each workout. Sets of
-              more than 12 reps count as 12, where the formula stops being reliable. When you save a
-              workout with a heavier weight than you have logged before for an exercise, the app
-              marks it as a PR. Each exercise also keeps its records: heaviest weight, most reps, best
-              session volume and best estimated 1RM, with the date of each.
-            </p>
-            <p>
-              These are the numbers most lifters use to check progressive overload: are you lifting
-              more total volume, or a heavier 1RM, than a few weeks ago? For a simple
-              method, read{" "}
+              Every chart shows its headline number and how it changed, ranges from one week to all
+              time, and a full-screen view. These are the numbers lifters use to check progressive
+              overload; for a simple method, read{" "}
               <TextLink href={pages.progressiveOverload.path}>how to track progressive overload</TextLink>.
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="workout-summary" title="Workout summary" shot="summary" flip>
+          <FeatureBlock
+            id="workout-summary"
+            title="Workout summary and personal records"
+            shot="summary"
+            more={{ href: pages.workoutSummary.path, label: "The workout summary in detail" }}
+          >
             <p>
-              Open a workout in History to see each exercise against last time (+2.5 kg, +2 reps, same
-              as last time, or first time), a PR marker on a new record, the muscles you worked and the
-              volume per muscle.
+              Open a workout in History to see each exercise against last time (+2.5 kg, +2 reps,
+              same as last time, or first time), a marker on the set that earned a new record, the
+              muscles you worked and the sets per muscle. Every exercise keeps its records: heaviest
+              weight, most reps, best session volume and best estimated 1RM, with dates, and the app
+              tells you when you save a new one.
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="share-cards" title="Share cards (full version)" shot="share">
+          <FeatureBlock
+            id="share-cards"
+            title="Share cards: workouts, PRs and charts as images (full version)"
+            shot="share"
+            flip
+            more={{ href: pages.shareCards.path, label: "How share cards work" }}
+          >
             <p>
-              Turn a workout, a personal record or a progress chart into an image and share it with
-              Android&apos;s share sheet, or save it to your phone. The image is made on your phone;
-              nothing is uploaded.
+              Turn a workout, a personal record or a progress chart into an image in your accent
+              colour and share it with Android&apos;s share sheet, or save it to your phone. The image
+              is made on your phone; nothing is uploaded.
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="body-metrics" title="Body metrics: weight and body fat percentage" shot="metrics" flip>
+          <FeatureBlock
+            id="body-metrics"
+            title="Body metrics: weight and body fat percentage"
+            shot="metrics"
+            more={{ href: `${pages.progressCharts.path}#body`, label: "Body weight and body fat charts" }}
+          >
             <p>
               Log body weight and body fat percentage whenever you want to, in Settings under Body
               Tracking, and see each as a chart over the same time ranges as your training. Body
@@ -234,59 +209,56 @@ export default function FeaturesPage() {
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="exercise-library" title="Exercise library with demonstrations" shot="library">
+          <FeatureBlock
+            id="exercise-library"
+            title="Exercise library with demonstrations, filters and your records"
+            shot="library"
+            flip
+            more={{ href: pages.exerciseLibrary.path, label: "The exercise library in detail" }}
+          >
             <p>
-              Search more than 800 exercises, filter by muscle group (chest, back, traps, legs,
-              shoulders, and more) and by equipment (barbell, dumbbell, machine, bodyweight, and
-              more), and see a demonstration thumbnail for each one.
-            </p>
-            <p>
-              Sort exercises A–Z or by the ones you did most recently, which also appear in a Recent
-              section with when you last did them. The library works offline, like the rest of the app.
-            </p>
-          </FeatureBlock>
-
-          <FeatureBlock id="exercise-page" title="Exercise pages: form, last workout and records" shot="exercise" flip>
-            <p>
-              Open any exercise, from the library, your split or a workout, to see its demonstration,
-              your last workout (sets, best set and its estimated 1RM) and your records: heaviest
-              weight, most reps, best session volume and best estimated 1RM, each with its date.
-            </p>
-            <p>
-              Below them, the muscles the exercise targets on a front and back body map, and written
-              cues for good form.
+              Search more than 800 exercises, filter by muscle group and by equipment, sort A–Z or by
+              the ones you did most recently, and see a demonstration for each one. Open any exercise
+              to see your last workout, your records, the muscles it targets on a body map and written
+              cues for good form. The library works offline, like the rest of the app.
             </p>
           </FeatureBlock>
 
           <FeatureBlock id="make-it-yours" title="Make it yours" shot="colors">
             <p>
-              Light, dark or follow your phone&apos;s theme. In the full version, pick your accent color:
-              it recolors buttons, charts, the body map and highlights, in light and dark theme.
+              Light, dark or follow your phone&apos;s theme. In the full version, pick one of eight
+              accent colours: it recolours buttons, charts, the body map, highlights and your share
+              cards, in light and dark theme.
             </p>
             <p>Settings has a search box that finds any setting, such as &ldquo;theme&rdquo; or &ldquo;backup&rdquo;.</p>
           </FeatureBlock>
 
-          <FeatureBlock id="your-data" title="Your data: offline, private, and portable" shot="data" flip>
-              <BulletList>
-                <li>
-                  <Strong>Offline:</Strong> logging, history, and the exercise library work without a
-                  connection. See{" "}
-                  <TextLink href={pages.offline.path}>how offline tracking works</TextLink>.
-                </li>
-                <li>
-                  <Strong>No account:</Strong> there is no sign-up or sign-in and no IronBuddy cloud.
-                </li>
-                <li>
-                  <Strong>Stored on your device:</Strong> workouts, splits, notes, body metrics, and
-                  settings live in the app&apos;s on-device storage. See{" "}
-                  <TextLink href={pages.privacyFocused.path}>what IronBuddy stores and where</TextLink>.
-                </li>
-                <li>
-                  <Strong>Backups you control:</Strong> in the full version, an automatic JSON backup file in your Downloads folder (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.
-                </li>
-                <li>
-                  <Strong>Reset All Data:</Strong> clears what IronBuddy stores on the device.
-                </li>
+          <FeatureBlock
+            id="your-data"
+            title="Your data: offline, private, and portable"
+            shot="data"
+            flip
+            more={{ href: pages.offline.path, label: "How offline tracking works" }}
+          >
+            <BulletList>
+              <li>
+                <Strong>Offline:</Strong> logging, history, and the exercise library work without a
+                connection.
+              </li>
+              <li>
+                <Strong>No account:</Strong> there is no sign-up or sign-in and no IronBuddy cloud.
+              </li>
+              <li>
+                <Strong>Stored on your device:</Strong> workouts, splits, notes, body metrics, and
+                settings live in the app&apos;s on-device storage. See{" "}
+                <TextLink href={pages.privacyFocused.path}>what IronBuddy stores and where</TextLink>.
+              </li>
+              <li>
+                <Strong>Backups you control:</Strong> in the full version, an automatic JSON backup file in your Downloads folder (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.
+              </li>
+              <li>
+                <Strong>Reset All Data:</Strong> clears what IronBuddy stores on the device.
+              </li>
             </BulletList>
           </FeatureBlock>
 
@@ -294,7 +266,7 @@ export default function FeaturesPage() {
 
           <RelatedLinks
             items={[
-              pages.offline,
+              pages.whatsNew,
               pages.noSubscription,
               pages.privacyFocused,
               pages.progressiveOverload,

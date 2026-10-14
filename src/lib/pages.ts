@@ -32,6 +32,8 @@ export type PageDef = {
 
 /** IronBuddy 2.0: new Home cards, Muscle Balance, workout summary, share cards, new trial wording. */
 const RELEASE_20 = "2026-10-13";
+/** IronBuddy 2.0.3: one page per feature, What's new, the easier Customise Home. */
+const RELEASE_203 = "2026-10-14";
 const LAUNCH = "2026-09-17";
 const UPDATED = "2026-09-20";
 const CONTACT_ADDED = "2026-09-21";
@@ -57,6 +59,13 @@ const screenshotImages = [
   "/screenshots/ironbuddy-customizable-home.webp",
   "/screenshots/ironbuddy-accent-colors.webp",
   "/screenshots/ironbuddy-offline-data.webp",
+  "/screenshots/ironbuddy-set-techniques.webp",
+  "/screenshots/ironbuddy-exercise-filters.webp",
+  "/screenshots/ironbuddy-split-presets.webp",
+  "/screenshots/ironbuddy-share-chart.webp",
+  "/screenshots/ironbuddy-muscle-balance-explained.webp",
+  "/screenshots/ironbuddy-personal-records.webp",
+  "/screenshots/ironbuddy-customise-sizes.webp",
 ] as const;
 
 export const pages = {
@@ -75,13 +84,120 @@ export const pages = {
     path: "/features/",
     kind: "product",
     label: "Features",
-    title: "Workout Log & Progressive Overload Tracker",
+    title: "Workout Log, Splits, Charts & Customizable Home",
     description:
-      "IronBuddy's offline workout log: track sets, reps and weight, follow training splits, and chart progressive overload with training volume and 1RM.",
-    summary: "Workout logging, training splits, progress charts, body metrics and the exercise library.",
+      "IronBuddy's features: offline workout log for sets, reps and weight, ten training splits, Muscle Balance, progress charts, share cards and a customizable Home.",
+    summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
     published: UPDATED,
-    modified: RELEASE_20,
+    modified: RELEASE_203,
     images: screenshotImages,
+  },
+  customizableHome: {
+    path: "/features/customizable-home/",
+    kind: "product",
+    label: "Customizable Home",
+    title: "Customizable Home for Your Workout Tracker",
+    description:
+      "Arrange IronBuddy's Home your way: drag, resize, add and remove cards for muscles worked, charts, records and Muscle Balance. Android, works offline.",
+    summary: "Drag, resize, add and remove the cards on IronBuddy's Home, on three pages that fit your screen (full version).",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-customizable-home.webp", "/screenshots/ironbuddy-customise-sizes.webp"],
+  },
+  muscleBalance: {
+    path: "/features/muscle-balance/",
+    kind: "product",
+    label: "Muscle Balance",
+    title: "Muscle Balance: Weekly Sets per Muscle Group",
+    description:
+      "See your working sets per body area this week against last week, the areas you skipped, and every muscle you trained on a front and back body map.",
+    summary: "Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-muscle-balance.webp", "/screenshots/ironbuddy-muscle-balance-explained.webp"],
+  },
+  workoutSummary: {
+    path: "/features/workout-summary/",
+    kind: "product",
+    label: "Workout summary",
+    title: "Workout Summary: Compare With Last Time",
+    description:
+      "After every workout IronBuddy shows each exercise against your last session (+2.5 kg, +2 reps), marks new personal records and sums the sets per muscle.",
+    summary: "Every exercise against your last session, new records marked, the muscles worked and volume per muscle.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-workout-summary.webp"],
+  },
+  progressCharts: {
+    path: "/features/progress-charts/",
+    kind: "product",
+    label: "Progress charts",
+    title: "Progress Charts: Best Weight, 1RM & Volume",
+    description:
+      "Charts for every exercise: best weight, estimated 1RM, weight vs reps, volume and reps, plus workout volume, body weight and body fat. Offline, on Android.",
+    summary: "Best weight, estimated 1RM, weight vs reps, volume and reps per exercise, workout volume, body weight and body fat.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-estimated-1rm-chart.webp", "/screenshots/ironbuddy-training-volume.webp", "/screenshots/ironbuddy-personal-records.webp"],
+  },
+  shareCards: {
+    path: "/features/share-cards/",
+    kind: "product",
+    label: "Share cards",
+    title: "Share Cards: Workouts, PRs & Charts as Images",
+    description:
+      "Turn a workout, a personal record or a progress chart into an image made on your phone, then share it to Instagram or save it. Nothing is uploaded.",
+    summary: "A workout, a personal record or a chart as an image, made on your phone and shared or saved (full version).",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-share-card.webp", "/screenshots/ironbuddy-share-chart.webp"],
+  },
+  exerciseLibrary: {
+    path: "/features/exercise-library/",
+    kind: "product",
+    label: "Exercise library",
+    title: "Exercise Library: 800+ Exercises, Offline",
+    description:
+      "Search 800+ exercises, filter by muscle and equipment, sort by recent, and open any exercise for its demo, your last workout, your records and target muscles.",
+    summary: "800+ exercises with form demos, muscle and equipment filters, and an exercise page with your last workout and records.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-exercise-library.webp", "/screenshots/ironbuddy-exercise-filters.webp", "/screenshots/ironbuddy-exercise-page.webp"],
+  },
+  trainingSplits: {
+    path: "/features/training-splits/",
+    kind: "product",
+    label: "Training splits",
+    title: "Training Splits: 10 Presets or Your Own Plan",
+    description:
+      "Pick Push/Pull/Legs, Upper/Lower, Full Body, PHUL, PHAT, 5/3/1 and more, filter presets by days and level, map days to weekdays, or build your own split.",
+    summary: "Ten preset splits with rep ranges and rest times, filters by days a week and level, and your own custom splits.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-training-splits.webp", "/screenshots/ironbuddy-split-presets.webp"],
+  },
+  setTechniques: {
+    path: "/features/set-techniques/",
+    kind: "product",
+    label: "Set techniques",
+    title: "Log Drop Sets, Supersets & Rest-Pause Sets",
+    description:
+      "Log drop sets, supersets, rest-pause, pyramid, back-off, myo-rep, cluster and mechanical drop sets with their own reps and weight, counted in your volume.",
+    summary: "Eight set techniques logged with their own reps and weight, so every drop and every pause counts in your volume.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
+    images: ["/screenshots/ironbuddy-set-techniques.webp", "/screenshots/ironbuddy-workout-log.webp"],
+  },
+  whatsNew: {
+    path: "/whats-new/",
+    kind: "product",
+    label: "What's new",
+    title: "What's New in IronBuddy: Release Notes",
+    description:
+      "Every IronBuddy update, newest first: the new Home and Muscle Balance in 2.0, Gold and the easier Customise Home in 2.0.x, and what each release changed.",
+    summary: "Release notes for every IronBuddy version, newest first.",
+    published: RELEASE_203,
+    modified: RELEASE_203,
   },
   offline: {
     path: "/offline-workout-tracker/",

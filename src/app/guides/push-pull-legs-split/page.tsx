@@ -206,7 +206,7 @@ export default function PushPullLegsGuidePage() {
           </NumberedList>
           <p>
             {trialDetails.includes} {trialDetails.unlocks} See{" "}
-            <TextLink href={`${pages.features.path}#training-splits`}>training splits in IronBuddy</TextLink>{" "}
+            <TextLink href={pages.trainingSplits.path}>training splits in IronBuddy</TextLink>{" "}
             for screenshots.
           </p>
         </ContentSection>

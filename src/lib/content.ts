@@ -28,53 +28,64 @@ export const features: Array<{
   title: string;
   description: string;
   icon: FeatureIcon;
+  /** The page that explains the feature (the card links there). */
+  href: string;
 }> = [
   {
     title: "Workout Log",
     description:
       "Sets, reps, weight and notes for every workout.",
     icon: "clipboard",
+    href: pages.setTechniques.path,
   },
   {
     title: "Training Splits",
     description:
       "Push Pull Legs, Upper Lower, Full Body, or your own.",
     icon: "calendar",
+    href: pages.trainingSplits.path,
   },
   {
     title: "Progressive Overload Tracking",
     description: "Follow 1RM, volume and personal records over time.",
     icon: "chart",
+    href: pages.progressCharts.path,
   },
   {
     title: "Muscles Worked & Balance",
     description: "See which muscles you trained and what you skipped.",
     icon: "body",
+    href: pages.muscleBalance.path,
   },
   {
     title: "Body Weight & Body Fat",
     description: "Track body weight and body fat % in one place.",
     icon: "scale",
+    href: `${pages.progressCharts.path}#body`,
   },
   {
     title: "800+ Exercise Library",
     description: "Form demos, with muscle and equipment filters.",
     icon: "library",
+    href: pages.exerciseLibrary.path,
   },
   {
     title: "Customizable Home",
     description: "Arrange and resize your cards (full version).",
     icon: "layout",
+    href: pages.customizableHome.path,
   },
   {
     title: "Share Cards",
     description: "Workouts, records and charts as images (full version).",
     icon: "share",
+    href: pages.shareCards.path,
   },
   {
     title: "Offline & Private",
     description: "Works offline, stored on your phone, no account.",
     icon: "shield",
+    href: pages.offline.path,
   },
 ];
 
@@ -213,6 +224,70 @@ export const screenshots = [
     width: 720,
     height: 1516,
     carousel: true,
+  },
+  // Screens for the feature pages (not in the home carousel).
+  {
+    id: "techniques",
+    file: "ironbuddy-set-techniques.webp",
+    label: "Set Techniques",
+    alt: "IronBuddy workout log with a drop set on the first set of hack squat: each drop has its own reps and weight",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "filters",
+    file: "ironbuddy-exercise-filters.webp",
+    label: "Exercise Filters",
+    alt: "IronBuddy exercise library filters: muscle groups and equipment, with Chest and Machine selected",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "presets",
+    file: "ironbuddy-split-presets.webp",
+    label: "Split Presets",
+    alt: "IronBuddy preset training splits filtered to four days a week: Upper / Lower, PHUL and Push / Pull",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "shareChart",
+    file: "ironbuddy-share-chart.webp",
+    label: "Share a Chart",
+    alt: "IronBuddy share card of a hack squat best-weight chart, ready to share or save as an image",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "balanceExplained",
+    file: "ironbuddy-muscle-balance-explained.webp",
+    label: "Muscle Balance Explained",
+    alt: "IronBuddy's Muscle Balance card with its explanation open: every set counts once, for the main muscle of the exercise",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "records",
+    file: "ironbuddy-personal-records.webp",
+    label: "Personal Records",
+    alt: "IronBuddy exercise page: last workout with sets, best set and estimated 1RM, and the records with their dates",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "customiseSizes",
+    file: "ironbuddy-customise-sizes.webp",
+    label: "Card Sizes",
+    alt: "IronBuddy Customise Home with a card's size menu open: Small, Wide, Tall or Large",
+    width: 720,
+    height: 1516,
+    carousel: false,
   },
 ] as const;
 
@@ -422,6 +497,7 @@ export const navItems = [
   { label: "Guides", href: pages.guides.path, desktop: true },
   { label: "FAQ", href: pages.faq.path, desktop: true },
   { label: "About", href: pages.about.path, desktop: true },
+  { label: "What's new", href: pages.whatsNew.path, desktop: false },
   { label: "Contact", href: pages.contact.path, desktop: false },
   { label: "Privacy Policy", href: pages.privacy.path, desktop: false },
   { label: "Download", href: "/#download", desktop: false },
@@ -442,8 +518,22 @@ export const footerGroups = [
     title: "Product",
     links: [
       { label: "Features", href: pages.features.path },
+      { label: pages.whatsNew.label, href: pages.whatsNew.path },
       { label: "Screenshots", href: "/#screenshots" },
       { label: "FAQ", href: pages.faq.path },
+    ],
+  },
+  {
+    title: "Features",
+    links: [
+      { label: pages.customizableHome.label, href: pages.customizableHome.path },
+      { label: pages.muscleBalance.label, href: pages.muscleBalance.path },
+      { label: pages.workoutSummary.label, href: pages.workoutSummary.path },
+      { label: pages.progressCharts.label, href: pages.progressCharts.path },
+      { label: pages.shareCards.label, href: pages.shareCards.path },
+      { label: pages.exerciseLibrary.label, href: pages.exerciseLibrary.path },
+      { label: pages.trainingSplits.label, href: pages.trainingSplits.path },
+      { label: pages.setTechniques.label, href: pages.setTechniques.path },
     ],
   },
   {

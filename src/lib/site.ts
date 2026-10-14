@@ -22,7 +22,7 @@ export const siteConfig = {
   tagline: "Your lifelong gym companion.",
   title: "IronBuddy: Workout Tracker & Gym Log App for Android",
   description:
-    "Offline workout tracker and gym log app for Android: track progressive overload, plan splits and log every set. No subscription, no ads, no account.",
+    "Offline workout tracker and gym log for Android: log every set, plan splits, track progressive overload, customize your Home. No subscription, ads or account.",
   url: "https://ironbuddy.fit",
   locale: "en_US",
   /**

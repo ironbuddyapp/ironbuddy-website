@@ -10,7 +10,7 @@ const linkClass = "inline-block py-1.5 transition hover:text-white";
 export function Footer() {
   return (
     <footer className="below-fold border-t border-white/8 bg-background">
-      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(5,1fr)]">
         <div className="sm:col-span-2 lg:col-span-1">
           <Logo />
           <p className="mt-3 max-w-xs text-sm text-muted">{siteConfig.tagline}</p>
