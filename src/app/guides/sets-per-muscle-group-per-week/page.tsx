@@ -170,7 +170,7 @@ export default function SetsPerWeekGuidePage() {
             </table>
           </div>
           <p>
-            The Volume per muscle card on Home lists the detailed muscles instead (quads, hamstrings,
+            The Volume per muscle widget on Home lists the detailed muscles instead (quads, hamstrings,
             glutes and so on), for when the area total hides a gap, such as plenty of quads and no
             hamstrings.
           </p>

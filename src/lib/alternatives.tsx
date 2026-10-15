@@ -374,7 +374,7 @@ export const alternatives = {
       body: (
         <>
           <p>
-            Open a training day from the home screen with Edit &amp; Log, or log a single exercise from
+            Open a training day from the home screen with its Log button, or log a single exercise from
             its preview. Every set gets its own reps and weight.
           </p>
           <BulletList>

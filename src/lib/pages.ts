@@ -34,6 +34,8 @@ export type PageDef = {
 const RELEASE_20 = "2026-10-13";
 /** IronBuddy 2.0.3: one page per feature, What's new, the easier Customise Home. */
 const RELEASE_203 = "2026-10-14";
+/** IronBuddy 2.0.6: the calendar around today, Calendar look, widgets. Set to the Play release day before deploying. */
+const RELEASE_206 = "2026-10-15";
 const SPLIT_GUIDES = "2026-10-14";
 const TRAINING_GUIDES = "2026-10-14";
 const LAUNCH = "2026-09-17";
@@ -79,7 +81,7 @@ export const pages = {
     description: siteConfig.description,
     summary: "Offline Android workout tracker with no account, ads, or subscription.",
     published: LAUNCH,
-    modified: RELEASE_20,
+    modified: RELEASE_206,
     images: screenshotImages,
   },
   features: {
@@ -91,7 +93,7 @@ export const pages = {
       "IronBuddy's features: offline workout log for sets, reps and weight, ten training splits, Muscle Balance, progress charts, share cards and a customizable Home.",
     summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
     published: UPDATED,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: screenshotImages,
   },
   customizableHome: {
@@ -100,11 +102,11 @@ export const pages = {
     label: "Customizable Home",
     title: "Customizable Home for Your Workout Tracker",
     description:
-      "Arrange IronBuddy's Home your way: drag, resize, add and remove cards for muscles worked, charts, records and Muscle Balance. Android, works offline.",
-    summary: "Drag, resize, add and remove the cards on IronBuddy's Home, on three pages that fit your screen (full version).",
+      "Arrange IronBuddy's Home your way: pick your calendar look, then drag, resize, add and remove widgets for charts, records and Muscle Balance. Works offline.",
+    summary: "Pick your calendar look, and drag, resize, add and remove the widgets on IronBuddy's Home, on three pages that fit your screen.",
     published: RELEASE_203,
-    modified: RELEASE_203,
-    images: ["/screenshots/ironbuddy-customizable-home.webp", "/screenshots/ironbuddy-customise-sizes.webp"],
+    modified: RELEASE_206,
+    images: ["/screenshots/ironbuddy-customizable-home.webp", "/screenshots/ironbuddy-calendar-look.webp", "/screenshots/ironbuddy-customise-sizes.webp"],
   },
   muscleBalance: {
     path: "/features/muscle-balance/",
@@ -115,7 +117,7 @@ export const pages = {
       "See your working sets per body area this week against last week, the areas you skipped, and every muscle you trained on a front and back body map.",
     summary: "Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: ["/screenshots/ironbuddy-muscle-balance.webp", "/screenshots/ironbuddy-muscle-balance-explained.webp"],
   },
   workoutSummary: {
@@ -127,7 +129,7 @@ export const pages = {
       "After every workout IronBuddy shows each exercise against your last session (+2.5 kg, +2 reps), marks new personal records and sums the sets per muscle.",
     summary: "Every exercise against your last session, new records marked, the muscles worked and volume per muscle.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: ["/screenshots/ironbuddy-workout-summary.webp"],
   },
   progressCharts: {
@@ -139,7 +141,7 @@ export const pages = {
       "Charts for every exercise: best weight, estimated 1RM, weight vs reps, volume and reps, plus workout volume, body weight and body fat. Offline, on Android.",
     summary: "Best weight, estimated 1RM, weight vs reps, volume and reps per exercise, workout volume, body weight and body fat.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: ["/screenshots/ironbuddy-estimated-1rm-chart.webp", "/screenshots/ironbuddy-training-volume.webp", "/screenshots/ironbuddy-personal-records.webp"],
   },
   shareCards: {
@@ -175,7 +177,7 @@ export const pages = {
       "Pick Push/Pull/Legs, Upper/Lower, Full Body, PHUL, PHAT, 5/3/1 and more, filter presets by days and level, map days to weekdays, or build your own split.",
     summary: "Ten preset splits with rep ranges and rest times, filters by days a week and level, and your own custom splits.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: ["/screenshots/ironbuddy-training-splits.webp", "/screenshots/ironbuddy-split-presets.webp"],
   },
   setTechniques: {
@@ -187,7 +189,7 @@ export const pages = {
       "Log drop sets, supersets, rest-pause, pyramid, back-off, myo-rep, cluster and mechanical drop sets with their own reps and weight, counted in your volume.",
     summary: "Eight set techniques logged with their own reps and weight, so every drop and every pause counts in your volume.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
     images: ["/screenshots/ironbuddy-set-techniques.webp", "/screenshots/ironbuddy-workout-log.webp"],
   },
   whatsNew: {
@@ -196,10 +198,10 @@ export const pages = {
     label: "What's new",
     title: "What's New in IronBuddy: Release Notes",
     description:
-      "Every IronBuddy update, newest first: the new Home and Muscle Balance in 2.0, Gold and the easier Customise Home in 2.0.x, and what each release changed.",
+      "Every IronBuddy update, newest first: Home built around today and Calendar look in 2.0.6, the new Home and Muscle Balance in 2.0, and each release in between.",
     summary: "Release notes for every IronBuddy version, newest first.",
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: RELEASE_206,
   },
   offline: {
     path: "/offline-workout-tracker/",
@@ -243,7 +245,7 @@ export const pages = {
       "Looking for a Strong, Hevy, FitNotes or JEFIT alternative? IronBuddy is an Android workout tracker with offline use, no account, no ads and no subscription.",
     summary: "Who IronBuddy fits, who it does not, and a checklist for comparing any workout tracker.",
     published: UPDATED,
-    modified: RELEASE_20,
+    modified: RELEASE_206,
   },
   // One page per app people search an alternative to. Like the hub above, they state facts about IronBuddy only,
   // never about the named app (see src/lib/alternatives.tsx).
@@ -488,7 +490,7 @@ export const pages = {
       "How many working sets each muscle group needs per week, what counts as a set, how to spread them across the week, and how to check your own numbers in your log.",
     summary: "What the research suggests for weekly sets per muscle, what counts as a set, and how to check your own week.",
     published: TRAINING_GUIDES,
-    modified: TRAINING_GUIDES,
+    modified: RELEASE_206,
   },
   logTechniques: {
     path: "/guides/drop-sets-supersets-rest-pause/",
@@ -499,7 +501,7 @@ export const pages = {
       "What drop sets, supersets and rest-pause sets are, how to do each one, when they help and when they get in the way, and how to log them so your volume is right.",
     summary: "How to do drop sets, supersets and rest-pause sets, when to use them, and how to log them properly.",
     published: TRAINING_GUIDES,
-    modified: TRAINING_GUIDES,
+    modified: RELEASE_206,
   },
   oneRmChart: {
     path: "/guides/how-to-read-your-1rm-chart/",
@@ -510,7 +512,7 @@ export const pages = {
       "What an estimated one-rep max is, how the Epley formula works, why the chart moves the way it does, how to pick your next weight from it, and when to doubt it.",
     summary: "What an estimated 1RM is, how the Epley formula works, how to read the trend, and when the number misleads.",
     published: TRAINING_GUIDES,
-    modified: TRAINING_GUIDES,
+    modified: RELEASE_206,
   },
   contact: {
     path: "/contact/",

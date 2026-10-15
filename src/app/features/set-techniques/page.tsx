@@ -35,7 +35,7 @@ const faqs: Faq[] = [
     id: "plan",
     question: "Can I plan techniques ahead, not only log them?",
     answer:
-      "Yes. Add a technique to a set under Edit & Log, or when you log a single exercise from its page, and it is saved with the day. If \"Also update my plan\" is on, it is planned for the same day in later weeks too.",
+      "Yes. Add a technique to a set from the day's Log button, or when you log a single exercise from its page, and it is saved with the day. If \"Also update my plan\" is on, it is planned for the same day in later weeks too.",
   },
   {
     id: "failure",
@@ -64,7 +64,7 @@ export default function SetTechniquesPage() {
       <PageBody>
         <FeatureBlock id="logging" title="Every set: reps and weight, quickly" shot="logging">
           <p>
-            Open a day from Home with <Strong>Edit &amp; Log</Strong>, tap an exercise, and each set
+            Open a day from Home with its <Strong>Log</Strong> button, tap an exercise, and each set
             has reps and weight with <Strong>+</Strong> and <Strong>−</Strong> buttons. Add or
             remove sets, reorder exercises, add any of 800+ exercises, write a note for the exercise
             or the whole day, then <Strong>Log workout</Strong>. Today or any past date. Read{" "}
@@ -94,7 +94,7 @@ export default function SetTechniquesPage() {
 
         <ContentSection id="how-to" title="How to log a drop set">
           <NumberedList>
-            <li>Open the day with <Strong>Edit &amp; Log</Strong> and tap the exercise.</li>
+            <li>Open the day with its <Strong>Log</Strong> button and tap the exercise.</li>
             <li>Log the main set: reps and weight.</li>
             <li>Tap <Strong>+ add technique</Strong> under it and choose <Strong>Drop set</Strong>.</li>
             <li>Enter the drop&apos;s reps and weight. Add another drop if you did one.</li>

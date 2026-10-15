@@ -109,7 +109,8 @@ export default function TrainingSplitsPage() {
 
         <FeatureBlock id="your-week" title="Your split on your week" shot="dashboard">
           <p>
-            Home shows the week with each day&apos;s status: full, partial or missed. <Strong>Edit
+            Home shows the week with each day&apos;s status: logged, partly logged or missed, and a
+            missed workout can move to the next free day in one tap. <Strong>Edit
             Week</Strong> maps your split days to weekdays for every week to come; <Strong>Change
             Day</Strong> swaps one date for another split day, a custom day or a rest day. Every
             workout counts toward the week, planned or not, so a 3-day split trained four times

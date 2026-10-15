@@ -218,8 +218,8 @@ export default function OneRmChartGuidePage() {
               the 1RM record updates when a session&apos;s best set beats the old estimate.
             </li>
             <li>
-              <Strong>Home:</Strong> the Personal records card counts your records and the Exercise
-              chart card shows one lift&apos;s trend at a glance (in the full version, add a card per
+              <Strong>Home:</Strong> the Personal records widget counts your records and the Exercise
+              chart widget shows one lift&apos;s trend at a glance (in the full version, add one per
               lift).
             </li>
             <li>

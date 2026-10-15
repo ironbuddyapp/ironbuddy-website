@@ -81,12 +81,12 @@ export default function ProgressChartsPage() {
         <FeatureBlock id="body" title="Body weight and body fat" shot="metrics">
           <p>
             Log your body weight and body fat percentage in Settings whenever you want, and the Body
-            view charts both over the same ranges as your lifts. The Home card shows your latest
+            view charts both over the same ranges as your lifts. The Home widget shows your latest
             weight and its trend. Both are optional: track what is useful to you and nothing else.
           </p>
         </FeatureBlock>
 
-        <ContentSection id="records-and-home" title="Records, Home cards and the exercise page">
+        <ContentSection id="records-and-home" title="Records, Home widgets and the exercise page">
           <BulletList>
             <li>
               <Strong>Records:</Strong> every exercise keeps its heaviest weight, most reps in a
@@ -94,8 +94,8 @@ export default function ProgressChartsPage() {
               <TextLink href={pages.workoutSummary.path}>workout summary</TextLink>.
             </li>
             <li>
-              <Strong>Exercise chart card:</Strong> Home shows the best-weight trend of one exercise
-              at a glance; in the full version you can add a card for every exercise you care
+              <Strong>Exercise chart widget:</Strong> Home shows the best-weight trend of one exercise
+              at a glance; in the full version you can add a widget for every exercise you care
               about and make it as big as you like. See{" "}
               <TextLink href={pages.customizableHome.path}>Customizable Home</TextLink>.
             </li>

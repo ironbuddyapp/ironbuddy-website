@@ -226,8 +226,8 @@ export default function TechniquesGuidePage() {
 
         <ContentSection id="in-ironbuddy" title="Logging them in IronBuddy">
           <p>
-            IronBuddy logs all eight techniques, each with its own numbers. Open a day with{" "}
-            <Strong>Edit &amp; Log</Strong>, tap the exercise, and under a set tap{" "}
+            IronBuddy logs all eight techniques, each with its own numbers. Open a day with its{" "}
+            <Strong>Log</Strong> button, tap the exercise, and under a set tap{" "}
             <Strong>+ add technique</Strong>.
           </p>
           <BulletList>

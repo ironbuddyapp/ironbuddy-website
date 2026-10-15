@@ -91,15 +91,20 @@ export default function FeaturesPage() {
             </p>
           </FeatureBlock>
 
-          <FeatureBlock id="weekly-view" title="Home: your week and your cards" shot="dashboard" flip>
+          <FeatureBlock id="weekly-view" title="Home: today, your week and your widgets" shot="dashboard" flip>
             <p>
-              Home shows your active split with a progress line for the week (2 of 3 workouts
-              logged), each day&apos;s status (full, partial or missed) and your workout counts.
-              Every workout counts, planned or not, and you can switch between a week and a month
-              view.
+              Home opens on today: the workout planned for today, its exercises and what you lifted
+              last time, with one <Strong>Log</Strong> button. Under it, your week: each day&apos;s
+              circle shows whether it is logged, partly logged, missed, today or a rest day, and the
+              progress at the top right counts every workout you log, planned or not.
             </p>
             <p>
-              Below it, swipe between three pages of cards that fit the screen without scrolling: the
+              Missed a day? &ldquo;Missed Push on Mon · Move to Sat&rdquo; moves that workout to the
+              next free day in one tap. Switch between a week and a month view, or tap the date to
+              jump to any week.
+            </p>
+            <p>
+              Below it, swipe between three pages of widgets that fit the screen without scrolling: the
               muscles you worked this week on a body map, your last workout, an exercise chart,
               personal records, workout counts, body weight, Muscle Balance and volume per muscle.
             </p>
@@ -107,16 +112,17 @@ export default function FeaturesPage() {
 
           <FeatureBlock
             id="customizable-home"
-            title="A customizable Home: arrange, resize, add and remove cards (full version)"
+            title="A customizable Home: your calendar look and your widgets"
             shot="customise"
             more={{ href: pages.customizableHome.path, label: "How the customizable Home works" }}
           >
             <p>
-              Tap Customise, or hold a card, and arrange Home your way: hold and drag a card to move
-              it, even to another page; tap or drag its corner handle to make it small, wide, tall or
-              large; remove the cards you don&apos;t need and add others, such as a chart for every
-              exercise you care about. A label under your finger says where a card lands and at what
-              size, and Reset puts the default cards back.
+              Pick how the calendar looks: five day styles (Ring, Boxes, Track, Effort or Agenda),
+              five ways to show your progress, and the greeting above it. In the full version,
+              arrange the widgets too: tap Customise, or hold a widget, then drag it, even to another
+              page; tap or drag its corner handle to make it small, wide, tall or large; remove the
+              widgets you don&apos;t need and add others, such as a chart for every exercise you care
+              about. Reset puts the default widgets back.
             </p>
           </FeatureBlock>
 

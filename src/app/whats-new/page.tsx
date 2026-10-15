@@ -13,6 +13,37 @@ export const metadata: Metadata = pageMetadata(pages.whatsNew);
 /** Newest first. Keep in step with the app's What's New notes (src/lib/whats-new.ts in the app). */
 const releases: Array<{ version: string; date: string; title: string; notes: React.ReactNode[] }> = [
   {
+    version: "2.0.6",
+    date: "15 October 2026",
+    title: "Home built around today, and your calendar look",
+    notes: [
+      <>Home opens on today: today&apos;s workout with one Log button. On a rest day it names your next workout.</>,
+      <><TextLink href={pages.customizableHome.path}>Calendar look</TextLink>: five day styles (Ring, Boxes, Track, Effort, Agenda), five progress styles and your greeting.</>,
+      <>Missed a day? Move that workout to the next free day in one tap.</>,
+      <>Week and Month are always visible; tap the date to jump to any week.</>,
+      <>A day&apos;s button names its date (&ldquo;Log for Fri 16 Oct&rdquo;), and Reset moved under ⋯.</>,
+      <>Bodyweight exercises ask for reps, cardio for minutes; Add exercise has the library&apos;s filters.</>,
+      <>Home cards are now called widgets.</>,
+    ],
+  },
+  {
+    version: "2.0.5",
+    date: "14 October 2026",
+    title: "Home fits your screen",
+    notes: [
+      <>Home pages never scroll: a widget that doesn&apos;t fit is refused, with the reason.</>,
+      <>A hard swipe moves one page at a time.</>,
+      <>Muscles worked shows just the body map; a tall Muscle Balance names the body areas.</>,
+      <>Help is a slim tab on the right edge.</>,
+    ],
+  },
+  {
+    version: "2.0.4",
+    date: "14 October 2026",
+    title: "Security update",
+    notes: [<>The app framework (Capacitor) updated to 8.4.3.</>],
+  },
+  {
     version: "2.0.3",
     date: "14 October 2026",
     title: "Customise Home, easier to use",

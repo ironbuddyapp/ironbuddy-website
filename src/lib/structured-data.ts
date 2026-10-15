@@ -81,7 +81,7 @@ export const appFeatureList = [
   "Body weight and body fat percentage tracking",
   "Exercise library with 800+ exercises and demonstrations",
   "JSON backup and export (full version), and a PDF export of the active split",
-  "Customizable Home: cards you arrange and resize (full version)",
+  "Customizable Home: widgets you arrange and resize (full version), and your choice of calendar look",
   "Share cards: workouts, records and charts as images (full version)",
   "Light, dark or system theme; accent colors (full version)",
   "No account, no ads and no subscription",

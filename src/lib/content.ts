@@ -71,7 +71,7 @@ export const features: Array<{
   },
   {
     title: "Customizable Home",
-    description: "Arrange and resize your cards (full version).",
+    description: "Arrange widgets, pick your calendar look.",
     icon: "layout",
     href: pages.customizableHome.path,
   },
@@ -90,7 +90,7 @@ export const features: Array<{
 ];
 
 /**
- * App screenshots in public/screenshots/ (WebP, recorded 13 October 2026 from app 2.0.2 with sample data). `carousel: true`
+ * App screenshots in public/screenshots/ (WebP, recorded 15 October 2026 from app 2.0.6 with sample data). `carousel: true`
  * marks the current set: it drives the home page carousel, the app's structured data and the image sitemap.
  * Keep the array in carousel order.
  *
@@ -103,7 +103,7 @@ export const screenshots = [
     id: "dashboard",
     file: "ironbuddy-workout-tracker-home.webp",
     label: "Dashboard",
-    alt: "IronBuddy Android workout tracker home screen: a Push/Pull/Legs week fully logged and the muscles worked this week",
+    alt: "IronBuddy Android workout tracker home screen: today's Legs workout with one Log button above a Push/Pull/Legs week",
     width: 720,
     height: 1516,
     carousel: true,
@@ -202,7 +202,7 @@ export const screenshots = [
     id: "customise",
     file: "ironbuddy-customizable-home.webp",
     label: "Customizable Home",
-    alt: "IronBuddy customizable home screen: cards with remove and resize handles, Add, Reset and Done",
+    alt: "IronBuddy customizable home screen: widgets with remove and resize handles, Add, Calendar look, Reset and Done",
     width: 720,
     height: 1516,
     carousel: true,
@@ -266,7 +266,7 @@ export const screenshots = [
     id: "balanceExplained",
     file: "ironbuddy-muscle-balance-explained.webp",
     label: "Muscle Balance Explained",
-    alt: "IronBuddy's Muscle Balance card with its explanation open: every set counts once, for the main muscle of the exercise",
+    alt: "IronBuddy's Muscle Balance widget with its explanation open: every set counts once, for the main muscle of the exercise",
     width: 720,
     height: 1516,
     carousel: false,
@@ -283,8 +283,26 @@ export const screenshots = [
   {
     id: "customiseSizes",
     file: "ironbuddy-customise-sizes.webp",
-    label: "Card Sizes",
-    alt: "IronBuddy Customise Home with a card's size menu open: Small, Wide, Tall or Large",
+    label: "Widget Sizes",
+    alt: "IronBuddy Customise Home with a widget's size menu open: Small, Wide, Tall or Large",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "calendarLook",
+    file: "ironbuddy-calendar-look.webp",
+    label: "Calendar Look",
+    alt: "IronBuddy calendar look settings: five day styles, five progress styles and the greeting above the calendar",
+    width: 720,
+    height: 1516,
+    carousel: false,
+  },
+  {
+    id: "missedDay",
+    file: "ironbuddy-missed-day.webp",
+    label: "Missed Day",
+    alt: "IronBuddy workout calendar with a missed day: Missed Push on Mon 12, Move to Sat 17, and today's Legs ready to log",
     width: 720,
     height: 1516,
     carousel: false,

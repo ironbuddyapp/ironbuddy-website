@@ -71,7 +71,7 @@ export default function WorkoutSummaryPage() {
             tells you at once. Every exercise page keeps four records with their dates:{" "}
             <Strong>heaviest weight</Strong>, <Strong>most reps in a set</Strong>,{" "}
             <Strong>best session volume</Strong> and <Strong>best estimated 1RM</Strong>. Home&apos;s
-            Personal records card counts them and lists the latest.
+            Personal records widget counts them and lists the latest.
           </p>
           <p>
             In the full version, tapping a PR marker opens that record as a{" "}

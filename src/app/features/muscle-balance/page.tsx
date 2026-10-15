@@ -24,7 +24,7 @@ const faqs: Faq[] = [
     id: "week",
     question: "Which week does Muscle Balance show?",
     answer:
-      "The current calendar week, the same one your split card shows, against the week before it. Every workout you logged counts, planned or not, so an extra session on a rest day is included.",
+      "The current calendar week, the same one the calendar on Home shows, against the week before it. Every workout you logged counts, planned or not, so an extra session on a rest day is included.",
   },
   {
     id: "vs-muscles-worked",
@@ -45,7 +45,7 @@ export default function MuscleBalancePage() {
         eyebrow="Muscle Balance"
         title="Sets per muscle group each week, and what you skipped"
         updated={pages.muscleBalance.modified}
-        lead="Muscle Balance is a card on IronBuddy's Home. It counts your working sets this week for six body areas, draws them as a shape against last week's, and names the areas you haven't trained yet. Together with the Muscles worked body map, it answers two questions every lifter has: what did I train this week, and did I miss anything?"
+        lead="Muscle Balance is a widget on IronBuddy's Home. It counts your working sets this week for six body areas, draws them as a shape against last week's, and names the areas you haven't trained yet. Together with the Muscles worked body map, it answers two questions every lifter has: what did I train this week, and did I miss anything?"
       >
         <HeroCta />
       </PageHero>
@@ -67,7 +67,7 @@ export default function MuscleBalancePage() {
 
         <FeatureBlock id="how-it-counts" title="How the sets are counted" shot="balanceExplained" flip>
           <p>
-            Tap ⓘ on the card and it explains itself. Every set you mark done counts once, for the
+            Tap ⓘ on the widget and it explains itself. Every set you mark done counts once, for the
             main muscle of the exercise: a bench press counts for Chest, a lat pulldown for Back, a
             leg press for Legs. Helper muscles don&apos;t add sets, so nothing is counted twice and the
             totals stay honest.
@@ -83,9 +83,8 @@ export default function MuscleBalancePage() {
 
         <FeatureBlock id="muscles-worked" title="Muscles worked: every muscle you trained, on a body map" shot="dashboard">
           <p>
-            The first card on Home is a front and back body drawing. Every muscle you trained this
-            week lights up in the same strong colour, and the list next to it names them head to
-            toe. It is a picture of coverage, not of volume, so a single set of curls lights the
+            The first widget on Home is a front and back body drawing. Every muscle you trained this
+            week lights up in the same strong colour. It is a picture of coverage, not of volume, so a single set of curls lights the
             biceps just as a full arm day does.
           </p>
           <p>
@@ -108,7 +107,7 @@ export default function MuscleBalancePage() {
               <TextLink href={pages.exerciseLibrary.path}>exercise library</TextLink>.
             </li>
             <li>
-              <Strong>Volume per muscle:</Strong> a card on Home that lists your working sets per
+              <Strong>Volume per muscle:</Strong> a widget on Home that lists your working sets per
               muscle this week as bars.
             </li>
             <li>
