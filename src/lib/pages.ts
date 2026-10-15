@@ -536,7 +536,7 @@ export const pages = {
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy.
-    modified: RELEASE_20,
+    modified: RELEASE_206,
   },
 } as const satisfies Record<string, PageDef>;
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata(pages.privacy);
 
 /*
  * The policy text below is ported verbatim from the source of truth:
- * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 11 October 2026).
+ * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 15 October 2026).
  * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
  *
  * Exception: the notes about GoatCounter (summary, section 6 and section 13) are about this website only and are
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
               referrers, without cookies and without storing IP addresses (see section 13).
             </li>
             <li>
-              IronBuddy is free to download and includes a 7-day free trial. During the trial you can log, plan and track everything. These come with the full version: exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home cards, and keeping an accent color; during the trial you can try a color, but it isn’t saved). Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
+              IronBuddy is free to download and includes a 7-day free trial. During the trial you can log, plan and track everything. These come with the full version: exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home widgets, and choosing an accent color). Choosing how the Home calendar looks works in both the trial and the full version. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
               Google Play (see section 4).
             </li>
             <li>
@@ -164,9 +164,9 @@ export default function PrivacyPage() {
               preferences (kg/lb).
             </li>
             <li>
-              <Strong>App settings:</Strong> preferences such as theme, units, and whether the
+              <Strong>App settings:</Strong> preferences such as theme, units, how the Home calendar looks, and whether the
               automatic backup file is turned on; in the full version, also your customizations: the
-              layout and sizes of your Home cards and your accent color. They stay on your device and
+              layout and sizes of your Home widgets and your accent color. They stay on your device and
               are included when you export a copy.
             </li>
             <li>
@@ -187,7 +187,7 @@ export default function PrivacyPage() {
 
         <ContentSection id="purchases" title="4. Purchases and payment processing">
           <p>
-            IronBuddy is free to download and use for a free trial period (currently 7 days), during which you can log, plan and track everything. Exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home cards, and keeping an accent color) come with the full version. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
+            IronBuddy is free to download and use for a free trial period (currently 7 days), during which you can log, plan and track everything. Exporting and importing your data, the local copy kept in Download/IronBuddy, share images, and customizations (arranging and resizing your Home widgets, and choosing an accent color) come with the full version. Android’s own backup works in both the trial and the full version. After the trial your data stays visible, and logging and editing need the one-time in-app purchase; there are no
             subscriptions. The purchase is made and processed entirely by Google Play
             using Google Play Billing. The App receives from Google Play only confirmation that the
             purchase exists (the product identifier and a purchase token) and stores it on your
