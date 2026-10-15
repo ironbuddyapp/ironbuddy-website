@@ -17,9 +17,9 @@ import { pageGraph, trail } from "@/lib/structured-data";
 export const metadata: Metadata = pageMetadata(pages.privacy);
 
 /*
- * The policy text below is ported verbatim from the source of truth:
- * https://github.com/ironbuddyapp/ironbuddy-privacy-policy (index.html, last updated 15 October 2026).
- * Change the wording there first, then mirror it here and bump `pages.privacy.modified` in src/lib/pages.ts.
+ * This page IS IronBuddy's privacy policy: the app links here (Settings → Help & About) and Play Console uses
+ * this URL. Change the wording here and bump `pages.privacy.modified` in src/lib/pages.ts. (The old GitHub repo
+ * ironbuddyapp/ironbuddy-privacy-policy was a workaround from before this website and is no longer used.)
  *
  * Exception: the notes about GoatCounter (summary, section 6 and section 13) are about this website only and are
  * not in the policy repo, because the app itself has no analytics.
