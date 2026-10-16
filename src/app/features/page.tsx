@@ -64,8 +64,8 @@ export default function FeaturesPage() {
               See it in two minutes
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-muted sm:text-base">
-              The Play Store tour: every screen of IronBuddy 2.0, from logging a set to sharing a
-              record, with no voice-over.
+              The Play Store tour: your week, logging a workout, progress, splits and customising your
+              dashboard, with no voice-over.
             </p>
             <VideoCard className="mt-5" />
           </section>

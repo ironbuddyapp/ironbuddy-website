@@ -141,7 +141,7 @@ export default function PressPage() {
 
         <ContentSection id="video" title="Video">
           <p>
-            The Google Play promo video (2:02, 4K, no voice-over) is on YouTube:{" "}
+            The Google Play promo video (1:56, 4K, no voice-over) is on YouTube:{" "}
             <TextLink href={siteConfig.promoVideo.url}>watch the two-minute tour</TextLink>. For
             the original 3840×2160 file, or a longer feature-by-feature tour,{" "}
             <TextLink href={pages.contact.path}>get in touch</TextLink>.

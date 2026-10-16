@@ -82,7 +82,7 @@ export function VideoCard({
             compact ? "text-xs max-sm:hidden sm:text-sm" : "text-sm sm:text-[15px]",
           )}
         >
-          Every screen of IronBuddy 2.0, from logging a set to sharing a record.
+          Your week, logging a workout, progress, splits and your dashboard.
         </span>
         <span className="mt-1.5 block text-xs text-muted/80">Opens YouTube in a new tab</span>
       </span>

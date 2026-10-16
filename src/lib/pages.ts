@@ -36,6 +36,8 @@ const RELEASE_20 = "2026-10-13";
 const RELEASE_203 = "2026-10-14";
 /** IronBuddy 2.0.6: the calendar around today, Calendar look, widgets. Set to the Play release day before deploying. */
 const RELEASE_206 = "2026-10-15";
+/** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
+const PROMO_VIDEO = "2026-10-16";
 const SPLIT_GUIDES = "2026-10-14";
 const TRAINING_GUIDES = "2026-10-14";
 const LAUNCH = "2026-09-17";
@@ -81,7 +83,7 @@ export const pages = {
     description: siteConfig.description,
     summary: "Offline Android workout tracker with no account, ads, or subscription.",
     published: LAUNCH,
-    modified: RELEASE_206,
+    modified: PROMO_VIDEO,
     images: screenshotImages,
   },
   features: {
@@ -93,7 +95,7 @@ export const pages = {
       "IronBuddy's features: offline workout log for sets, reps and weight, ten training splits, Muscle Balance, progress charts, share cards and a customizable Home.",
     summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
     published: UPDATED,
-    modified: RELEASE_206,
+    modified: PROMO_VIDEO,
     images: screenshotImages,
   },
   customizableHome: {
@@ -357,7 +359,7 @@ export const pages = {
       "Download the IronBuddy press kit: a fact sheet, ready-to-use descriptions, the app icon and screenshots of the offline workout tracker for Android.",
     summary: "Fact sheet, ready-to-use descriptions, the app icon and screenshots for writing about IronBuddy.",
     published: PRESS_ADDED,
-    modified: RELEASE_20,
+    modified: PROMO_VIDEO,
     images: ["/press/ironbuddy-app-icon-1024.png"],
   },
   guides: {
