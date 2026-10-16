@@ -20,7 +20,7 @@ const releases: Array<{ version: string; date: string; title: string; notes: Rea
       <>Every preset split shows its level: Beginner, Intermediate or Advanced. See the <TextLink href={pages.trainingSplits.path}>ten presets</TextLink>.</>,
       <>Presets are listed Advanced first, Beginner last, and Filters has a Level choice.</>,
       <>Edit week has a calendar icon, and Customise is a round dashboard button right of the page dots.</>,
-      <>The ⌄ and ⋮ on split cards line up on the right.</>,
+      <>The arrow and the three-dot menu on split cards line up on the right.</>,
     ],
   },
   {
