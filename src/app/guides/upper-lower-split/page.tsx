@@ -97,7 +97,7 @@ const faqs: Faq[] = [
     id: "faq-upper-lower-beginners",
     question: "Is an Upper Lower split good for beginners?",
     answer:
-      "Yes. Each day has a clear job, the exercises are mostly machines and dumbbells, and nothing is trained on consecutive days. IronBuddy marks its Upper / Lower preset Beginner-friendly for that reason. A three-day full body plan is the other common starting point.",
+      "Yes. Each day has a clear job, the exercises are mostly machines and dumbbells, and nothing is trained on consecutive days. IronBuddy lists its Upper / Lower preset as Beginner for that reason. A three-day full body plan is the other common starting point.",
   },
   {
     id: "faq-upper-lower-missed-day",
@@ -214,7 +214,7 @@ export default function UpperLowerGuidePage() {
         <ContentSection id="in-ironbuddy" title="Running Upper Lower in IronBuddy">
           <RunInIronBuddy
             preset="Upper / Lower"
-            note="It is marked Beginner-friendly and set to Mon / Tue / Thu / Fri; change the days with Edit Week."
+            note="It is listed as Beginner and set to Mon / Tue / Thu / Fri; change the days with Edit Week."
           />
         </ContentSection>
 

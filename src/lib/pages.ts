@@ -36,6 +36,8 @@ const RELEASE_20 = "2026-10-13";
 const RELEASE_203 = "2026-10-14";
 /** IronBuddy 2.0.6: the calendar around today, Calendar look, widgets. Set to the Play release day before deploying. */
 const RELEASE_206 = "2026-10-15";
+/** 2.0.8: preset levels, the dashboard button, Edit week icon. Set to the day it goes live. */
+const RELEASE_208 = "2026-10-16";
 /** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
 const PROMO_VIDEO = "2026-10-16";
 const SPLIT_GUIDES = "2026-10-14";
@@ -95,7 +97,7 @@ export const pages = {
       "IronBuddy's features: offline workout log for sets, reps and weight, ten training splits, Muscle Balance, progress charts, share cards and a customizable Home.",
     summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
     published: UPDATED,
-    modified: PROMO_VIDEO,
+    modified: RELEASE_208,
     images: screenshotImages,
   },
   customizableHome: {
@@ -107,7 +109,7 @@ export const pages = {
       "Arrange IronBuddy's Home your way: pick your calendar look, then drag, resize, add and remove widgets for charts, records and Muscle Balance. Works offline.",
     summary: "Pick your calendar look, and drag, resize, add and remove the widgets on IronBuddy's Home, on three pages that fit your screen.",
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: RELEASE_208,
     images: ["/screenshots/ironbuddy-customizable-home.webp", "/screenshots/ironbuddy-calendar-look.webp", "/screenshots/ironbuddy-customise-sizes.webp"],
   },
   muscleBalance: {
@@ -179,7 +181,7 @@ export const pages = {
       "Pick Push/Pull/Legs, Upper/Lower, Full Body, PHUL, PHAT, 5/3/1 and more, filter presets by days and level, map days to weekdays, or build your own split.",
     summary: "Ten preset splits with rep ranges and rest times, filters by days a week and level, and your own custom splits.",
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: RELEASE_208,
     images: ["/screenshots/ironbuddy-training-splits.webp", "/screenshots/ironbuddy-split-presets.webp"],
   },
   setTechniques: {
@@ -203,7 +205,7 @@ export const pages = {
       "Every IronBuddy update, newest first: Home built around today and Calendar look in 2.0.6, the new Home and Muscle Balance in 2.0, and each release in between.",
     summary: "Release notes for every IronBuddy version, newest first.",
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: RELEASE_208,
   },
   offline: {
     path: "/offline-workout-tracker/",
@@ -415,7 +417,7 @@ export const pages = {
       "How to run a four-day Upper Lower split: two upper and two lower sessions a week, the exercises on each day, how to lay out the week, and how to track it.",
     summary: "Two upper and two lower sessions a week: what goes on each day, weekly layouts, and how to track an Upper Lower split.",
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: RELEASE_208,
   },
   fullBody: {
     path: "/guides/full-body-workout-3-days/",
@@ -426,7 +428,7 @@ export const pages = {
       "A three-day full body workout plan: three sessions that each train the whole body, the exercises on each one, why it suits beginners, and how to track progress.",
     summary: "Three full-body sessions a week: the exercises on each day, why it suits beginners, and how to track it.",
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: RELEASE_208,
   },
   phul: {
     path: "/guides/phul-workout/",
@@ -437,7 +439,7 @@ export const pages = {
       "PHUL explained: a four-day upper/lower split with two power days and two hypertrophy days. The exercises on each day, who it suits, and how to log and track it.",
     summary: "The four-day Power Hypertrophy Upper Lower split: what each day trains, who it suits, and how to run and track it.",
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: RELEASE_208,
   },
   phat: {
     path: "/guides/phat-workout/",

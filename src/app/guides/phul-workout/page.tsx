@@ -172,9 +172,9 @@ export default function PhulGuidePage() {
               how you look, PHUL gives each a day.
             </li>
             <li>
-              <Strong>Beginners with a few months behind them.</Strong> The machine-based version in
-              IronBuddy is marked Beginner-friendly; the heavy barbell version is better after you have
-              learned the lifts on a full body or Upper Lower plan.
+              <Strong>Lifters with a few months behind them.</Strong> IronBuddy lists its machine-based
+              version as Intermediate, as the program's author does; learn the lifts on a full body or
+              Upper Lower plan first, and keep the heavy barbell version for later.
             </li>
             <li>
               <Strong>Four days, not more.</Strong> PHUL does its work in four sessions. If you have
@@ -216,7 +216,7 @@ export default function PhulGuidePage() {
         <ContentSection id="in-ironbuddy" title="Running PHUL in IronBuddy">
           <RunInIronBuddy
             preset="PHUL"
-            note="It is marked Beginner-friendly and set to Mon / Tue / Thu / Fri. To run the heavier original, edit the power days to 5–6 reps; your copy is saved under My splits."
+            note="It is listed as Intermediate and set to Mon / Tue / Thu / Fri. To run the heavier original, edit the power days to 5–6 reps; your copy is saved under My splits."
           />
         </ContentSection>
 

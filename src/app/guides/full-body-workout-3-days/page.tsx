@@ -80,7 +80,7 @@ const faqs: Faq[] = [
     id: "faq-full-body-beginner",
     question: "Is a full body workout the best way to start?",
     answer:
-      "For most beginners, yes. Every muscle gets practised three times a week, which is what learning a movement needs, the sessions are short enough to finish, and a missed day costs you a third of a week instead of a whole muscle group. IronBuddy marks its Full Body 3× preset Beginner-friendly.",
+      "For most beginners, yes. Every muscle gets practised three times a week, which is what learning a movement needs, the sessions are short enough to finish, and a missed day costs you a third of a week instead of a whole muscle group. IronBuddy lists its Full Body 3× preset as Beginner.",
   },
   {
     id: "faq-full-body-how-long",
@@ -210,7 +210,7 @@ export default function FullBodyGuidePage() {
         <ContentSection id="in-ironbuddy" title="Running Full Body 3× in IronBuddy">
           <RunInIronBuddy
             preset="Full Body 3×"
-            note="It is marked Beginner-friendly and set to Monday, Wednesday and Friday; move the days with Edit Week."
+            note="It is listed as Beginner and set to Monday, Wednesday and Friday; move the days with Edit Week."
           />
         </ContentSection>
 

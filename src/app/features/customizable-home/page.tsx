@@ -19,7 +19,7 @@ const faqs: Faq[] = [
     id: "trial",
     question: "Can I customise Home during the free trial?",
     answer:
-      "You can pick your calendar look during the trial. Arranging the widgets is part of the full version: during the trial you get the default widgets on all three pages, and tapping Customise shows what the full version adds. After the one-time purchase your arrangement is saved with your settings and included in exports.",
+      "You can pick your calendar look during the trial. Arranging the widgets is part of the full version: during the trial you get the default widgets on all three pages, and tapping the dashboard button shows what the full version adds. After the one-time purchase your arrangement is saved with your settings and included in exports.",
   },
   {
     id: "reset",
@@ -95,7 +95,7 @@ export default function CustomizableHomePage() {
 
         <FeatureBlock id="arrange" title="Drag, resize, add, remove" shot="customise" flip>
           <p>
-            Tap <Strong>Customise</Strong> above the widgets, or hold a widget for a moment. Every
+            Tap the round <Strong>dashboard button</Strong> right of the page dots, or hold a widget for a moment. Every
             widget gets an × to remove it and a ↘ corner handle to resize it, and the bar at the top names
             the three gestures.
           </p>
@@ -137,7 +137,7 @@ export default function CustomizableHomePage() {
 
         <ContentSection id="how-to" title="How to customise Home, step by step">
           <NumberedList>
-            <li>Open Home and tap <Strong>Customise</Strong> (full version), or hold any widget.</li>
+            <li>Open Home and tap the round <Strong>dashboard button</Strong> right of the page dots (full version), or hold any widget.</li>
             <li>Tap × on the widgets you don&apos;t want. Undo appears for five seconds if you change your mind.</li>
             <li>Tap <Strong>Add</Strong> to add a widget, or to move one over from another page.</li>
             <li>Hold a widget until it lifts, drag it where you want it, and let go. Rest it at a page edge to carry it to the next page.</li>

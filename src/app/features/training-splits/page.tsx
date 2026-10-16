@@ -13,17 +13,18 @@ import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.trainingSplits);
 
+/** In the app's order: Advanced first, Beginner last (levels from published program guides). */
 const presets = [
-  ["Full Body 3×", "3 days", "Beginner-friendly"],
-  ["Upper / Lower", "4 days", "Beginner-friendly"],
-  ["Push / Pull / Legs (3×)", "3 days", "Beginner-friendly"],
-  ["Push / Pull / Legs (6×)", "6 days", ""],
-  ["Push / Pull (2×)", "4 days", "Beginner-friendly"],
-  ["Bro Split (5×)", "5 days", ""],
-  ["Arnold Split (6×)", "6 days", ""],
-  ["PHUL", "4 days", "Beginner-friendly"],
-  ["PHAT", "5 days", ""],
-  ["5/3/1 (BBB)", "3 days", ""],
+  ["Arnold Split (6×)", "6 days", "Advanced"],
+  ["PHAT", "5 days", "Advanced"],
+  ["Push / Pull / Legs (6×)", "6 days", "Intermediate"],
+  ["Bro Split (5×)", "5 days", "Intermediate"],
+  ["PHUL", "4 days", "Intermediate"],
+  ["5/3/1 (BBB)", "3 days", "Intermediate"],
+  ["Push / Pull (2×)", "4 days", "Intermediate"],
+  ["Push / Pull / Legs (3×)", "3 days", "Beginner"],
+  ["Full Body 3×", "3 days", "Beginner"],
+  ["Upper / Lower", "4 days", "Beginner"],
 ] as const;
 
 const faqs: Faq[] = [
@@ -66,10 +67,11 @@ export default function TrainingSplitsPage() {
       <PageBody>
         <FeatureBlock id="presets" title="The ten presets" shot="presets">
           <p>
-            Every preset is written for beginner-to-intermediate lifters with machines and
-            dumbbells, in the 10–15 rep range for most work. Each exercise carries its rep range and
+            Every preset is written with machines and dumbbells, in the 10–15 rep range for most
+            work. Each exercise carries its rep range and
             rest time as a note, such as &ldquo;10–12 reps · Rest 2:00&rdquo;, so the plan is on the
-            day itself. Five of them are marked <Strong>Beginner-friendly</Strong>.
+            day itself. Each one shows its <Strong>level</Strong>, Beginner, Intermediate or Advanced,
+            taken from published program guides, and the list runs from Advanced to Beginner.
           </p>
           <div className="overflow-x-auto rounded-2xl border border-white/8">
             <table className="w-full text-sm">
@@ -85,7 +87,7 @@ export default function TrainingSplitsPage() {
                   <tr key={name} className="border-t border-white/8">
                     <td className="px-4 py-2 font-medium text-white">{name}</td>
                     <td className="px-4 py-2">{days}</td>
-                    <td className="px-4 py-2">{level || "Intermediate"}</td>
+                    <td className="px-4 py-2">{level}</td>
                   </tr>
                 ))}
               </tbody>
@@ -97,7 +99,7 @@ export default function TrainingSplitsPage() {
           <p>
             The Splits tab has two lists: <Strong>My splits</Strong> (your own and your edited
             copies of presets) and <Strong>Presets</Strong>. Filter the presets by days a week,
-            style (Push/Pull/Legs, Upper/Lower, full body, body-part) and Beginner-friendly, and
+            style (Push/Pull/Legs, Upper/Lower, full body, body-part) and level, and
             the button tells you how many match before you apply it. Tap a day to see its
             exercises, sets and notes.
           </p>

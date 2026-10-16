@@ -13,6 +13,25 @@ export const metadata: Metadata = pageMetadata(pages.whatsNew);
 /** Newest first. Keep in step with the app's What's New notes (src/lib/whats-new.ts in the app). */
 const releases: Array<{ version: string; date: string; title: string; notes: React.ReactNode[] }> = [
   {
+    version: "2.0.8",
+    date: "16 October 2026",
+    title: "A level on every split",
+    notes: [
+      <>Every preset split shows its level: Beginner, Intermediate or Advanced. See the <TextLink href={pages.trainingSplits.path}>ten presets</TextLink>.</>,
+      <>Presets are listed Advanced first, Beginner last, and Filters has a Level choice.</>,
+      <>Edit week has a calendar icon, and Customise is a round dashboard button right of the page dots.</>,
+      <>The ⌄ and ⋮ on split cards line up on the right.</>,
+    ],
+  },
+  {
+    version: "2.0.7",
+    date: "15 October 2026",
+    title: "Today's volume, right after logging",
+    notes: [
+      <>Once today&apos;s workout is logged, the Today block shows what you lifted today, not last session&apos;s total.</>,
+    ],
+  },
+  {
     version: "2.0.6",
     date: "15 October 2026",
     title: "Home built around today, and your calendar look",

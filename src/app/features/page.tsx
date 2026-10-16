@@ -119,7 +119,7 @@ export default function FeaturesPage() {
             <p>
               Pick how the calendar looks: five day styles (Ring, Boxes, Track, Effort or Agenda),
               five ways to show your progress, and the greeting above it. In the full version,
-              arrange the widgets too: tap Customise, or hold a widget, then drag it, even to another
+              arrange the widgets too: tap the dashboard button, or hold a widget, then drag it, even to another
               page; tap or drag its corner handle to make it small, wide, tall or large; remove the
               widgets you don&apos;t need and add others, such as a chart for every exercise you care
               about. Reset puts the default widgets back.
