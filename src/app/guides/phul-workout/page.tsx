@@ -173,7 +173,7 @@ export default function PhulGuidePage() {
             </li>
             <li>
               <Strong>Lifters with a few months behind them.</Strong> IronBuddy lists its machine-based
-              version as Intermediate, as the program's author does; learn the lifts on a full body or
+              version as Intermediate, as the program&apos;s author does; learn the lifts on a full body or
               Upper Lower plan first, and keep the heavy barbell version for later.
             </li>
             <li>
