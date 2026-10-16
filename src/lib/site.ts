@@ -54,7 +54,9 @@ export const siteConfig = {
     title: "IronBuddy: Offline Workout Tracker & Gym Log for Android",
     description:
       "A two-minute tour of IronBuddy 2.0, the offline workout tracker for Android: your week on Home, logging a workout, the summary against last time, progress charts, the exercise library, training splits, the customizable Home, accent colours and share cards. No account, no ads, no subscription.",
-    uploadDate: "2026-10-14",
+    // A full date and time with a time zone (Google's video markup rejects a bare date). Update it with the
+    // YouTube upload time (YouTube Studio > Content) whenever the video is replaced.
+    uploadDate: "2026-10-14T12:00:00+03:00",
     durationSeconds: 122,
     thumbnail: "/video/ironbuddy-tour.jpg",
     thumbnailWidth: 1280,

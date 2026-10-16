@@ -120,6 +120,11 @@ for (const p of indexable) {
     };
     walk(nodes);
     const need = (cond, msg) => { if (!cond) warn(label, `JSON-LD: ${msg}`); };
+    for (const video of nodes.filter((n) => n["@type"] === "VideoObject")) {
+      // Google Search Console: "uploadDate is missing a time zone" / "Invalid datetime value".
+      need(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})$/.test(video.uploadDate ?? "") && !Number.isNaN(Date.parse(video.uploadDate)), `VideoObject uploadDate must be a full ISO 8601 datetime with a time zone, got "${video.uploadDate}"`);
+      need(/^PT(\d+H)?(\d+M)?(\d+S)?$/.test(video.duration ?? ""), "VideoObject duration must be ISO 8601 (PT#M#S)");
+    }
     const org = nodes.find((n) => n["@type"] === "Organization");
     need(org && org.logo?.width >= 112 && org.logo?.height >= 112, "Organization logo must be >= 112px");
     need(org && org.contactPoint?.[0]?.email, "Organization contactPoint email");
