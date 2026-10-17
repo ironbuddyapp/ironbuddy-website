@@ -31,7 +31,7 @@ export function pageMetadata(page: PageDef): Metadata {
   const url = absoluteUrl(page.path);
   const shared = {
     url,
-    siteName: siteConfig.name,
+    siteName: siteConfig.fullName,
     locale: siteConfig.locale,
     title,
     description: page.description,

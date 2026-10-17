@@ -24,9 +24,9 @@ export default function AboutPage() {
       <PageHero
         trail={crumbs}
         eyebrow="About"
-        title="About IronBuddy"
+        title="About IronBuddy: Workout Tracker"
         updated={pages.about.modified}
-        lead="IronBuddy is an Android app for planning and logging gym workouts. It is designed around one idea: your training data belongs to you."
+        lead="IronBuddy: Workout Tracker is an Android app for planning and logging gym workouts. It is designed around one idea: your training data belongs to you."
       >
         <HeroCta />
       </PageHero>

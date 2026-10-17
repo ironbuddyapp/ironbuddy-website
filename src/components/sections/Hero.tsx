@@ -4,6 +4,7 @@ import { ExploreIronBuddyButton } from "@/components/ExploreIronBuddyButton";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
 import { heroBullets, heroHighlights, screenshotSrc } from "@/lib/content";
+import { siteConfig } from "@/lib/site";
 import { preload } from "react-dom";
 
 export function Hero() {
@@ -20,7 +21,7 @@ export function Hero() {
           {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
           <h1 className="max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Workout tracker app for Android
+              {siteConfig.fullName} for Android
               <span className="sr-only">. </span>
             </span>
             <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">

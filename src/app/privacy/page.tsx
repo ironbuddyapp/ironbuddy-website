@@ -62,7 +62,7 @@ export default function PrivacyPage() {
         updated={pages.privacy.modified}
         lead={
           <>
-            IronBuddy (“the App”, “we”, “us”) is a local workout planning and logging app. This
+            IronBuddy: Workout Tracker (“the App”, “we”, “us”) is a local workout planning and logging app. This
             Privacy Policy describes what information the App handles, how it is stored, and what
             we do <em>not</em> collect. It is intended to meet Google Play requirements for health
             and fitness apps, including clear disclosure of on-device data, automatic backups, and
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
           <div>
             <dt className="inline font-medium text-white">App: </dt>
             <dd className="inline">
-              IronBuddy (Android package <Code>{siteConfig.playStoreId}</Code>)
+              IronBuddy: Workout Tracker (Android package <Code>{siteConfig.playStoreId}</Code>)
             </dd>
           </div>
           <div>

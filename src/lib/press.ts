@@ -82,7 +82,7 @@ export const pressFeatures = appFeatureList;
 type Fact = { term: string; detail: string; href?: string };
 
 export const pressFacts: Fact[] = [
-  { term: "Name", detail: siteConfig.name },
+  { term: "Name", detail: siteConfig.fullName },
   { term: "Developer", detail: siteConfig.name },
   { term: "What it is", detail: "An offline workout tracker and gym log app" },
   { term: "Platform", detail: "Android, on Google Play. Not available on iPhone yet." },
@@ -122,7 +122,7 @@ export const wordCount = (text: string) => text.trim().split(/\s+/).length;
 /** Plain-text copy of the kit for the ZIP, so it is useful without the website. */
 export function pressReadme() {
   const lines = [
-    `${siteConfig.name} press kit`,
+    `${siteConfig.fullName} press kit`,
     "",
     pressUsage,
     `The latest version of this kit is at ${siteConfig.url}${pages.press.path}`,

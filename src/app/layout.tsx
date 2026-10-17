@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | IronBuddy",
   },
   description: siteConfig.description,
-  applicationName: siteConfig.name,
+  applicationName: siteConfig.fullName,
   authors: [{ name: "IronBuddy", url: siteConfig.url }],
   creator: "IronBuddy",
   publisher: "IronBuddy",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    siteName: siteConfig.name,
+    siteName: siteConfig.fullName,
     title: siteConfig.title,
     description: siteConfig.description,
     images: [ogImage],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         appLinks: {
           android: {
             package: siteConfig.playStoreId,
-            app_name: siteConfig.name,
+            app_name: siteConfig.fullName,
             url: siteConfig.playStoreUrl,
           },
         },

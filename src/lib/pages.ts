@@ -37,6 +37,8 @@ const RELEASE_203 = "2026-10-14";
 /** IronBuddy 2.0.6: the calendar around today, Calendar look, widgets. Set to the Play release day before deploying. */
 const RELEASE_206 = "2026-10-15";
 /** 2.0.8: preset levels, the dashboard button, Edit week icon. Set to the day it goes live. */
+/** The product's full name, IronBuddy: Workout Tracker, now shows where the app is named. */
+const FULL_NAME = "2026-10-17";
 const RELEASE_208 = "2026-10-16";
 /** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
 const PROMO_VIDEO = "2026-10-16";
@@ -85,7 +87,7 @@ export const pages = {
     description: siteConfig.description,
     summary: "Offline Android workout tracker with no account, ads, or subscription.",
     published: LAUNCH,
-    modified: PROMO_VIDEO,
+    modified: FULL_NAME,
     images: screenshotImages,
   },
   features: {
@@ -350,7 +352,7 @@ export const pages = {
       "IronBuddy is an Android workout tracker built on one idea: your training data belongs to you. See how it works, what it costs, and how to get in touch.",
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
     published: UPDATED,
-    modified: RELEASE_20,
+    modified: FULL_NAME,
   },
   press: {
     path: "/press/",
@@ -361,7 +363,7 @@ export const pages = {
       "Download the IronBuddy press kit: a fact sheet, ready-to-use descriptions, the app icon and screenshots of the offline workout tracker for Android.",
     summary: "Fact sheet, ready-to-use descriptions, the app icon and screenshots for writing about IronBuddy.",
     published: PRESS_ADDED,
-    modified: PROMO_VIDEO,
+    modified: FULL_NAME,
     images: ["/press/ironbuddy-app-icon-1024.png"],
   },
   guides: {
@@ -540,7 +542,7 @@ export const pages = {
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy.
-    modified: RELEASE_206,
+    modified: FULL_NAME,
   },
 } as const satisfies Record<string, PageDef>;
 

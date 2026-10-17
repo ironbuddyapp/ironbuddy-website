@@ -19,6 +19,8 @@ const playStoreLinkUrl = `${playStoreUrl}&referrer=${playReferrer}`;
 
 export const siteConfig = {
   name: "IronBuddy",
+  /** The product's full name, as on the App Store. Use it where the app is named; titles keep the short name (50-60 characters). */
+  fullName: "IronBuddy: Workout Tracker",
   tagline: "Your lifelong gym companion.",
   title: "IronBuddy: Workout Tracker & Gym Log App for Android",
   description:

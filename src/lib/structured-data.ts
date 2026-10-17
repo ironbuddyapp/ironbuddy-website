@@ -60,11 +60,11 @@ function websiteNode(): JsonLdNode {
     "@type": "WebSite",
     "@id": ids.website,
     url: absoluteUrl("/"),
-    name: siteConfig.name,
+    name: siteConfig.fullName,
     // Google reads these when choosing the site name shown in results. Other products share the name
-    // "IronBuddy", so the longer form helps tell this one apart. "Iron Buddy" is how most people type it
-    // into Search (Search Console, September 2026).
-    alternateName: ["IronBuddy Workout Tracker", "Iron Buddy", "ironbuddy.fit"],
+    // "IronBuddy", so the full name leads and the short one is the alternate. "Iron Buddy" is how most
+    // people type it into Search (Search Console, September 2026).
+    alternateName: [siteConfig.name, "Iron Buddy", "ironbuddy.fit"],
     description: siteConfig.description,
     inLanguage: "en-US",
     publisher: { "@id": ids.organization },
@@ -91,8 +91,8 @@ function appNode(): JsonLdNode {
   return {
     "@type": ["MobileApplication", "SoftwareApplication"],
     "@id": ids.app,
-    name: siteConfig.name,
-    alternateName: ["IronBuddy Workout Tracker", "Iron Buddy"],
+    name: siteConfig.fullName,
+    alternateName: [siteConfig.name, "Iron Buddy"],
     description: siteConfig.description,
     url: absoluteUrl("/"),
     applicationCategory: "HealthApplication",
