@@ -39,6 +39,8 @@ const RELEASE_206 = "2026-10-15";
 /** 2.0.8: preset levels, the dashboard button, Edit week icon. Set to the day it goes live. */
 /** The product's full name, IronBuddy: Workout Tracker, now shows where the app is named. */
 const FULL_NAME = "2026-10-17";
+/** The privacy policy now covers the iPhone app. */
+const PRIVACY_IPHONE = "2026-10-17";
 const RELEASE_208 = "2026-10-16";
 /** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
 const PROMO_VIDEO = "2026-10-16";
@@ -537,12 +539,12 @@ export const pages = {
     label: "Privacy Policy",
     title: "Privacy Policy: Local Data, No Account, No Ads",
     description:
-      "IronBuddy's privacy policy: workout data is stored on your device. No account, no ads, no third-party analytics SDKs, and a one-time purchase via Google Play.",
+      "IronBuddy's privacy policy: workout data is stored on your device. No account, no ads, no third-party analytics SDKs, and a one-time purchase via Google Play or the App Store.",
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy.
-    modified: FULL_NAME,
+    modified: PRIVACY_IPHONE,
   },
 } as const satisfies Record<string, PageDef>;
 
