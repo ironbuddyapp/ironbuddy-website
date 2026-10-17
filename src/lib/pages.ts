@@ -539,7 +539,7 @@ export const pages = {
     label: "Privacy Policy",
     title: "Privacy Policy: Local Data, No Account, No Ads",
     description:
-      "IronBuddy's privacy policy: workout data is stored on your device. No account, no ads, no third-party analytics SDKs, and a one-time purchase via Google Play or the App Store.",
+      "IronBuddy's privacy policy: your workout data stays on your device. No account, no ads, no analytics SDKs; one-time purchase via Google Play or the App Store.",
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
