@@ -35,6 +35,7 @@ export function GET() {
     entry(pages.home),
     entry(pages.about),
     entry(pages.contact),
+    entry(pages.privacy),
     "",
   ].join("\n");
 

@@ -1,4 +1,4 @@
-export type PageKind = "home" | "about" | "contact";
+export type PageKind = "home" | "about" | "contact" | "legal";
 
 export type PageDef = {
   /** Path with leading and trailing slash (the site uses trailingSlash: true). */
@@ -56,6 +56,17 @@ export const pages = {
     published: BRAND_LAUNCH,
     modified: BRAND_LAUNCH,
   },
+  privacy: {
+    path: "/privacy/",
+    kind: "legal",
+    label: "Privacy",
+    title: "Privacy – App Policies and This Website",
+    description:
+      "Privacy at IronBuddy: links to the Workout Tracker and Nutrition Tracker privacy policies, and how this website handles data. No analytics, no cookies.",
+    summary: "Links to each app's privacy policy, and how ironbuddy.fit itself handles data.",
+    published: BRAND_LAUNCH,
+    modified: BRAND_LAUNCH,
+  },
 } as const satisfies Record<string, PageDef>;
 
-export const pageList: PageDef[] = [pages.home, pages.about, pages.contact];
+export const pageList: PageDef[] = [pages.home, pages.about, pages.contact, pages.privacy];

@@ -80,6 +80,7 @@ export const footerGroups = [
   {
     title: "Privacy",
     links: [
+      { label: "Privacy at IronBuddy", href: "/privacy/" },
       { label: "Workout Tracker privacy policy", href: `${siteConfig.workoutUrl}/privacy/` },
       { label: "Nutrition Tracker privacy policy", href: `${siteConfig.nutritionUrl}/privacy/` },
     ],

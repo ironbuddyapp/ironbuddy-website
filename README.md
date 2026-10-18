@@ -12,8 +12,8 @@ The apps have their own sites, in their own repositories:
 ironbuddy.fit used to be the workout tracker's website. `scripts/make-redirects.mjs` runs after the build and writes a
 forwarding page for every old path listed in `scripts/workout-paths.json`, pointing at the same path on
 workout.ironbuddy.fit (canonical link, meta refresh and a script). Unknown paths land on the 404 page, which forwards
-too. The workout app and its Google Play listing still use `https://ironbuddy.fit/privacy/`, so keep that one working
-until both point at the new address.
+too. `/privacy/` is not forwarded: since 18 October 2026 it is the IronBuddy privacy hub, with the two app policies at the
+top (older workout app versions still open this address from Settings).
 
 ## Stack
 
