@@ -1,4 +1,9 @@
 export type LucideIconName =
+  | "camera"
+  | "barcode"
+  | "weigh"
+  | "target"
+  | "pot"
   | "clipboard"
   | "calendar"
   | "chart"
@@ -28,6 +33,44 @@ export function Icon({
   className?: string;
 }) {
   switch (name) {
+    case "camera":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.6l1.4-2h5l1.4 2h1.6A2.5 2.5 0 0 1 20 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-9Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+          <circle cx="12" cy="13" r="3.6" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      );
+    case "weigh":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5.5 9h13l1.5 10.5a1 1 0 0 1-1 1.1H5a1 1 0 0 1-1-1.1L5.5 9Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M8 9a4 4 0 0 1 8 0" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M12 9l1.6-2.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M9 15.5h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
+    case "barcode":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6v12M7 6v12M10.5 6v12M13 6v12M16.5 6v12M20 6v12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M8.5 6v12M18 6v12" stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" />
+        </svg>
+      );
+    case "target":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="4.8" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+        </svg>
+      );
+    case "pot":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 10h14v6.5A3.5 3.5 0 0 1 15.5 20h-7A3.5 3.5 0 0 1 5 16.5V10Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M3 10h18M9 6.5c0-1 .6-1.5 1.5-1.5M14 6.5c0-1 .6-1.5 1.5-1.5M12 7.5V6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
     case "clipboard":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">

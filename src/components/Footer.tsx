@@ -10,7 +10,7 @@ const linkClass = "inline-block py-1.5 transition hover:text-white";
 export function Footer() {
   return (
     <footer className="below-fold border-t border-white/8 bg-background">
-      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(5,1fr)]">
+      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
         <div className="sm:col-span-2 lg:col-span-1">
           <Logo />
           <p className="mt-3 max-w-xs text-sm text-muted">{siteConfig.tagline}</p>
@@ -20,56 +20,31 @@ export function Footer() {
           const labelId = `footer-${group.title.toLowerCase().replace(/\s+/g, "-")}`;
           return (
             <nav key={group.title} aria-labelledby={labelId}>
-              <p
-                id={labelId}
-                className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70"
-              >
+              <p id={labelId} className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
                 {group.title}
               </p>
               <ul className="mt-3 text-sm text-muted">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className={linkClass}>
-                      {link.label}
-                    </Link>
+                    {link.href.startsWith("http") ? (
+                      <a href={link.href} className={linkClass}>
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className={linkClass}>
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
-                {group.title === "Company" && siteConfig.playListingLive ? (
-                  <li>
-                    <a
-                      href={siteConfig.playStoreLinkUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={linkClass}
-                    >
-                      Google Play
-                    </a>
-                  </li>
-                ) : null}
-                {group.title === "Company" ? (
-                  <li>
-                    <a
-                      href={siteConfig.youtubeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={linkClass}
-                    >
-                      YouTube
-                    </a>
-                  </li>
-                ) : null}
               </ul>
             </nav>
           );
         })}
       </Container>
       <Container className="flex flex-col gap-2 border-t border-white/8 py-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted">
-          © {new Date().getFullYear()} IronBuddy. All rights reserved.
-        </p>
-        <p className="text-xs text-muted">
-          Google Play and the Google Play logo are trademarks of Google LLC.
-        </p>
+        <p className="text-xs text-muted">© {new Date().getFullYear()} IronBuddy. All rights reserved.</p>
+        <p className="text-xs text-muted">Google Play and the Google Play logo are trademarks of Google LLC.</p>
       </Container>
     </footer>
   );

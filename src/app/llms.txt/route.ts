@@ -1,4 +1,3 @@
-import { trialDetails } from "@/lib/content";
 import { pages } from "@/lib/pages";
 import type { PageDef } from "@/lib/pages";
 import { absoluteUrl } from "@/lib/seo";
@@ -9,86 +8,35 @@ export const dynamic = "force-static";
 const entry = (page: PageDef) => `- [${page.label}](${absoluteUrl(page.path)}): ${page.summary}`;
 
 /**
- * A plain-text summary for AI assistants and agents (https://llmstxt.org). It is generated from the same
- * page registry as the sitemap, so it never lists a page that does not exist. Adoption is informal:
- * no major search engine has said it uses this file for ranking, so treat it as a low-cost extra.
+ * A plain-text summary for AI assistants and agents (https://llmstxt.org), generated from the same page registry
+ * as the sitemap, so it never lists a page that does not exist. Every fact must match the apps.
  */
 export function GET() {
   const body = [
-    `# ${siteConfig.fullName}`,
+    "# IronBuddy",
     "",
-    `> IronBuddy: Workout Tracker is an offline workout tracker for Android. It logs sets, reps and weight, supports training splits, charts training volume and 1RM (one-rep max), calculated with the Epley formula, and tracks body weight and body fat percentage. Muscle Balance counts weekly sets per muscle group, and the full version adds a customizable Home (cards you move, resize, add and remove), share cards and accent colours. There is no account, no ads and no subscription: the app is free to download with a ${siteConfig.freeTrialDays}-day free trial, and after the trial a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep logging and editing. Workout data is stored on the device and is not sent to IronBuddy servers.`,
+    `> IronBuddy makes offline Android apps for people who train: IronBuddy: Workout Tracker (a gym log) and IronBuddy: Nutrition Tracker (a calorie and macro tracker). Both work without a connection, need no account, show no ads and have no subscription: a free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase through Google Play. Data stays on the phone.`,
     "",
-    "Key facts:",
+    "## Apps",
     "",
-    "- Platform: Android, on Google Play. Not available on iPhone yet.",
-    `- Android package: ${siteConfig.playStoreId}`,
-    ...(siteConfig.playListingLive ? [`- Google Play: ${siteConfig.playStoreUrl}`] : []),
-    `- YouTube: ${siteConfig.youtubeUrl} (two-minute tour: ${siteConfig.promoVideo.url})`,
-    "- Works offline: yes (logging, history and the exercise library need no connection)",
-    "- Account required: no",
-    "- Ads: none",
-    "- Subscription: none",
-    `- Free trial: ${trialDetails.includes} ${trialDetails.unlocks} ${trialDetails.afterTrial}`,
-    `- Price: ${siteConfig.price.label} one-time, after the ${siteConfig.freeTrialDays}-day free trial (Google Play shows the final amount for your country)`,
+    `- [IronBuddy: Workout Tracker](${siteConfig.workoutUrl}): offline gym log with training splits, progressive overload, estimated 1RM charts and muscle balance. On Google Play (${siteConfig.workout.playStoreUrl}). ${siteConfig.workout.price} one-time after the trial.`,
+    `- [IronBuddy: Nutrition Tracker](${siteConfig.nutritionUrl}): offline calorie and macro tracker with photo, barcode and kitchen-scale logging; every number is marked Exact or Estimate. ${siteConfig.nutrition.live ? `On Google Play (${siteConfig.nutrition.playStoreUrl}).` : "Coming soon to Google Play."} ${siteConfig.nutrition.price} one-time after the trial.`,
+    "",
+    "## About this site",
+    "",
+    "ironbuddy.fit is the home of the IronBuddy name. Each app has its own website, with its own privacy policy:",
+    "",
+    `- Workout Tracker: ${siteConfig.workoutUrl} (privacy policy: ${siteConfig.workoutUrl}/privacy/)`,
+    `- Nutrition Tracker: ${siteConfig.nutritionUrl} (privacy policy: ${siteConfig.nutritionUrl}/privacy/)`,
     `- Contact: ${siteConfig.contactEmail}`,
     "",
-    "## Product",
+    "## Pages",
     "",
     entry(pages.home),
-    entry(pages.features),
-    entry(pages.whatsNew),
-    entry(pages.offline),
-    entry(pages.noSubscription),
-    entry(pages.privacyFocused),
-    entry(pages.alternatives),
-    entry(pages.strongAlternative),
-    entry(pages.hevyAlternative),
-    entry(pages.fitnotesAlternative),
-    entry(pages.jefitAlternative),
-    entry(pages.boostcampAlternative),
-    entry(pages.caliberAlternative),
-    entry(pages.comparison),
-    "",
-    "## Features",
-    "",
-    entry(pages.customizableHome),
-    entry(pages.muscleBalance),
-    entry(pages.workoutSummary),
-    entry(pages.progressCharts),
-    entry(pages.shareCards),
-    entry(pages.exerciseLibrary),
-    entry(pages.trainingSplits),
-    entry(pages.setTechniques),
-    "",
-    "## Guides",
-    "",
-    entry(pages.guides),
-    entry(pages.progressiveOverload),
-    entry(pages.logWorkouts),
-    entry(pages.setsPerWeek),
-    entry(pages.logTechniques),
-    entry(pages.oneRmChart),
-    entry(pages.pushPullLegs),
-    entry(pages.upperLower),
-    entry(pages.fullBody),
-    entry(pages.phul),
-    entry(pages.phat),
-    entry(pages.broSplit),
-    entry(pages.arnoldSplit),
-    entry(pages.fiveThreeOne),
-    "",
-    "## Answers and policies",
-    "",
-    entry(pages.faq),
     entry(pages.about),
-    entry(pages.press),
     entry(pages.contact),
-    entry(pages.privacy),
     "",
   ].join("\n");
 
-  return new Response(body, {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
+  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

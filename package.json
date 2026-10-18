@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build --turbopack && node scripts/make-redirects.mjs",
     "start": "next start",
     "lint": "eslint",
     "seo:check": "node scripts/check-seo.mjs"

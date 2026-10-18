@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
 import { Footer } from "@/components/Footer";
-import { GoatCounter } from "@/components/GoatCounter";
 import { Header } from "@/components/Header";
 import { ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -23,17 +22,15 @@ export const metadata: Metadata = {
     template: "%s | IronBuddy",
   },
   description: siteConfig.description,
-  applicationName: siteConfig.fullName,
+  applicationName: siteConfig.name,
   authors: [{ name: "IronBuddy", url: siteConfig.url }],
   creator: "IronBuddy",
   publisher: "IronBuddy",
-  // No `alternates` here on purpose: a canonical set at the layout level is inherited by every page that
-  // does not override it, which would point those pages at the home page. Each page sets its own via pageMetadata().
-  // Fallback social card for routes without their own metadata (for example the 404 page).
+  // No `alternates` here on purpose: every page sets its own canonical via pageMetadata().
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    siteName: siteConfig.fullName,
+    siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
     images: [ogImage],
@@ -56,30 +53,10 @@ export const metadata: Metadata = {
     },
   },
   category: "fitness",
-  ...(siteConfig.playListingLive
-    ? {
-        appLinks: {
-          android: {
-            package: siteConfig.playStoreId,
-            app_name: siteConfig.fullName,
-            url: siteConfig.playStoreUrl,
-          },
-        },
-      }
-    : {}),
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // Same as next/font's preload: fetch the Latin font file early, since every page uses it.
-  preload("/fonts/plus-jakarta-sans/latin.woff2", {
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  });
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  preload("/fonts/plus-jakarta-sans/latin.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
 
   return (
     <html lang="en" className="dark">
@@ -93,7 +70,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <GoatCounter />
       </body>
     </html>
   );

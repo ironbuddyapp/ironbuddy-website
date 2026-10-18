@@ -42,15 +42,7 @@ export function pageMetadata(page: PageDef): Metadata {
     title: page.kind === "home" ? { absolute: page.title } : page.title,
     description: page.description,
     alternates: { canonical: url },
-    openGraph:
-      page.kind === "guide"
-        ? {
-            ...shared,
-            type: "article",
-            publishedTime: page.published,
-            modifiedTime: page.modified,
-          }
-        : { ...shared, type: "website" },
+    openGraph: { ...shared, type: "website" },
     twitter: {
       card: "summary_large_image",
       title,

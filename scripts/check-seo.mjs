@@ -36,9 +36,17 @@ const pages = pageFiles.map((file) => {
   const rel = path.relative(out, path.dirname(file)).replace(/\\/g, "/");
   const urlPath = rel === "" ? "/" : `/${rel}/`;
   const html = fs.readFileSync(file, "utf8");
-  return { file, urlPath, html, is404: urlPath === "/404/" };
+  return { file, urlPath, html, is404: urlPath === "/404/", isForward: /http-equiv="refresh"/.test(html) };
 });
-const indexable = pages.filter((p) => !p.is404);
+const forwards = pages.filter((p) => p.isForward);
+const WORKOUT = siteSource.match(/\bworkoutUrl:\s*"(https?:\/\/[^"]+)"/)?.[1];
+for (const p of forwards) {
+  const target = WORKOUT + p.urlPath;
+  if (!p.html.includes(`<link rel="canonical" href="${target}">`)) warn(p.urlPath, `forwarding page canonical should be ${target}`);
+  if (!p.html.includes(`url=${target}`)) warn(p.urlPath, "forwarding page meta refresh missing or wrong");
+  if (!p.html.includes(`<a href="${target}">`)) warn(p.urlPath, "forwarding page has no visible link");
+}
+const indexable = pages.filter((p) => !p.is404 && !p.isForward);
 const known = new Set(pages.map((p) => p.urlPath));
 
 const titles = new Map();
@@ -145,7 +153,7 @@ for (const p of indexable) {
       }
     }
     const app = nodes.find((n) => [].concat(n["@type"]).includes("MobileApplication"));
-    if (urlPath === "/") {
+    if (urlPath === "/" && app) {
       need(app && [].concat(app["@type"]).includes("SoftwareApplication"), "MobileApplication+SoftwareApplication");
       need(app?.operatingSystem === "Android" && app?.applicationCategory === "HealthApplication", "app OS/category");
       need(app?.offers?.description, "offers.description");
@@ -234,19 +242,21 @@ for (const d of lastmods) if (!/^\d{4}-\d{2}-\d{2}(T[\d:.]+Z)?$/.test(d)) warn("
 const imgLocs = [...sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
 for (const i of imgLocs) if (!fs.existsSync(path.join(out, new URL(i).pathname))) warn("sitemap.xml", `image not found: ${i}`);
 const robots = fs.readFileSync(path.join(out, "robots.txt"), "utf8");
-if (!/Sitemap: https:\/\/ironbuddy\.fit\/sitemap\.xml/.test(robots)) warn("robots.txt", "sitemap line missing");
+if (!robots.includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) warn("robots.txt", "sitemap line missing");
 if (/Disallow:\s*\//.test(robots)) warn("robots.txt", "Disallow found");
 if (/^Host:/im.test(robots)) warn("robots.txt", "Host directive still present");
 const llmsPath = path.join(out, "llms.txt");
 if (!fs.existsSync(llmsPath)) warn("llms.txt", "missing");
 const llms = fs.existsSync(llmsPath) ? fs.readFileSync(llmsPath, "utf8") : "";
-for (const m of llms.matchAll(/\]\((https:\/\/ironbuddy\.fit[^)]*)\)/g)) { const u = new URL(m[1]).pathname; if (!known.has(u)) warn("llms.txt", `link to missing page ${u}`); }
+for (const m of llms.matchAll(/\]\((https:\/\/[^)]*)\)/g)) {
+  if (!m[1].startsWith(ORIGIN)) continue; const u = new URL(m[1]).pathname; if (!known.has(u)) warn("llms.txt", `link to missing page ${u}`); }
 const manifest = JSON.parse(fs.readFileSync(path.join(out, "manifest.webmanifest"), "utf8"));
 for (const ic of manifest.icons) if (!fs.existsSync(path.join(out, ic.src))) warn("manifest", `icon missing ${ic.src}`);
 const pressZip = path.join(out, "press", "ironbuddy-press-kit.zip");
 if (fs.existsSync(pressZip) && fs.readFileSync(pressZip).readUInt32LE(0) !== 0x04034b50) warn("press kit", "ironbuddy-press-kit.zip is not a ZIP file");
 
 // ---- report
+console.log(`Forwarding pages checked: ${forwards.length}`);
 console.log(`Pages checked: ${indexable.length} (+404)  |  Sitemap URLs: ${locs.length}  |  Sitemap images: ${imgLocs.length}`);
 console.log(`FAQ questions marked up: ${faqQuestions.size} across ${new Set(faqQuestions.values()).size} pages`);
 console.log("\nPage                                              inbound  depth  JSON-LD");

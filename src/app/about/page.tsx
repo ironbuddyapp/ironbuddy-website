@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { BulletList, Code, ContentSection, PageBody, TextLink } from "@/components/content";
-import { CtaBanner, HeroCta } from "@/components/CtaBanner";
+import Link from "next/link";
+import { Container } from "@/components/Container";
 import { JsonLd } from "@/components/JsonLd";
-import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
-import { RelatedLinks } from "@/components/RelatedLinks";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -12,126 +10,64 @@ import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.about);
 
+const linkClass = "text-primary underline-offset-4 hover:underline";
+
 export default function AboutPage() {
   const crumbs = trail(pages.home, pages.about);
-  const email = siteConfig.contactEmail;
-
   return (
     <main id="main">
-      <JsonLd
-        data={pageGraph(pages.about, { type: "AboutPage", trail: crumbs, about: "organization" })}
-      />
+      <JsonLd data={pageGraph(pages.about, { trail: crumbs, type: "AboutPage" })} />
       <PageHero
         trail={crumbs}
         eyebrow="About"
-        title="About IronBuddy: Workout Tracker"
+        title="Small apps, made to be trusted"
+        lead="IronBuddy makes offline Android apps for people who train. We build them to do one job well, keep your data on your phone and charge once instead of every month."
         updated={pages.about.modified}
-        lead="IronBuddy: Workout Tracker is an Android app for planning and logging gym workouts. It is designed around one idea: your training data belongs to you."
-      >
-        <HeroCta />
-      </PageHero>
-
-      <PageBody>
-        <KeyFacts
-          id="at-a-glance"
-          title="IronBuddy at a glance"
-          items={[
-            { term: "What it is", detail: "A local workout planning and logging app." },
-            { term: "Platform", detail: "Android, distributed on Google Play. Not available on iPhone yet." },
-            { term: "Android package", detail: <Code>{siteConfig.playStoreId}</Code> },
-            {
-              term: "Pricing",
-              detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
-            },
-            { term: "Ads and analytics", detail: "No ads and no third-party analytics SDKs." },
-            { term: "Account", detail: "None. There is no sign-up or sign-in." },
-            {
-              term: "Your data",
-              detail: "Stored on your device and not sent to IronBuddy servers.",
-            },
-            {
-              term: "Privacy policy",
-              detail: <TextLink href={pages.privacy.path}>Read the IronBuddy privacy policy</TextLink>,
-            },
-            {
-              term: "Contact",
-              detail: (
-                <>
-                  {email} · <TextLink href={pages.contact.path}>Contact page</TextLink>
-                </>
-              ),
-            },
-            { term: "Website", detail: siteConfig.url.replace("https://", "") },
-          ]}
-        />
-
-        <ContentSection id="what-it-does" title="What IronBuddy does">
-          <p>
-            IronBuddy helps you log sets, reps, weight, and notes for every workout, follow a
-            training split, chart training volume and 1RM (one-rep max), calculated with the Epley formula, and track body weight and body
-            fat percentage. An exercise library of more than 800 exercises with demonstrations helps
-            you pick the right movement, and it all works offline.
-          </p>
-          <p>
-            See the <TextLink href={pages.features.path}>full feature tour</TextLink> with
-            screenshots.
-          </p>
-        </ContentSection>
-
-        <ContentSection id="how-it-handles-data" title="How IronBuddy handles your data">
-          <p>
-            Your workouts, body metrics, notes, and settings are stored on your device. IronBuddy
-            has no account system and does not operate a cloud sync service, so your training data
-            is not sent to IronBuddy servers. Copies can exist only in ways you control or Android
-            provides: Android Auto Backup if you have Google backup turned on and, in the full version, an automatic backup file and files you export or share.
-          </p>
-          <p>
-            Read the plain-language overview,{" "}
-            <TextLink href={pages.privacyFocused.path}>a privacy-focused fitness app</TextLink>, or
-            the complete <TextLink href={pages.privacy.path}>privacy policy</TextLink>.
-          </p>
-        </ContentSection>
-
-        <ContentSection id="how-it-is-paid-for" title="How IronBuddy is priced">
-          <p>
-            IronBuddy has no ads and no subscriptions. It is free to download with a free trial,
-            and after the trial a one-time in-app purchase of {siteConfig.price.label} through Google Play is required to keep logging and editing after the trial. Details are on the{" "}
-            <TextLink href={pages.noSubscription.path}>no subscription, no ads</TextLink> page.
-          </p>
-        </ContentSection>
-
-        <ContentSection id="health-notice" title="Health and fitness notice">
-          <p>
-            IronBuddy is a fitness logging and planning tool. It is not a medical device and does
-            not diagnose, treat, cure, or prevent any medical condition. Progress charts and
-            estimated strength figures are informational calculations based on the data you enter,
-            not clinical advice. Consult a qualified healthcare professional for medical advice.
-          </p>
-        </ContentSection>
-
-        <ContentSection id="contact" title="Contact and follow">
-          <p>
-            For support or privacy questions, use the{" "}
-            <TextLink href={pages.contact.path}>contact page</TextLink> or write to {email}. Please
-            do not send passwords or unnecessary personal documents.
-          </p>
-          <BulletList>
-            <li>
-              <TextLink href={siteConfig.instagramUrl}>IronBuddy on Instagram</TextLink>
-            </li>
-            <li>
-              <TextLink href={siteConfig.tiktokUrl}>IronBuddy on TikTok</TextLink>
-            </li>
-            <li>
-              <TextLink href={siteConfig.githubUrl}>IronBuddy on GitHub</TextLink>
-            </li>
-          </BulletList>
-        </ContentSection>
-
-        <CtaBanner />
-
-        <RelatedLinks items={[pages.features, pages.privacy, pages.faq, pages.guides]} />
-      </PageBody>
+      />
+      <Container>
+        <div className="mx-auto max-w-3xl space-y-10 pb-20 text-base leading-relaxed text-white/80">
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-white">What we make</h2>
+            <p className="mt-3">
+              Two apps today. <a href={siteConfig.workoutUrl} className={linkClass}>{siteConfig.workout.name}</a> is a gym
+              log with training splits, progressive overload and progress charts, and it is on Google Play now.{" "}
+              <a href={siteConfig.nutritionUrl} className={linkClass}>{siteConfig.nutrition.name}</a> is a calorie and
+              macro tracker that reads a photo of your plate, scans a barcode or takes grams from your kitchen scale, and
+              it is coming to Google Play.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-white">What we promise</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>Offline. The apps work with no connection and never send your logs, photos or weight to us.</li>
+              <li>
+                Pay once. Each app has a free {siteConfig.freeTrialDays}-day trial and then one purchase on Google Play.
+                No subscription.
+              </li>
+              <li>No account, no ads and no analytics inside the apps.</li>
+              <li>Honest numbers. If a figure is a guess, the app says so.</li>
+            </ul>
+          </section>
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-white">Where to find things</h2>
+            <p className="mt-3">
+              Every app has its own website with features, help and its own privacy policy:{" "}
+              <a href={`${siteConfig.workoutUrl}/privacy/`} className={linkClass}>workout tracker privacy policy</a> and{" "}
+              <a href={`${siteConfig.nutritionUrl}/privacy/`} className={linkClass}>nutrition tracker privacy policy</a>.
+              This site, ironbuddy.fit, is the home of the IronBuddy name. Links to the workout tracker&apos;s old pages
+              on this address forward to {siteConfig.workoutUrl.replace("https://", "")}.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-white">Talk to us</h2>
+            <p className="mt-3">
+              Questions, bugs, ideas or press: write to{" "}
+              <a href={`mailto:${siteConfig.contactEmail}`} className={linkClass}>{siteConfig.contactEmail}</a>, or see{" "}
+              <Link href={pages.contact.path} className={linkClass}>Contact</Link>.
+            </p>
+          </section>
+        </div>
+      </Container>
     </main>
   );
 }

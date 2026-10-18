@@ -15,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#050B14",
     theme_color: "#050B14",
     lang: "en",
-    categories: ["health", "fitness", "lifestyle"],
+    categories: ["health", "food", "fitness"],
     icons: [
       {
         // Declared at its real size. It was previously listed as 512x512 while the file is 256x256.

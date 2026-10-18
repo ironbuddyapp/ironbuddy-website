@@ -1,84 +1,35 @@
-# IronBuddy
+# IronBuddy: brand site
 
-Marketing site for **IronBuddy** — the offline Android workout tracker with no account, no ads, and no subscription.
+The site at **https://ironbuddy.fit**: the home of the IronBuddy name, with a home page, About and Contact.
+
+The apps have their own sites, in their own repositories:
+
+- Workout Tracker: https://workout.ironbuddy.fit (`ironbuddyapp/ironbuddy-workout-site`)
+- Nutrition Tracker: https://nutrition.ironbuddy.fit (`ironbuddyapp/ironbuddy-nutrition-site`)
+
+## Old workout addresses
+
+ironbuddy.fit used to be the workout tracker's website. `scripts/make-redirects.mjs` runs after the build and writes a
+forwarding page for every old path listed in `scripts/workout-paths.json`, pointing at the same path on
+workout.ironbuddy.fit (canonical link, meta refresh and a script). Unknown paths land on the 404 page, which forwards
+too. The workout app and its Google Play listing still use `https://ironbuddy.fit/privacy/`, so keep that one working
+until both point at the new address.
 
 ## Stack
 
-- Next.js 15 App Router
-- TypeScript
-- Tailwind CSS v4
-- Static export (GitHub Pages)
+Next.js 15 App Router (static export), TypeScript, Tailwind CSS v4. No analytics, no cookies.
+Deployed by `.github/workflows/pages.yml` on every push to `main`.
 
 ## Configure
 
-Update `src/lib/site.ts` before launch:
+`src/lib/site.ts`: when the Nutrition Tracker's Play listing is public, set `nutrition.live` to `true`.
 
-- `url` — production domain
-- `playStoreUrl` — Google Play listing
-- `contactEmail` — support inbox
-- `freeTrialDays` — keep in sync with the privacy policy and the Play listing
-
-## Develop
+## Build and check
 
 ```bash
 npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build
-
-```bash
 npm run build
+npm run seo:check
 ```
 
-Static files are written to `out/`.
-
-## SEO
-
-Every indexable page is registered once in `src/lib/pages.ts` (path, title, description, dates, summary). The
-registry drives page metadata, the sitemap, the header and footer links, related-link cards, and `/llms.txt`.
-
-- `src/lib/seo.ts` — `pageMetadata()` builds a complete title, description, canonical, Open Graph and Twitter set.
-  Next.js merges metadata shallowly, so each page must set all of it itself; do not rely on the root layout.
-- `src/lib/structured-data.ts` — JSON-LD builders (Organization, WebSite, WebPage, MobileApplication, BreadcrumbList,
-  FAQPage, Article, CollectionPage).
-- `src/lib/content.ts` — shared copy: features, FAQ, navigation and footer links.
-
-### Add a page
-
-1. Add an entry to `pages` in `src/lib/pages.ts`. Keep the full title (with ` | IronBuddy`) at 50–60 characters and
-   the description at 140–160.
-2. Create `src/app/<path>/page.tsx`: export `metadata = pageMetadata(pages.yourPage)` and render
-   `<JsonLd data={pageGraph(...)} />`.
-3. Link to it from at least one other page, then run the check below.
-
-### Check before you deploy
-
-```bash
-npm run build && npm run seo:check
-```
-
-The script checks title and description lengths, canonicals, Open Graph tags, headings, JSON-LD, image attributes,
-internal links and anchors, and that the sitemap, robots.txt and llms.txt match the built pages.
-
-### Content rules
-
-- State only what the app does. Every claim should be backed by the privacy policy, the screenshots, or the Play listing.
-- Do not state other apps' prices, features, or policies. They change, and a wrong claim is worse than none.
-- Mark up each FAQ question on one page only. `/faq/` holds the full list; other pages carry questions that are unique to them.
-- Bump `modified` in `src/lib/pages.ts` when a page's content changes.
-
-### Privacy policy
-
-The source of truth is [ironbuddyapp/ironbuddy-privacy-policy](https://github.com/ironbuddyapp/ironbuddy-privacy-policy).
-`src/app/privacy/page.tsx` mirrors it word for word. Change the policy there first, then update the page and bump the
-page's `modified` date.
-
-### Still needs real data
-
-- `offers.price` (the real one-time price, not `0`: the app is free to download but needs a purchase after the trial)
-  and a genuine `aggregateRating` in the app's JSON-LD, once the Play listing is public.
-- A developer or team name and bio for the About page, if you want one.
-- A Terms of Use page, if you want one. It needs your own legal wording.
+`scripts/make-og.mjs` renders the share image `public/og.jpg` (needs Playwright).

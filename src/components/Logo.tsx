@@ -13,7 +13,7 @@ export function Logo({ className }: { className?: string }) {
         fetchPriority="high"
         className="h-8 w-8 rounded-lg shadow-[0_0_24px_rgba(183,255,42,0.22)]"
       />
-      <span className="text-[15px] font-semibold tracking-tight text-white">{siteConfig.fullName}</span>
+      <span className="text-[15px] font-semibold tracking-tight text-white">{siteConfig.name}</span>
     </span>
   );
 }
