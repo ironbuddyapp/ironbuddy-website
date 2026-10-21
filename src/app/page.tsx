@@ -35,7 +35,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 text-lg font-semibold tracking-tight text-white/85 sm:text-2xl">
-              Offline. No account. No ads. Pay once.
+              IronBuddy apps work offline. No account. No ads. Pay once.
             </p>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               IronBuddy makes small, honest Android apps for lifters: a workout tracker and a nutrition tracker. Your
