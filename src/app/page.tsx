@@ -72,8 +72,8 @@ export default function Home() {
                   <p className="mt-4 text-sm leading-relaxed text-muted">{product.text}</p>
                   <p className="mt-4 text-sm text-white/80">
                     {product.live
-                      ? `Free ${siteConfig.freeTrialDays}-day trial, then ${product.price} once.`
-                      : `Coming soon to Google Play. ${product.price} once, after a free ${siteConfig.freeTrialDays}-day trial.`}
+                      ? `Free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase.`
+                      : `Coming soon to Google Play. A one-time purchase after a free ${siteConfig.freeTrialDays}-day trial.`}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <a href={product.url} className={buttonPrimary}>

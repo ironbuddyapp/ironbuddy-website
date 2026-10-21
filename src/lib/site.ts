@@ -27,7 +27,6 @@ export const siteConfig = {
     playStoreUrl: `https://play.google.com/store/apps/details?id=${workoutPlayId}`,
     playStoreLinkUrl: `https://play.google.com/store/apps/details?id=${workoutPlayId}&referrer=${playReferrer("brand")}`,
     live: true as boolean,
-    price: "€6.99",
   },
   nutrition: {
     name: "IronBuddy: Nutrition Tracker",
@@ -35,7 +34,6 @@ export const siteConfig = {
     playStoreUrl: `https://play.google.com/store/apps/details?id=${nutritionPlayId}`,
     playStoreLinkUrl: `https://play.google.com/store/apps/details?id=${nutritionPlayId}&referrer=${playReferrer("brand")}`,
     live: false as boolean,
-    price: "€7",
   },
   playDeveloperUrl: "https://play.google.com/store/apps/developer?id=IronBuddy",
   githubUrl: "https://github.com/ironbuddyapp",
