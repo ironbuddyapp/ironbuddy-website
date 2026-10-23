@@ -14,6 +14,8 @@ export const metadata: Metadata = pageMetadata(pages.home);
 
 const buttonPrimary =
   "inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-background transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+const buttonNutrition =
+  "inline-flex h-12 items-center justify-center rounded-full bg-nutrition px-6 text-sm font-semibold text-background transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nutrition focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 const buttonGhost =
   "inline-flex h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
 
@@ -68,7 +70,11 @@ export default function Home() {
               >
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold tracking-tight text-white">{product.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-primary">{product.tagline}</p>
+                  <p
+                    className={`mt-1 text-sm font-semibold ${product.accent === "nutrition" ? "text-nutrition" : "text-primary"}`}
+                  >
+                    {product.tagline}
+                  </p>
                   <p className="mt-4 text-sm leading-relaxed text-muted">{product.text}</p>
                   <p className="mt-4 text-sm text-white/80">
                     {product.live
@@ -76,7 +82,7 @@ export default function Home() {
                       : `Coming soon to Google Play. A one-time purchase after a free ${siteConfig.freeTrialDays}-day trial.`}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <a href={product.url} className={buttonPrimary}>
+                    <a href={product.url} className={product.accent === "nutrition" ? buttonNutrition : buttonPrimary}>
                       Explore the app
                     </a>
                     {product.live ? (

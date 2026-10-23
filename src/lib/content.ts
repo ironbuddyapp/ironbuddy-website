@@ -27,6 +27,7 @@ export const principles: { icon: LucideIconName; title: string; text: string }[]
 export const products = [
   {
     id: "workout",
+    accent: "workout",
     name: siteConfig.workout.name,
     tagline: "Log every set. See the progress.",
     text: "A gym log for lifters: plan your split, log sets in seconds, track progressive overload and estimated 1RM, and see which muscles you are under-training. Works fully offline.",
@@ -40,6 +41,7 @@ export const products = [
   },
   {
     id: "nutrition",
+    accent: "nutrition",
     name: siteConfig.nutrition.name,
     tagline: "Snap it, scan it or weigh it.",
     text: "A calorie and macro tracker for people who train: photo of the plate, barcode scanner or kitchen-scale grams. Every number says whether it is exact or an estimate. Works fully offline.",

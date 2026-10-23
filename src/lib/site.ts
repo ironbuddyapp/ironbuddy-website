@@ -45,6 +45,6 @@ export const siteConfig = {
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageType: "image/jpeg",
-  ogImageAlt: "IronBuddy: offline workout and nutrition tracker apps for Android. No account, no ads, no subscription.",
+  ogImageAlt: "IronBuddy: Two apps. One brand. Built by lifters, for lifters. IronBuddy: Workout Tracker and IronBuddy: Nutrition Tracker for Android.",
   freeTrialDays: 7,
 } as const;
