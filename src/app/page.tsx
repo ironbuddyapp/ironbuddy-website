@@ -86,7 +86,7 @@ export default function Home() {
                       Explore the app
                     </a>
                     {product.live ? (
-                      <>
+                      <div className="flex items-center gap-3">
                         <a
                           href={product.playUrl}
                           rel="noopener noreferrer"
@@ -99,7 +99,7 @@ export default function Home() {
                             height={53}
                             loading="lazy"
                             decoding="async"
-                            className="h-12 w-auto"
+                            className={product.id === "workout" ? "h-10 w-auto" : "h-12 w-auto"}
                           />
                         </a>
                         {product.id === "workout" ? (
@@ -110,10 +110,10 @@ export default function Home() {
                             height={53}
                             loading="lazy"
                             decoding="async"
-                            className="h-12 w-auto"
+                            className="h-10 w-auto"
                           />
                         ) : null}
-                      </>
+                      </div>
                     ) : null}
                   </div>
                 </div>
