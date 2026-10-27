@@ -44,7 +44,9 @@ export function Footer() {
       </Container>
       <Container className="flex flex-col gap-2 border-t border-white/8 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">© {new Date().getFullYear()} IronBuddy. All rights reserved.</p>
-        <p className="text-xs text-muted">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+        <p className="text-xs text-muted">
+          Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.
+        </p>
       </Container>
     </footer>
   );
