@@ -86,21 +86,34 @@ export default function Home() {
                       Explore the app
                     </a>
                     {product.live ? (
-                      <a
-                        href={product.playUrl}
-                        rel="noopener noreferrer"
-                        className="inline-flex rounded-[13px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                      >
-                        <img
-                          src="/badges/google-play-badge.svg"
-                          alt={`Get ${product.name} on Google Play`}
-                          width={180}
-                          height={53}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-12 w-auto"
-                        />
-                      </a>
+                      <>
+                        <a
+                          href={product.playUrl}
+                          rel="noopener noreferrer"
+                          className="inline-flex rounded-[13px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        >
+                          <img
+                            src="/badges/google-play-badge.svg"
+                            alt={`Get ${product.name} on Google Play`}
+                            width={180}
+                            height={53}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-12 w-auto"
+                          />
+                        </a>
+                        {product.id === "workout" ? (
+                          <img
+                            src="/badges/app-store-badge.svg"
+                            alt="IronBuddy: Workout Tracker on the App Store"
+                            width={159}
+                            height={53}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-12 w-auto"
+                          />
+                        ) : null}
+                      </>
                     ) : null}
                   </div>
                 </div>
