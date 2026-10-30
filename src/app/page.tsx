@@ -78,7 +78,7 @@ export default function Home() {
                   <p className="mt-4 text-sm leading-relaxed text-muted">{product.text}</p>
                   <p className="mt-4 text-sm text-white/80">
                     {product.live
-                      ? `Free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase.`
+                      ? `Free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase.${product.id === "workout" ? " iPhone app coming soon." : ""}`
                       : `Coming soon to Google Play. A one-time purchase after a free ${siteConfig.freeTrialDays}-day trial.`}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -99,23 +99,9 @@ export default function Home() {
                             height={53}
                             loading="lazy"
                             decoding="async"
-                            className={product.id === "workout" ? "h-10 w-auto" : "h-12 w-auto"}
+                            className="h-12 w-auto"
                           />
                         </a>
-                        {product.id === "workout" ? (
-                          <span className="inline-flex flex-col items-center">
-                            <img
-                              src="/badges/app-store-badge.svg"
-                              alt="IronBuddy: Workout Tracker on the App Store"
-                              width={159}
-                              height={53}
-                              loading="lazy"
-                              decoding="async"
-                              className="h-10 w-auto"
-                            />
-                            <span className="mt-0.5 text-xs leading-4 text-muted">Coming soon</span>
-                          </span>
-                        ) : null}
                       </div>
                     ) : null}
                   </div>
