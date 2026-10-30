@@ -24,32 +24,49 @@ export default function Home() {
     <main id="main">
       <JsonLd data={homeGraph(pages.home)} />
 
-      <section className="relative overflow-hidden pb-16 pt-10 sm:pb-24 sm:pt-20">
+      <section className="relative overflow-hidden pb-12 pt-6 sm:pb-24 sm:pt-16">
         <div className="hero-grid pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
         <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
         <Container className="relative">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1>
-              <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">IronBuddy</span>
-              <span className="mt-4 block text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl">
-                Apps for people who train.
-              </span>
-            </h1>
-            <p className="mt-6 text-lg font-semibold tracking-tight text-white/85 sm:text-2xl">
-              IronBuddy apps work offline. No account. No ads. Pay once.
-            </p>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              IronBuddy makes small, honest Android apps for lifters: a workout tracker and a nutrition tracker. Your
-              data stays on your phone, and nothing is rented to you by the month.
-            </p>
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="#apps" className={buttonPrimary}>
-                See the apps
-              </a>
-              <Link href={pages.about.path} className={buttonGhost}>
-                About IronBuddy
-              </Link>
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-10">
+            <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
+              <h1>
+                <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">IronBuddy</span>
+                <span className="mt-3 block text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:mt-4 sm:text-6xl lg:text-5xl xl:text-6xl">
+                  Apps for people who train.
+                </span>
+              </h1>
+              <p className="mt-5 text-lg font-semibold tracking-tight text-white/85 sm:mt-6 sm:text-2xl">
+                IronBuddy apps work offline. No account. No ads. Pay once.
+              </p>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted sm:mt-5 sm:text-lg lg:mx-0">
+                IronBuddy makes small, honest Android apps for lifters: a workout tracker and a nutrition tracker. Your
+                data stays on your phone, and nothing is rented to you by the month.
+              </p>
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-9 lg:justify-start">
+                <a href="#apps" className={buttonPrimary}>
+                  See the apps
+                </a>
+                <Link href={pages.about.path} className={buttonGhost}>
+                  About IronBuddy
+                </Link>
+              </div>
+            </div>
+            <div className="mx-auto flex items-start justify-center gap-4 sm:gap-6 lg:gap-6">
+              {products.map((product, index) => (
+                <img
+                  key={product.id}
+                  src={product.image}
+                  alt={product.imageAlt}
+                  width={product.width}
+                  height={product.height}
+                  loading="eager"
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                  className={`h-auto w-[10.5rem] rounded-[1.6rem] border border-white/10 shadow-2xl sm:w-52 lg:w-56 ${index === 1 ? "mt-8 sm:mt-12" : ""}`}
+                />
+              ))}
             </div>
           </div>
         </Container>
