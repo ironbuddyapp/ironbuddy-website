@@ -13,7 +13,7 @@ export const principles: { icon: LucideIconName; title: string; text: string }[]
     text: `A ${siteConfig.freeTrialDays}-day free trial, then a single purchase through Google Play. No subscription, ever.`,
   },
   {
-    icon: "close",
+    icon: "lock",
     title: "No account, no ads",
     text: "No sign-up, no login, no ad networks and no analytics inside the apps.",
   },
