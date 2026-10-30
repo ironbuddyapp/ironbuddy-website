@@ -10,7 +10,8 @@ import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.about);
 
-const linkClass = "text-primary underline-offset-4 hover:underline";
+const linkClass =
+  "text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
 
 export default function AboutPage() {
   const crumbs = trail(pages.home, pages.about);
@@ -23,7 +24,30 @@ export default function AboutPage() {
         title="Small apps, made to be trusted"
         lead="IronBuddy makes offline Android apps for people who train. We build them to do one job well, keep your data on your phone and charge once instead of every month."
         updated={pages.about.modified}
-      />
+      >
+        {siteConfig.workout.live ? (
+          <div>
+            <a
+              href={siteConfig.workout.playStoreLinkUrl}
+              rel="noopener noreferrer"
+              className="inline-flex rounded-[13px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <img
+                src="/badges/google-play-badge.svg"
+                alt={`Get ${siteConfig.workout.name} on Google Play`}
+                width={180}
+                height={53}
+                decoding="async"
+                className="h-12 w-auto"
+              />
+            </a>
+            <p className="mt-3 text-sm text-muted">
+              {siteConfig.workout.name}. Free {siteConfig.freeTrialDays}-day trial, then a one-time purchase. iPhone app
+              coming soon.
+            </p>
+          </div>
+        ) : null}
+      </PageHero>
       <Container>
         <div className="mx-auto max-w-3xl space-y-10 pb-20 text-base leading-relaxed text-white/80">
           <section>
