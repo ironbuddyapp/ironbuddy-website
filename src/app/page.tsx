@@ -86,7 +86,7 @@ export default function Home() {
                       Explore the app
                     </a>
                     {product.live ? (
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-start gap-3">
                         <a
                           href={product.playUrl}
                           rel="noopener noreferrer"
@@ -103,15 +103,18 @@ export default function Home() {
                           />
                         </a>
                         {product.id === "workout" ? (
-                          <img
-                            src="/badges/app-store-badge.svg"
-                            alt="IronBuddy: Workout Tracker on the App Store"
-                            width={159}
-                            height={53}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-10 w-auto"
-                          />
+                          <span className="inline-flex flex-col items-center">
+                            <img
+                              src="/badges/app-store-badge.svg"
+                              alt="IronBuddy: Workout Tracker on the App Store"
+                              width={159}
+                              height={53}
+                              loading="lazy"
+                              decoding="async"
+                              className="h-10 w-auto"
+                            />
+                            <span className="mt-0.5 text-xs leading-4 text-muted">Coming soon</span>
+                          </span>
                         ) : null}
                       </div>
                     ) : null}
