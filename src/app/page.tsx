@@ -78,7 +78,7 @@ export default function Home() {
                   <p className="mt-4 text-sm leading-relaxed text-muted">{product.text}</p>
                   <p className="mt-4 text-sm text-white/80">
                     {product.live
-                      ? `Free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase.`
+                      ? `Free ${siteConfig.freeTrialDays}-day trial, then a one-time purchase.${product.id === "workout" ? " iPhone app coming soon." : ""}`
                       : `Coming soon to Google Play. A one-time purchase after a free ${siteConfig.freeTrialDays}-day trial.`}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -86,7 +86,7 @@ export default function Home() {
                       Explore the app
                     </a>
                     {product.live ? (
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-start gap-3">
                         <a
                           href={product.playUrl}
                           rel="noopener noreferrer"
@@ -99,20 +99,9 @@ export default function Home() {
                             height={53}
                             loading="lazy"
                             decoding="async"
-                            className={product.id === "workout" ? "h-10 w-auto" : "h-12 w-auto"}
+                            className="h-12 w-auto"
                           />
                         </a>
-                        {product.id === "workout" ? (
-                          <img
-                            src="/badges/app-store-badge.svg"
-                            alt="IronBuddy: Workout Tracker on the App Store"
-                            width={159}
-                            height={53}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-10 w-auto"
-                          />
-                        ) : null}
                       </div>
                     ) : null}
                   </div>
