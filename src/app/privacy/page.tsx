@@ -46,7 +46,7 @@ export default function PrivacyPage() {
         updated={pages.privacy.modified}
       />
       <Container>
-        <div className="mx-auto max-w-3xl pb-20 text-base leading-relaxed text-white/80">
+        <div className="mx-auto max-w-3xl pb-20 text-base leading-relaxed text-white/80 [&_li]:max-w-[38rem] [&_p]:max-w-[38rem]">
           <section aria-labelledby="app-policies">
             <h2 id="app-policies" className={h2Class}>
               App privacy policies

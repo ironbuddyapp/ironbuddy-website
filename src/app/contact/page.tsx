@@ -24,7 +24,7 @@ export default function ContactPage() {
         updated={pages.contact.modified}
       />
       <Container>
-        <div className="mx-auto max-w-3xl space-y-10 pb-20 text-base leading-relaxed text-white/80">
+        <div className="mx-auto max-w-3xl space-y-10 pb-20 text-base leading-relaxed text-white/80 [&_li]:max-w-[38rem] [&_p]:max-w-[38rem]">
           <section>
             <h2 className="text-2xl font-semibold tracking-tight text-white">Email</h2>
             <p className="mt-3">
