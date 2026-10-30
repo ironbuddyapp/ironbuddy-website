@@ -36,7 +36,7 @@ export function PageHero({
           <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
             {title}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="mt-5 max-w-[40rem] text-base leading-relaxed text-white/80 sm:text-lg">
             {lead}
           </p>
           {updated ? (
