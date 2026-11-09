@@ -26,6 +26,9 @@ const BRAND_LAUNCH = "2026-10-18";
 /** Keyword map applied: titles, H1s, descriptions and intros name each page's main keyword. */
 const KEYWORD_MAP = "2026-10-21";
 
+/** "Offline" worded as the apps are: logging works without a connection (HQ job J-20261108-1). */
+const OFFLINE_WORDING = "2026-11-09";
+
 export const pages = {
   home: {
     path: "/",
@@ -37,7 +40,7 @@ export const pages = {
     summary: "IronBuddy makes offline workout and nutrition tracker apps for Android.",
     keywords: { main: "IronBuddy", supporting: ["IronBuddy: Workout Tracker", "IronBuddy: Nutrition Tracker"] },
     published: BRAND_LAUNCH,
-    modified: KEYWORD_MAP,
+    modified: OFFLINE_WORDING,
     images: [
       "/screenshots/ironbuddy-workout-tracker-home.webp",
       "/screenshots/ironbuddy-nutrition-today-calories-protein.webp",
@@ -77,7 +80,7 @@ export const pages = {
     summary: "Links to each app's privacy policy, and how ironbuddy.fit itself handles data.",
     keywords: null,
     published: BRAND_LAUNCH,
-    modified: BRAND_LAUNCH,
+    modified: OFFLINE_WORDING,
   },
 } as const satisfies Record<string, PageDef>;
 
