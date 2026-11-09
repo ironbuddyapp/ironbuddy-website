@@ -72,7 +72,10 @@ export default function PrivacyPage() {
               What both apps have in common
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-5">
-              <li>They work offline. What you log stays on your phone and is never sent to us.</li>
+              <li>
+                They need no account, and logging works without an internet connection. What you log stays on your
+                phone and is never sent to us.
+              </li>
               <li>There is no account, no ads and no analytics inside the apps.</li>
               <li>
                 Purchases go through Google Play or the App Store. We never see your payment details.
